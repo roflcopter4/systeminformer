@@ -11,7 +11,6 @@
  */
 
 #include <kph.h>
-#include <dyndata.h>
 
 #include <trace.h>
 
@@ -124,7 +123,6 @@ PVOID KphSearchMemory(
 {
     PBYTE buffer;
     PBYTE end;
-    PVOID found;
 
     if (!BufferLength || !PatternLength)
     {
@@ -136,7 +134,6 @@ PVOID KphSearchMemory(
         return NULL;
     }
 
-    found = NULL;
     buffer = Buffer;
     end = Add2Ptr(Buffer, BufferLength - PatternLength);
 
@@ -155,8 +152,7 @@ PVOID KphSearchMemory(
         {                                                                     \
             if (*(type*)buffer == *(type*)Pattern)                            \
             {                                                                 \
-                found = buffer;                                               \
-                goto Exit;                                                    \
+                return buffer;                                                \
             }                                                                 \
         }                                                                     \
         break;                                                                \
@@ -175,17 +171,14 @@ PVOID KphSearchMemory(
 #pragma warning(suppress: 4995) // suppress deprecation warning
                 if (memcmp(buffer, Pattern, PatternLength) == 0)
                 {
-                    found = buffer;
-                    goto Exit;
+                    return buffer;
                 }
             }
             break;
         }
     }
 
-Exit:
-
-    return found;
+    return NULL;
 }
 
 /**
@@ -1216,41 +1209,45 @@ Exit:
  * \brief Checks if a given process is lsass.
  *
  * \param[in] Process The process to check.
+ * \param[out] IsLsass TRUE if the process is lsass, FALSE otherwise.
  *
- * \return TRUE if the process is lsass.
+ * \return Successful or errant status.
  */
 _IRQL_requires_max_(PASSIVE_LEVEL)
-BOOLEAN KphProcessIsLsass(
-    _In_ PEPROCESS Process
+_Must_inspect_result_
+NTSTATUS KphProcessIsLsass(
+    _In_ PEPROCESS Process,
+    _Out_ PBOOLEAN IsLsass
     )
 {
     NTSTATUS status;
     HANDLE processId;
     SECURITY_SUBJECT_CONTEXT subjectContext;
-    BOOLEAN result;
 
     PAGED_CODE_PASSIVE();
+
+    *IsLsass = FALSE;
 
     status = KphpGetLsassProcessId(&processId);
     if (!NT_SUCCESS(status))
     {
-        return FALSE;
+        return status;
     }
 
     if (processId != PsGetProcessId(Process))
     {
-        return FALSE;
+        return STATUS_SUCCESS;
     }
 
     SeCaptureSubjectContextEx(NULL, Process, &subjectContext);
 
-    result = KphSinglePrivilegeCheckEx(SeCreateTokenPrivilege,
-                                       &subjectContext,
-                                       UserMode);
+    *IsLsass = KphSinglePrivilegeCheckEx(SeCreateTokenPrivilege,
+                                         &subjectContext,
+                                         UserMode);
 
     SeReleaseSubjectContext(&subjectContext);
 
-    return result;
+    return STATUS_SUCCESS;
 }
 
 /**
