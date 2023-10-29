@@ -13,7 +13,7 @@
 #ifndef PH_NETLIST_H
 #define PH_NETLIST_H
 
-#include <phuisup.h>
+#include "phuisup.h"
 
 // Columns
 

@@ -10,20 +10,18 @@
  *
  */
 
-#include <phapp.h>
-#include <phsettings.h>
+#include "phapp.h"
 
 #include <cpysave.h>
 #include <emenu.h>
 #include <kphuser.h>
 #include <ksisup.h>
+#include <settings.h>
 #include <symprv.h>
 
-#include <actions.h>
-#include <colmgr.h>
-#include <phplug.h>
-#include <settings.h>
-#include <thrdprv.h>
+#include "colmgr.h"
+#include "phplug.h"
+#include "thrdprv.h"
 
 #define WM_PH_COMPLETED (WM_APP + 301)
 //#define WM_PH_STATUS_UPDATE (WM_APP + 302)

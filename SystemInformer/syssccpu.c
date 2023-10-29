@@ -10,15 +10,15 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <settings.h>
-#include <sysinfo.h>
-#include <sysinfop.h>
+#include "sysinfo.h"
+#include "sysinfop.h"
 
 #include <math.h>
 
-#include <procprv.h>
-#include <phsettings.h>
+#include "procprv.h"
+#include "phsettings.h"
 
 static PPH_SYSINFO_SECTION CpuSection;
 static HWND CpuDialog;

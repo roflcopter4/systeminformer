@@ -9,8 +9,8 @@
  *
  */
 
-#include <phapp.h>
-#include <settings.h>
+#include "phapp.h"
+
 #include <vssym32.h>
 
 typedef struct PH_SEARCHCONTROL_CONTEXT

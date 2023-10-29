@@ -10,9 +10,10 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
+
+#include "phsettings.h"
 #include <emenu.h>
-#include <phsettings.h>
 #include <winsta.h>
 
 INT_PTR CALLBACK PhpSessionPropertiesDlgProc(

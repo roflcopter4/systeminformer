@@ -10,18 +10,17 @@
  *
  */
 
-#include <phapp.h>
-#include <mainwnd.h>
+#include "phapp.h"
+#include "mainwnd.h"
+#include "mainwndp.h"
 
 #include <emenu.h>
-
-#include <phplug.h>
-#include <phsettings.h>
 #include <settings.h>
-#include <srvlist.h>
-#include <srvprv.h>
 
-#include <mainwndp.h>
+#include "phplug.h"
+#include "phsettings.h"
+#include "srvlist.h"
+#include "srvprv.h"
 
 PPH_MAIN_TAB_PAGE PhMwpServicesPage;
 HWND PhMwpServiceTreeNewHandle;

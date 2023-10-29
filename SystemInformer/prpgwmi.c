@@ -9,19 +9,20 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
+
 #include <cpysave.h>
 #include <emenu.h>
+#include <mapldr.h>
 #include <secwmi.h>
 #include <settings.h>
-#include <mapldr.h>
 
-#include <phsettings.h>
-#include <procprp.h>
-#include <procprpp.h>
-#include <procprv.h>
+#include "phsettings.h"
+#include "procprp.h"
+#include "procprpp.h"
+#include "procprv.h"
 
-#include <wbemidl.h>
+#include <WbemIdl.h>
 
 typedef struct PH_PROCESS_WMI_CONTEXT
 {

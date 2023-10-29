@@ -10,35 +10,34 @@
  *
  */
 
-#include <phapp.h>
-#include <mainwnd.h>
+#include "phapp.h"
+#include "mainwnd.h"
 
 #include <cpysave.h>
 #include <emenu.h>
 #include <hndlinfo.h>
 #include <kphuser.h>
 #include <lsasup.h>
-#include <svcsup.h>
-#include <workqueue.h>
-#include <phsettings.h>
-
-#include <actions.h>
-#include <colsetmgr.h>
-#include <memsrch.h>
-#include <netlist.h>
-#include <netprv.h>
-#include <notifico.h>
-#include <phplug.h>
-#include <phsvccl.h>
-#include <procprv.h>
-#include <proctree.h>
 #include <secedit.h>
 #include <settings.h>
-#include <srvlist.h>
-#include <srvprv.h>
-#include <notiftoast.h>
+#include <svcsup.h>
+#include <workqueue.h>
 
-#include <mainwndp.h>
+#include "actions.h"
+#include "colsetmgr.h"
+#include "mainwndp.h"
+#include "memsrch.h"
+#include "netlist.h"
+#include "netprv.h"
+#include "notifico.h"
+#include "notiftoast.h"
+#include "phplug.h"
+#include "phsettings.h"
+#include "phsvccl.h"
+#include "procprv.h"
+#include "proctree.h"
+#include "srvlist.h"
+#include "srvprv.h"
 
 PHAPPAPI HWND PhMainWndHandle = NULL;
 BOOLEAN PhMainWndExiting = FALSE;

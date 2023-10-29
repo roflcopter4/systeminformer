@@ -10,9 +10,8 @@
  *
  */
 
-#include <phapp.h>
-#include <phsettings.h>
-#include <procmtgn.h>
+#include "phapp.h"
+#include "procmtgn.h"
 
 typedef struct MITIGATION_POLICY_ENTRY
 {

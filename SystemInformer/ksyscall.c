@@ -9,7 +9,7 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <mapimg.h>
 
 #define NTOS_SERVICE_INDEX 0

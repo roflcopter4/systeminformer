@@ -10,22 +10,21 @@
  *
  */
 
-#include <phapp.h>
-#include <mainwnd.h>
+#include "phapp.h"
+#include "mainwnd.h"
+#include "mainwndp.h"
 
 #include <emenu.h>
-#include <verify.h>
-#include <phsettings.h>
-
-#include <actions.h>
-#include <colsetmgr.h>
-#include <phplug.h>
-#include <procprp.h>
-#include <procprv.h>
-#include <proctree.h>
 #include <settings.h>
+#include <verify.h>
 
-#include <mainwndp.h>
+#include "actions.h"
+#include "colsetmgr.h"
+#include "phplug.h"
+#include "phsettings.h"
+#include "procprp.h"
+#include "procprv.h"
+#include "proctree.h"
 
 PPH_MAIN_TAB_PAGE PhMwpProcessesPage;
 HWND PhMwpProcessTreeNewHandle;

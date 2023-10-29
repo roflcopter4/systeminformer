@@ -48,22 +48,22 @@
  *     program.exe
  */
 
-#include <phapp.h>
-
-#include <shlwapi.h>
-#include <winsta.h>
+#include "phapp.h"
 
 #include <apiimport.h>
 #include <appresolver.h>
-#include <actions.h>
 #include <lsasup.h>
-#include <mapldr.h>
-#include <phsvc.h>
-#include <phsvccl.h>
-#include <phsettings.h>
 #include <settings.h>
 #include <svcsup.h>
-#include <mainwnd.h>
+#include <winsta.h>
+
+#include "actions.h"
+#include "mainwnd.h"
+#include "phsettings.h"
+#include "phsvc.h"
+#include "phsvccl.h"
+
+#include <Shlwapi.h>
 
 typedef struct RUNAS_DIALOG_CONTEXT
 {

@@ -9,14 +9,14 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <apiimport.h>
 #include <mapldr.h>
 
 #include <vsstyle.h>
-#include <uxtheme.h>
+#include <Uxtheme.h>
 
-#include "settings.h"
+#include <settings.h>
 #include "../tools/thirdparty/detours/detours.h"
 
 // https://learn.microsoft.com/en-us/windows/win32/winmsg/about-window-procedures#window-procedure-superclassing

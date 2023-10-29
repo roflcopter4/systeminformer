@@ -10,13 +10,13 @@
  *
  */
 
-#include <phapp.h>
-#include <phsettings.h>
-#include <phsvccl.h>
-#include <actions.h>
+#include "phapp.h"
+#include "phsettings.h"
+#include "phsvccl.h"
+#include "actions.h"
 #include <emenu.h>
-#include <mainwnd.h>
-#include <procprv.h>
+#include "mainwnd.h"
+#include "procprv.h"
 #include <settings.h>
 
 typedef struct PH_PROCESS_HEAPS_CONTEXT

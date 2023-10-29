@@ -10,8 +10,8 @@
  *
  */
 
-#include <phapp.h>
-#include <phsvc.h>
+#include "phapp.h"
+#include "phsvc.h"
 
 HANDLE PhSvcTimeoutStandbyEventHandle = NULL;
 HANDLE PhSvcTimeoutCancelEventHandle = NULL;

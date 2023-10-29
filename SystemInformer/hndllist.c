@@ -10,16 +10,16 @@
  *
  */
 
-#include <phapp.h>
-#include <hndllist.h>
+#include "phapp.h"
+#include "hndllist.h"
 
 #include <emenu.h>
 #include <secedit.h>
 #include <settings.h>
 
-#include <extmgri.h>
-#include <hndlprv.h>
-#include <phsettings.h>
+#include "extmgri.h"
+#include "hndlprv.h"
+#include "phsettings.h"
 
 BOOLEAN PhpHandleNodeHashtableEqualFunction(
     _In_ PVOID Entry1,

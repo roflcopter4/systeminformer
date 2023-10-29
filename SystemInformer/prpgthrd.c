@@ -10,21 +10,22 @@
  *
  */
 
-#include <phapp.h>
-#include <procprp.h>
-#include <procprpp.h>
+#include "phapp.h"
+#include "procprp.h"
+#include "procprpp.h"
+
 #include <cpysave.h>
 #include <emenu.h>
 #include <secedit.h>
 #include <settings.h>
 #include <symprv.h>
 
-#include <actions.h>
-#include <extmgri.h>
-#include <phplug.h>
-#include <phsettings.h>
-#include <procprv.h>
-#include <thrdprv.h>
+#include "actions.h"
+#include "extmgri.h"
+#include "phplug.h"
+#include "phsettings.h"
+#include "procprv.h"
+#include "thrdprv.h"
 
 static PH_STRINGREF EmptyThreadsText = PH_STRINGREF_INIT(L"There are no threads to display.");
 

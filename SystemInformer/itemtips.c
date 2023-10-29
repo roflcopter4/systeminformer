@@ -10,16 +10,16 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 
 #include <settings.h>
 #include <svcsup.h>
 #include <verify.h>
 
-#include <phplug.h>
-#include <phsettings.h>
-#include <procprv.h>
-#include <srvprv.h>
+#include "phplug.h"
+#include "phsettings.h"
+#include "procprv.h"
+#include "srvprv.h"
 
 #include <taskschd.h>
 

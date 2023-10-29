@@ -10,15 +10,15 @@
  *
  */
 
-#include <phapp.h>
-#include <phplug.h>
+#include "phapp.h"
+#include "phplug.h"
 #include <svcsup.h>
 #include <settings.h>
 #include <emenu.h>
 
-#include <actions.h>
-#include <srvprv.h>
-#include <mainwnd.h>
+#include "actions.h"
+#include "srvprv.h"
+#include "mainwnd.h"
 
 typedef struct PH_SERVICES_CONTEXT
 {

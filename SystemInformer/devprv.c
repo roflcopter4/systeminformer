@@ -9,13 +9,13 @@
  *
  */
 
-#include <phapp.h>
-#include <phplug.h>
+#include "phapp.h"
+#include "phplug.h"
 #include <settings.h>
 #include <mapldr.h>
 #include <secedit.h>
 
-#include <devprv.h>
+#include "devprv.h"
 
 #include <devquery.h>
 

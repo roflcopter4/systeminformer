@@ -10,12 +10,12 @@
  *
  */
 
-#include <phapp.h>
-#include <phsettings.h>
+#include "phapp.h"
+#include "phsettings.h"
 #include <svcsup.h>
 
-#include <actions.h>
-#include <phsvccl.h>
+#include "actions.h"
+#include "phsvccl.h"
 
 INT_PTR CALLBACK PhpCreateServiceDlgProc(
     _In_ HWND hwndDlg,

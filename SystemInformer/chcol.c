@@ -10,7 +10,7 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <settings.h>
 
 typedef struct COLUMNS_DIALOG_CONTEXT

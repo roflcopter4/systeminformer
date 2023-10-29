@@ -41,9 +41,9 @@
  * separately (only a "system" cycle time).
  */
 
-#include <phapp.h>
-#include <phsettings.h>
-#include <procprv.h>
+#include "phapp.h"
+#include "phsettings.h"
+#include "procprv.h"
 
 #include <appresolver.h>
 #include <hndlinfo.h>
@@ -51,9 +51,9 @@
 #include <lsasup.h>
 #include <workqueue.h>
 
-#include <extmgri.h>
-#include <phplug.h>
-#include <srvprv.h>
+#include "extmgri.h"
+#include "phplug.h"
+#include "srvprv.h"
 
 #define PROCESS_ID_BUCKETS 64
 #define PROCESS_ID_TO_BUCKET_INDEX(ProcessId) ((HandleToUlong(ProcessId) / 4) & (PROCESS_ID_BUCKETS - 1))

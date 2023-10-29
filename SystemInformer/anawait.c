@@ -22,12 +22,12 @@
  * calls.
  */
 
-#include <phapp.h>
+#include "phapp.h"
 
 #include <hndlinfo.h>
 #include <symprv.h>
 
-#include <procprv.h>
+#include "procprv.h"
 
 typedef struct ANALYZE_WAIT_CONTEXT
 {

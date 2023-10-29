@@ -10,8 +10,8 @@
  *
  */
 
-#include <phapp.h>
-#include <phsettings.h>
+#include "phapp.h"
+#include "phsettings.h"
 #include <settings.h>
 #include <emenu.h>
 

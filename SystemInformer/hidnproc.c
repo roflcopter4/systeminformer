@@ -29,14 +29,14 @@
  * handles are examined.
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <apiimport.h>
-#include <hidnproc.h>
+#include "hidnproc.h"
 #include <kphuser.h>
-#include <mainwnd.h>
-#include <procprv.h>
+#include "mainwnd.h"
+#include "procprv.h"
 #include <settings.h>
-#include <phsettings.h>
+#include "phsettings.h"
 #include <emenu.h>
 
 INT_PTR CALLBACK PhpHiddenProcessesDlgProc(

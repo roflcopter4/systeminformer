@@ -9,7 +9,7 @@
  *     dmex    2017-2023
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <settings.h>
 #include <winsta.h>
 

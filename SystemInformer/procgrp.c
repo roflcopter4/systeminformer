@@ -9,11 +9,11 @@
  *
  */
 
-#include <phapp.h>
-#include <procgrp.h>
+#include "phapp.h"
+#include "procgrp.h"
 
-#include <procprv.h>
-#include <proctree.h>
+#include "procprv.h"
+#include "proctree.h"
 
 typedef struct PHP_PROCESS_DATA
 {

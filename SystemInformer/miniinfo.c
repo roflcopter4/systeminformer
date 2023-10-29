@@ -10,16 +10,16 @@
  *
  */
 
-#include <phapp.h>
-#include <miniinfo.h>
-#include <miniinfop.h>
+#include "phapp.h"
+#include "miniinfo.h"
+#include "miniinfop.h"
 
-#include <actions.h>
-#include <mainwnd.h>
-#include <notifico.h>
-#include <phplug.h>
-#include <procprv.h>
-#include <proctree.h>
+#include "actions.h"
+#include "mainwnd.h"
+#include "notifico.h"
+#include "phplug.h"
+#include "procprv.h"
+#include "proctree.h"
 
 #include <emenu.h>
 #include <settings.h>

@@ -13,9 +13,9 @@
 #ifndef PH_PHPLUG_H
 #define PH_PHPLUG_H
 
-#include <extmgr.h>
-#include <sysinfo.h>
-#include <miniinfo.h>
+#include "extmgr.h"
+#include "sysinfo.h"
+#include "miniinfo.h"
 
 // begin_phapppub
 // Callbacks

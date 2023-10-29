@@ -10,12 +10,12 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <emenu.h>
 
-#include <mainwnd.h>
-#include <memsrch.h>
-#include <procprv.h>
+#include "mainwnd.h"
+#include "memsrch.h"
+#include "procprv.h"
 #include <settings.h>
 
 #include "../tools/thirdparty/pcre/pcre2.h"

@@ -11,10 +11,10 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <settings.h>
 #define PH_SETTINGS_PRIVATE
-#include <phsettings.h>
+#include "phsettings.h"
 
 #define PH_UPDATE_SETTING(Name) \
     (PhCs##Name = PhGetIntegerSetting(TEXT(#Name)))

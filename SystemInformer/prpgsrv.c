@@ -9,10 +9,9 @@
  *
  */
 
-#include <phapp.h>
-#include <phsettings.h>
-#include <procprp.h>
-#include <procprv.h>
+#include "phapp.h"
+#include "procprp.h"
+#include "procprv.h"
 
 static VOID PhpLayoutServiceListControl(
     _In_ HWND hwndDlg,

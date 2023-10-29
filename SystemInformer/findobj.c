@@ -10,7 +10,7 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <cpysave.h>
 #include <emenu.h>
 #include <hndlinfo.h>
@@ -18,12 +18,12 @@
 #include <secedit.h>
 #include <workqueue.h>
 
-#include <colmgr.h>
-#include <hndlmenu.h>
-#include <hndlprv.h>
-#include <mainwnd.h>
-#include <procprv.h>
-#include <proctree.h>
+#include "colmgr.h"
+#include "hndlmenu.h"
+#include "hndlprv.h"
+#include "mainwnd.h"
+#include "procprv.h"
+#include "proctree.h"
 #include <settings.h>
 
 #include "../tools/thirdparty/pcre/pcre2.h"

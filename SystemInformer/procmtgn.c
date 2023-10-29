@@ -10,8 +10,8 @@
  *
  */
 
-#include <phapp.h>
-#include <procmtgn.h>
+#include "phapp.h"
+#include "procmtgn.h"
 
 NTSTATUS PhpCopyProcessMitigationPolicy(
     _Inout_ PNTSTATUS Status,

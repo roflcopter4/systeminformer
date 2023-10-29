@@ -10,18 +10,18 @@
  *
  */
 
-#include <phapp.h>
-#include <phuisup.h>
-#include <colmgr.h>
+#include "phapp.h"
+#include "phuisup.h"
+#include "colmgr.h"
 
-#include <thrdlist.h>
+#include "thrdlist.h"
 
 #include <emenu.h>
 #include <settings.h>
 
-#include <extmgri.h>
-#include <phsettings.h>
-#include <thrdprv.h>
+#include "extmgri.h"
+#include "phsettings.h"
+#include "thrdprv.h"
 
 BOOLEAN PhpThreadNodeHashtableEqualFunction(
     _In_ PVOID Entry1,

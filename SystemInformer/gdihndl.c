@@ -10,9 +10,9 @@
  *
  */
 
-#include <phapp.h>
-#include <procprv.h>
-#include <phsettings.h>
+#include "phapp.h"
+#include "procprv.h"
+#include "phsettings.h"
 #include <emenu.h>
 
 #include <ntgdi.h>

@@ -11,13 +11,15 @@
  *
  */
 
-#include <phapp.h>
-#include <phplug.h>
-#include <phsettings.h>
-#include <extmgri.h>
+#include "phapp.h"
+#include "netprv.h"
+
+#include "extmgri.h"
+#include "phplug.h"
+#include "phsettings.h"
+#include "procprv.h"
+
 #include <mapldr.h>
-#include <netprv.h>
-#include <procprv.h>
 #include <svcsup.h>
 #include <workqueue.h>
 

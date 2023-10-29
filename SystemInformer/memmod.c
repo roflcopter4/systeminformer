@@ -9,8 +9,8 @@
  *
  */
 
-#include <phapp.h>
-#include <procprv.h>
+#include "phapp.h"
+#include "procprv.h"
 #include <settings.h>
 #include <emenu.h>
 #include <symprv.h>

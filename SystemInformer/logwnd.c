@@ -10,11 +10,11 @@
  *
  */
 
-#include <phapp.h>
-#include <phplug.h>
-#include <phsettings.h>
+#include "phapp.h"
+#include "phplug.h"
+#include "phsettings.h"
 #include <settings.h>
-#include <mainwnd.h>
+#include "mainwnd.h"
 #include <emenu.h>
 
 #define WM_PH_LOG_UPDATED (WM_APP + 300)

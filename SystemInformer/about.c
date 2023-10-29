@@ -10,19 +10,19 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <symprv.h>
 
-#include <hndlprv.h>
-#include <mainwnd.h>
-#include <memprv.h>
-#include <modprv.h>
-#include <netprv.h>
-#include <phappres.h>
-#include <phsettings.h>
-#include <procprv.h>
-#include <srvprv.h>
-#include <thrdprv.h>
+#include "hndlprv.h"
+#include "mainwnd.h"
+#include "memprv.h"
+#include "modprv.h"
+#include "netprv.h"
+#include "phappres.h"
+#include "phsettings.h"
+#include "procprv.h"
+#include "srvprv.h"
+#include "thrdprv.h"
 
 static HWND PhAboutWindowHandle = NULL;
 

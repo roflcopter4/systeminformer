@@ -9,13 +9,13 @@
  *
  */
 
-#include <phapp.h>
-#include <devprv.h>
-#include <settings.h>
+#include "phapp.h"
+#include "devprv.h"
 
-#include <phplug.h>
-#include <mainwnd.h>
-#include <mainwndp.h>
+#include "phplug.h"
+#include "mainwnd.h"
+#include "mainwndp.h"
+#include <settings.h>
 
 #include <devguid.h>
 

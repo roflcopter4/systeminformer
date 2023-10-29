@@ -9,8 +9,8 @@
  *
  */
 
-#include <phapp.h>
-#include <colsetmgr.h>
+#include "phapp.h"
+#include "colsetmgr.h"
 #include <settings.h>
 
 PPH_LIST PhInitializeColumnSetList(

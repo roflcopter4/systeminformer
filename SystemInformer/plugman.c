@@ -10,11 +10,13 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
+
+#include "colmgr.h"
+#include "phplug.h"
+
 #include <emenu.h>
 #include <settings.h>
-#include <colmgr.h>
-#include <phplug.h>
 
 #define WM_PH_PLUGINS_SHOWPROPERTIES (WM_APP + 401)
 

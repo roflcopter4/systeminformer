@@ -10,10 +10,10 @@
  *
  */
 
-#include <phapp.h>
-#include <phplug.h>
-#include <phsettings.h>
-#include <procprv.h>
+#include "phapp.h"
+#include "phplug.h"
+#include "phsettings.h"
+#include "procprv.h"
 
 #include <emenu.h>
 #include <hndlinfo.h>

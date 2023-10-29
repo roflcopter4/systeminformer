@@ -1,7 +1,7 @@
 #ifndef PH_PHSVCCL_H
 #define PH_PHSVCCL_H
 
-#include <phsvcapi.h>
+#include "phsvcapi.h"
 
 extern HANDLE PhSvcClServerProcessId;
 

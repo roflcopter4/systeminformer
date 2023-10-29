@@ -10,10 +10,9 @@
  *
  */
 
-#include <phapp.h>
-#include <phsettings.h>
-#include <mainwnd.h>
-#include <procprv.h>
+#include "phapp.h"
+#include "mainwnd.h"
+#include "procprv.h"
 
 typedef struct PROCESS_RECORD_CONTEXT
 {

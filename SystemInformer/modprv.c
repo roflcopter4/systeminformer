@@ -10,20 +10,19 @@
  *
  */
 
-#include <phapp.h>
-#include <modprv.h>
+#include "phapp.h"
+#include "modprv.h"
 
-#include <mapimg.h>
 #include <kphuser.h>
+#include <mapimg.h>
+#include <mapldr.h>
+#include <symprv.h>
 #include <workqueue.h>
 
-#include <extmgri.h>
-#include <procprv.h>
-#include <phsettings.h>
-
-#include <symprv.h>
-#include <appsup.h>
-#include <mapldr.h>
+#include "extmgri.h"
+#include "procprv.h"
+#include "phsettings.h"
+#include "appsup.h"
 
 typedef struct PH_MODULE_QUERY_DATA
 {

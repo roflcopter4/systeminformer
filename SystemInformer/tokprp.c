@@ -10,7 +10,8 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
+
 #include <apiimport.h>
 #include <appresolver.h>
 #include <cpysave.h>
@@ -22,7 +23,8 @@
 #include <settings.h>
 #include <symprv.h>
 #include <workqueue.h>
-#include <phsettings.h>
+
+#include "phsettings.h"
 
 typedef enum PH_PROCESS_TOKEN_CATEGORY
 {

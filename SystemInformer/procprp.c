@@ -10,18 +10,18 @@
  *
  */
 
-#include <phapp.h>
-#include <procprp.h>
-#include <procprpp.h>
+#include "phapp.h"
+#include "procprp.h"
+#include "procprpp.h"
 
 #include <mapldr.h>
 #include <kphuser.h>
 #include <settings.h>
 
-#include <phplug.h>
-#include <phsettings.h>
-#include <procprv.h>
-#include <mainwnd.h>
+#include "phplug.h"
+#include "phsettings.h"
+#include "procprv.h"
+#include "mainwnd.h"
 
 PPH_OBJECT_TYPE PhpProcessPropContextType = NULL;
 PPH_OBJECT_TYPE PhpProcessPropPageContextType = NULL;

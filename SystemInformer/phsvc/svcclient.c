@@ -9,8 +9,8 @@
  *
  */
 
-#include <phapp.h>
-#include <phsvc.h>
+#include "phapp.h"
+#include "phsvc.h"
 
 VOID NTAPI PhSvcpClientDeleteProcedure(
     _In_ PVOID Object,

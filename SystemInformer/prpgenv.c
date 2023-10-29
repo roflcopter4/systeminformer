@@ -10,16 +10,17 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
+
+#include <apiimport.h>
 #include <cpysave.h>
 #include <emenu.h>
 #include <settings.h>
 
-#include <apiimport.h>
-#include <phsettings.h>
-#include <procprp.h>
-#include <procprpp.h>
-#include <procprv.h>
+#include "phsettings.h"
+#include "procprp.h"
+#include "procprpp.h"
+#include "procprv.h"
 
 typedef enum ENVIRONMENT_TREE_MENU_ITEM
 {

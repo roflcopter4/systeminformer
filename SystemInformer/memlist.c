@@ -10,15 +10,15 @@
  *
  */
 
-#include <phapp.h>
-#include <memlist.h>
+#include "phapp.h"
+#include "memlist.h"
 
 #include <emenu.h>
-
-#include <extmgri.h>
-#include <memprv.h>
 #include <settings.h>
-#include <phsettings.h>
+
+#include "extmgri.h"
+#include "memprv.h"
+#include "phsettings.h"
 
 VOID PhpClearMemoryList(
     _Inout_ PPH_MEMORY_LIST_CONTEXT Context

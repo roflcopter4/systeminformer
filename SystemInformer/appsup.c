@@ -10,16 +10,16 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 
 #include <cpysave.h>
 #include <emenu.h>
 #include <symprv.h>
 #include <settings.h>
 
-#include <actions.h>
-#include <phappres.h>
-#include <phsvccl.h>
+#include "actions.h"
+#include "phappres.h"
+#include "phsvccl.h"
 
 #include "../tools/thirdparty/pcre/pcre2.h"
 

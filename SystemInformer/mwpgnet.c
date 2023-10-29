@@ -10,17 +10,16 @@
  *
  */
 
-#include <phapp.h>
-#include <phplug.h>
-#include <mainwnd.h>
+#include "phapp.h"
+#include "mainwnd.h"
+
+#include "mainwndp.h"
+#include "netlist.h"
+#include "netprv.h"
+#include "phplug.h"
 
 #include <emenu.h>
-
-#include <netlist.h>
-#include <netprv.h>
 #include <settings.h>
-
-#include <mainwndp.h>
 
 PPH_MAIN_TAB_PAGE PhMwpNetworkPage;
 HWND PhMwpNetworkTreeNewHandle;

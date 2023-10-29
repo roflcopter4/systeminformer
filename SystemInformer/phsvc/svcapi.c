@@ -10,18 +10,20 @@
  *
  */
 
-#include <phapp.h>
-#include <phsvc.h>
-#include <extmgri.h>
+#include "phapp.h"
+
+#include "extmgri.h"
+#include "phplug.h"
+#include "phsvc.h"
+
 #include <lsasup.h>
 #include <mapldr.h>
-#include <phplug.h>
 #include <secedit.h>
 #include <svcsup.h>
-
-#include <accctrl.h>
-#include <dbghelp.h>
 #include <symprv.h>
+
+#include <AccCtrl.h>
+#include <DbgHelp.h>
 
 typedef struct PHSVCP_CAPTURED_RUNAS_SERVICE_PARAMETERS
 {

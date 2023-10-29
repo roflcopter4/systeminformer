@@ -16,17 +16,17 @@
  * the process provider. However, this does increase the complexity of the thread provider system.
  */
 
-#include <phapp.h>
-#include <phplug.h>
-#include <thrdprv.h>
+#include "phapp.h"
+#include "phplug.h"
+#include "thrdprv.h"
 
 #include <svcsup.h>
 #include <symprv.h>
 #include <workqueue.h>
 #include <kphuser.h>
 
-#include <extmgri.h>
-#include <procprv.h>
+#include "extmgri.h"
+#include "procprv.h"
 
 typedef struct PH_THREAD_QUERY_DATA
 {

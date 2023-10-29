@@ -10,21 +10,21 @@
  *
  */
 
-#include <phapp.h>
-#include <procprp.h>
-#include <procprpp.h>
+#include "phapp.h"
+#include "procprp.h"
+#include "procprpp.h"
 
 #include <emenu.h>
 #include <mapimg.h>
 #include <secedit.h>
+#include <settings.h>
 #include <verify.h>
 
-#include <actions.h>
-#include <mainwnd.h>
-#include <phsettings.h>
-#include <procmtgn.h>
-#include <procprv.h>
-#include <settings.h>
+#include "actions.h"
+#include "mainwnd.h"
+#include "phsettings.h"
+#include "procmtgn.h"
+#include "procprv.h"
 
 static PH_KEY_VALUE_PAIR PhProtectedTypeStrings[] =
 {

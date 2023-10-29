@@ -13,7 +13,7 @@
 #ifndef PH_MINIINFO_H
 #define PH_MINIINFO_H
 
-#include <procgrp.h>
+#include "procgrp.h"
 
 // begin_phapppub
 // Section

@@ -10,16 +10,16 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <appresolver.h>
 #include <settings.h>
-
-#include <dbghelp.h>
 #include <symprv.h>
 
-#include <actions.h>
-#include <phsvccl.h>
-#include <procprv.h>
+#include <DbgHelp.h>
+
+#include "actions.h"
+#include "phsvccl.h"
+#include "procprv.h"
 
 #define WM_PH_MINIDUMP_STATUS_UPDATE (WM_APP + 301)
 #define WM_PH_MINIDUMP_COMPLETED (WM_APP + 302)

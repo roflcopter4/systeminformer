@@ -10,11 +10,10 @@
  *
  */
 
-#include <phapp.h>
-#include <mainwnd.h>
-#include <memsrch.h>
-#include <procprv.h>
-#include <phsettings.h>
+#include "phapp.h"
+#include "mainwnd.h"
+#include "memsrch.h"
+#include "procprv.h"
 
 #define WM_PH_MEMORY_STATUS_UPDATE (WM_APP + 301)
 

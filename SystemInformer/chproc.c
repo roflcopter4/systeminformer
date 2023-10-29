@@ -10,8 +10,8 @@
  *
  */
 
-#include <phapp.h>
-#include <procprv.h>
+#include "phapp.h"
+#include "procprv.h"
 #include <lsasup.h>
 
 typedef struct PH_CHOOSE_PROCESS_DIALOG_CONTEXT

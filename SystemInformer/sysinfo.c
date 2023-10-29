@@ -34,17 +34,17 @@
  * * Using the tab or arrow keys to select "Back" and pressing space or enter.
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <settings.h>
-#include <sysinfo.h>
-#include <sysinfop.h>
+#include "sysinfo.h"
+#include "sysinfop.h"
 
 #include <vssym32.h>
 
-#include <mainwnd.h>
+#include "mainwnd.h"
 #include <guisup.h>
-#include <phplug.h>
-#include <phsettings.h>
+#include "phplug.h"
+#include "phsettings.h"
 
 static HANDLE PhSipThread = NULL;
 HWND PhSipWindow = NULL;

@@ -13,14 +13,14 @@
 #ifndef PH_PROCPRPP_H
 #define PH_PROCPRPP_H
 
-#include <phuisup.h>
-#include <colmgr.h>
+#include "phuisup.h"
+#include "colmgr.h"
 
-#include <thrdlist.h>
-#include <modlist.h>
-#include <hndllist.h>
-#include <memlist.h>
-#include <memprv.h>
+#include "thrdlist.h"
+#include "modlist.h"
+#include "hndllist.h"
+#include "memlist.h"
+#include "memprv.h"
 
 typedef struct PH_PROCESS_PROPSHEETCONTEXT
 {

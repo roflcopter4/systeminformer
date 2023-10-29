@@ -10,16 +10,17 @@
  */
 
 #ifdef _M_IX86
-#include <phapp.h>
-#include <phplug.h>
-#include <phsettings.h>
-#include <procprp.h>
-#include <procprv.h>
-#include <settings.h>
+#include "phapp.h"
+
+#include "phplug.h"
+#include "procprp.h"
+#include "procprv.h"
+
 #include <emenu.h>
 #include <mapldr.h>
+#include <settings.h>
 
-#include <vdmdbg.h>
+#include <VdmDbg.h>
 
 #define WM_PH_VDMDBG_UPDATE (WM_APP + 251)
 

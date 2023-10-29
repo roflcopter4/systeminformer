@@ -10,14 +10,14 @@
  *
  */
 
-#include <phapp.h>
-#include <phplug.h>
+#include "phapp.h"
+#include "phplug.h"
 #include <emenu.h>
 #include <settings.h>
-#include <actions.h>
-#include <phsvccl.h>
+#include "actions.h"
+#include "phsvccl.h"
 #include <kphuser.h>
-#include <ksisup.h>
+#include "ksisup.h"
 
 #define MSG_UPDATE (WM_APP + 1)
 

@@ -10,24 +10,24 @@
  *
  */
 
-#include <phapp.h>
-#include <procprp.h>
-#include <procprpp.h>
+#include "phapp.h"
+#include "procprp.h"
+#include "procprpp.h"
 
 #include <cpysave.h>
 #include <emenu.h>
 #include <hndlinfo.h>
 #include <kphuser.h>
+#include <secedit.h>
 #include <settings.h>
 
-#include <actions.h>
-#include <extmgri.h>
-#include <hndlmenu.h>
-#include <hndlprv.h>
-#include <phplug.h>
-#include <phsettings.h>
-#include <procprv.h>
-#include <secedit.h>
+#include "actions.h"
+#include "extmgri.h"
+#include "hndlmenu.h"
+#include "hndlprv.h"
+#include "phplug.h"
+#include "phsettings.h"
+#include "procprv.h"
 
 static PH_STRINGREF EmptyHandlesText = PH_STRINGREF_INIT(L"There are no handles to display.");
 

@@ -10,19 +10,20 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 
 #include <commdlg.h>
-#include <colmgr.h>
+
 #include <colorbox.h>
 #include <cpysave.h>
-#include <settings.h>
 #include <emenu.h>
+#include <settings.h>
 
-#include <mainwnd.h>
-#include <proctree.h>
-#include <phplug.h>
-#include <phsettings.h>
+#include "colmgr.h"
+#include "mainwnd.h"
+#include "phplug.h"
+#include "phsettings.h"
+#include "proctree.h"
 
 #define WM_PH_CHILD_EXIT (WM_APP + 301)
 

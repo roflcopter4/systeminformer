@@ -10,17 +10,17 @@
  *
  */
 
-#include <phapp.h>
-#include <phplug.h>
+#include "phapp.h"
+#include "phplug.h"
+
+#include "colmgr.h"
+#include "extmgri.h"
+#include "phsvccl.h"
+#include "procprv.h"
 
 #include <emenu.h>
-
-#include <colmgr.h>
-#include <extmgri.h>
-#include <phsvccl.h>
-#include <procprv.h>
-#include <settings.h>
 #include <mapldr.h>
+#include <settings.h>
 
 typedef struct PHP_PLUGIN_LOAD_ERROR
 {

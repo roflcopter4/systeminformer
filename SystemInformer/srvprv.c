@@ -10,16 +10,18 @@
  *
  */
 
-#include <phapp.h>
-#include <phplug.h>
-#include <srvprv.h>
-#include <svcsup.h>
-#include <workqueue.h>
-#include <extmgri.h>
-#include <procprv.h>
-#include <phsettings.h>
+#include "phapp.h"
+#include "srvprv.h"
+
 #include <apiimport.h>
 #include <mapldr.h>
+#include <svcsup.h>
+#include <workqueue.h>
+
+#include "extmgri.h"
+#include "phplug.h"
+#include "phsettings.h"
+#include "procprv.h"
 
 typedef struct PHP_SERVICE_NAME_ENTRY
 {

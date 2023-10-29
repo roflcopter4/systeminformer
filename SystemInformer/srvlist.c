@@ -10,23 +10,23 @@
  *
  */
 
-#include <phapp.h>
-#include <srvlist.h>
+#include "phapp.h"
+#include "srvlist.h"
 
 #include <cpysave.h>
 #include <emenu.h>
-#include <svcsup.h>
-#include <settings.h>
-#include <verify.h>
 #include <mapldr.h>
+#include <settings.h>
+#include <svcsup.h>
+#include <verify.h>
 
-#include <colmgr.h>
-#include <extmgri.h>
-#include <mainwnd.h>
-#include <phplug.h>
-#include <phsettings.h>
-#include <procprv.h>
-#include <srvprv.h>
+#include "colmgr.h"
+#include "extmgri.h"
+#include "mainwnd.h"
+#include "phplug.h"
+#include "phsettings.h"
+#include "procprv.h"
+#include "srvprv.h"
 
 BOOLEAN PhpServiceNodeHashtableEqualFunction(
     _In_ PVOID Entry1,

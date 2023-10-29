@@ -9,10 +9,10 @@
  *
  */
 
-#include <phapp.h>
-#include <hexedit.h>
+#include "phapp.h"
 
-#include <procprv.h>
+#include "procprv.h"
+#include <hexedit.h>
 #include <settings.h>
 
 #define WM_PH_SELECT_OFFSET (WM_APP + 300)

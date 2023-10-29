@@ -10,16 +10,16 @@
  *
  */
 
-#include <phapp.h>
-#include <hndlprv.h>
-#include <phplug.h>
-#include <phsettings.h>
+#include "phapp.h"
+#include "hndlprv.h"
+#include "phplug.h"
+#include "phsettings.h"
 #include <kphuser.h>
 
 #include <emenu.h>
 #include <settings.h>
 #include <hndlinfo.h>
-#include <procprv.h>
+#include "procprv.h"
 #include <secedit.h>
 
 typedef enum PHP_HANDLE_GENERAL_CATEGORY

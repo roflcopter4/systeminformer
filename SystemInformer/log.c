@@ -10,8 +10,8 @@
  *
  */
 
-#include <phapp.h>
-#include <phplug.h>
+#include "phapp.h"
+#include "phplug.h"
 #include <settings.h>
 
 PH_CIRCULAR_BUFFER_PVOID PhLogBuffer;

@@ -10,9 +10,9 @@
  *
  */
 
-#include <phapp.h>
-#include <procprp.h>
-#include <procprv.h>
+#include "phapp.h"
+#include "procprp.h"
+#include "procprv.h"
 
 NTSTATUS NTAPI PhpOpenProcessTokenForPage(
     _Out_ PHANDLE Handle,

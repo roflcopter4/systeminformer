@@ -1,7 +1,7 @@
 #ifndef PH_PHSVC_H
 #define PH_PHSVC_H
 
-#include <phsvcapi.h>
+#include "phsvcapi.h"
 
 #define PHSVC_SHARED_SECTION_SIZE (512 * 1024)
 

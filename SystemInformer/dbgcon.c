@@ -15,7 +15,7 @@
  * problems and memory usage, as well as to do general performance testing.
  */
 
-#include <phapp.h>
+#include "phapp.h"
 
 #include <phintrnl.h>
 #include <refp.h>
@@ -25,9 +25,9 @@
 #include <workqueue.h>
 #include <workqueuep.h>
 
-#include <procprv.h>
-#include <srvprv.h>
-#include <thrdprv.h>
+#include "procprv.h"
+#include "srvprv.h"
+#include "thrdprv.h"
 
 typedef struct STRING_TABLE_ENTRY
 {

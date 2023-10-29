@@ -10,12 +10,12 @@
  *
  */
 
-#include <phapp.h>
-#include <sysinfo.h>
-#include <sysinfop.h>
+#include "phapp.h"
+#include "sysinfo.h"
+#include "sysinfop.h"
 
-#include <procprv.h>
-#include <phsettings.h>
+#include "procprv.h"
+#include "phsettings.h"
 
 static PPH_SYSINFO_SECTION IoSection;
 static HWND IoDialog;

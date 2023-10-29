@@ -16,9 +16,9 @@
  * and generic masks.
  */
 
-#include <phapp.h>
-#include <procprv.h>
-#include <thrdprv.h>
+#include "phapp.h"
+#include "procprv.h"
+#include "thrdprv.h"
 
 typedef struct PH_AFFINITY_DIALOG_CONTEXT
 {

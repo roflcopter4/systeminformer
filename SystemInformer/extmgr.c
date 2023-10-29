@@ -15,8 +15,8 @@
  * loaded, plugin information, etc.).
  */
 
-#include <phapp.h>
-#include <extmgri.h>
+#include "phapp.h"
+#include "extmgri.h"
 
 LIST_ENTRY PhEmAppContextListHead = { &PhEmAppContextListHead, &PhEmAppContextListHead };
 ULONG PhEmAppContextCount = 0;

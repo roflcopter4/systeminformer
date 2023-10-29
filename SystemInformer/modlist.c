@@ -10,17 +10,17 @@
  *
  */
 
-#include <phapp.h>
-#include <modlist.h>
+#include "phapp.h"
+#include "modlist.h"
 
 #include <emenu.h>
 #include <settings.h>
+#include <svcsup.h>
 #include <verify.h>
 
-#include <extmgri.h>
-#include <modprv.h>
-#include <svcsup.h>
-#include <phsettings.h>
+#include "extmgri.h"
+#include "modprv.h"
+#include "phsettings.h"
 
 BOOLEAN PhpModuleNodeHashtableEqualFunction(
     _In_ PVOID Entry1,

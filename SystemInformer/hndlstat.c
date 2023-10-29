@@ -10,7 +10,7 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <hndlinfo.h>
 #include <settings.h>
 

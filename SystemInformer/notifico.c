@@ -10,19 +10,19 @@
  *
  */
 
-#include <phapp.h>
-#include <phsettings.h>
+#include "phapp.h"
+#include "phsettings.h"
 
 #include <shellapi.h>
 
-#include <mainwnd.h>
-#include <phplug.h>
-#include <procprv.h>
+#include "mainwnd.h"
+#include "phplug.h"
+#include "procprv.h"
 #include <settings.h>
 
-#include <mainwndp.h>
-#include <notifico.h>
-#include <notificop.h>
+#include "mainwndp.h"
+#include "notifico.h"
+#include "notificop.h"
 
 BOOLEAN PhNfMiniInfoEnabled = FALSE;
 BOOLEAN PhNfMiniInfoPinned = FALSE;

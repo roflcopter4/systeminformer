@@ -10,8 +10,8 @@
  *
  */
 
-#include <phapp.h>
-#include <phsvccl.h>
+#include "phapp.h"
+#include "phsvccl.h"
 
 HANDLE PhSvcClPortHandle;
 PVOID PhSvcClPortHeap;

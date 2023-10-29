@@ -10,15 +10,15 @@
  *
  */
 
-#include <phapp.h>
-#include <hndlprv.h>
+#include "phapp.h"
+#include "hndlprv.h"
 
 #include <hndlinfo.h>
 #include <kphuser.h>
 #include <settings.h>
 #include <workqueue.h>
 
-#include <extmgri.h>
+#include "extmgri.h"
 
 typedef struct PHP_CREATE_HANDLE_ITEM_CONTEXT
 {

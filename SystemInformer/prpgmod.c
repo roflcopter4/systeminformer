@@ -10,21 +10,21 @@
  *
  */
 
-#include <phapp.h>
-#include <procprp.h>
-#include <procprpp.h>
+#include "phapp.h"
+#include "procprp.h"
+#include "procprpp.h"
 
 #include <cpysave.h>
 #include <emenu.h>
-
-#include <actions.h>
-#include <extmgri.h>
-#include <modprv.h>
-#include <phplug.h>
-#include <phsettings.h>
-#include <procprv.h>
 #include <settings.h>
 #include <verify.h>
+
+#include "actions.h"
+#include "extmgri.h"
+#include "modprv.h"
+#include "phplug.h"
+#include "phsettings.h"
+#include "procprv.h"
 
 static PH_STRINGREF EmptyModulesText = PH_STRINGREF_INIT(L"There are no modules to display.");
 

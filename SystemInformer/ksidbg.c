@@ -9,7 +9,7 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <kphuser.h>
 #include <kphcomms.h>
 #include <kphmsgdyn.h>

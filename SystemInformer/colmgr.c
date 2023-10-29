@@ -10,11 +10,11 @@
  *
  */
 
-#include <phapp.h>
-#include <colmgr.h>
+#include "phapp.h"
+#include "colmgr.h"
 
-#include <extmgri.h>
-#include <phplug.h>
+#include "extmgri.h"
+#include "phplug.h"
 
 typedef struct PH_CM_SORT_CONTEXT
 {

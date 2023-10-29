@@ -18,8 +18,8 @@
  * data not supplied by the process provider.
  */
 
-#include <phapp.h>
-#include <proctree.h>
+#include "phapp.h"
+#include "proctree.h"
 
 #include <appresolver.h>
 #include <cpysave.h>
@@ -31,12 +31,12 @@
 #include <settings.h>
 #include <verify.h>
 
-#include <colmgr.h>
-#include <extmgri.h>
-#include <mainwnd.h>
-#include <phplug.h>
-#include <phsettings.h>
-#include <procprv.h>
+#include "colmgr.h"
+#include "extmgri.h"
+#include "mainwnd.h"
+#include "phplug.h"
+#include "phsettings.h"
+#include "procprv.h"
 
 #include <math.h>
 

@@ -10,16 +10,16 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 #include <kphuser.h>
 #include <kphcomms.h>
 #include <kphdyndata.h>
 #include <settings.h>
 #include <json.h>
-#include <phappres.h>
+#include "phappres.h"
 #include <sistatus.h>
 
-#include <ksisup.h>
+#include "ksisup.h"
 
 #ifdef DEBUG
 //#define KSI_DEBUG_DELAY_SPLASHSCREEN 1

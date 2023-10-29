@@ -9,9 +9,9 @@
  *
  */
 
-#include <phapp.h>
-#include <memprv.h>
-#include <procprv.h>
+#include "phapp.h"
+#include "memprv.h"
+#include "procprv.h"
 
 typedef struct MEMORY_PROTECT_CONTEXT
 {

@@ -10,8 +10,8 @@
  *
  */
 
-#include <phapp.h>
-#include <phsvc.h>
+#include "phapp.h"
+#include "phsvc.h"
 
 NTSTATUS PhSvcApiRequestThreadStart(
     _In_ PVOID Parameter

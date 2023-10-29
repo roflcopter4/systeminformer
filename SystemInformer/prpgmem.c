@@ -10,18 +10,18 @@
  *
  */
 
-#include <phapp.h>
-#include <procprp.h>
-#include <procprpp.h>
+#include "phapp.h"
+#include "procprp.h"
+#include "procprpp.h"
 
 #include <cpysave.h>
 #include <emenu.h>
 
-#include <actions.h>
-#include <extmgri.h>
-#include <mainwnd.h>
-#include <phplug.h>
-#include <procprv.h>
+#include "actions.h"
+#include "extmgri.h"
+#include "mainwnd.h"
+#include "phplug.h"
+#include "procprv.h"
 
 static PPH_OBJECT_TYPE PhMemoryContextType = NULL;
 static PH_STRINGREF EmptyMemoryText = PH_STRINGREF_INIT(L"There are no memory regions to display.");

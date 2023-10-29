@@ -9,14 +9,15 @@
  *
  */
 
-#include <phapp.h>
-#include <phsettings.h>
-#include <kphuser.h>
-#include <ksisup.h>
-#include <hndlinfo.h>
+#include "phapp.h"
+
+#include "ksisup.h"
+#include "mainwnd.h"
+#include "procprv.h"
+
 #include <emenu.h>
-#include <mainwnd.h>
-#include <procprv.h>
+#include <hndlinfo.h>
+#include <kphuser.h>
 
 typedef struct COMMON_PAGE_CONTEXT
 {

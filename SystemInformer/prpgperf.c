@@ -10,12 +10,12 @@
  *
  */
 
-#include <phapp.h>
-#include <phplug.h>
-#include <procprp.h>
-#include <procprpp.h>
-#include <procprv.h>
-#include <phsettings.h>
+#include "phapp.h"
+#include "phplug.h"
+#include "phsettings.h"
+#include "procprp.h"
+#include "procprpp.h"
+#include "procprv.h"
 
 static VOID NTAPI PerformanceUpdateHandler(
     _In_opt_ PVOID Parameter,

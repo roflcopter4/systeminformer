@@ -31,8 +31,8 @@
 #include <phnet.h>
 
 #include "../resource.h"
-#include <phfwddef.h>
-#include <appsup.h>
+#include "phfwddef.h"
+#include "appsup.h"
 
 // main
 

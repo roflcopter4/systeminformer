@@ -16,13 +16,13 @@
  * elevation can also easily be added if necessary.
  */
 
-#include <phapp.h>
-#include <actions.h>
+#include "phapp.h"
+#include "actions.h"
 
 #include <winsta.h>
 
 #include <kphuser.h>
-#include <ksisup.h>
+#include "ksisup.h"
 #include <mapldr.h>
 #include <secedit.h>
 #include <secwmi.h>
@@ -32,14 +32,14 @@
 #include <apiimport.h>
 #include <bcd.h>
 #include <emenu.h>
-#include <hndlprv.h>
-#include <memprv.h>
-#include <modprv.h>
-#include <netprv.h>
-#include <phsvccl.h>
-#include <procprv.h>
-#include <srvprv.h>
-#include <thrdprv.h>
+#include "hndlprv.h"
+#include "memprv.h"
+#include "modprv.h"
+#include "netprv.h"
+#include "phsvccl.h"
+#include "procprv.h"
+#include "srvprv.h"
+#include "thrdprv.h"
 
 static PH_STRINGREF DangerousProcesses[] =
 {

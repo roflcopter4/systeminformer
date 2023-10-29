@@ -10,19 +10,19 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
 
 #include <secedit.h>
-#include <svcsup.h>
-#include <mainwnd.h>
 #include <settings.h>
+#include <svcsup.h>
 
-#include <actions.h>
-#include <phplug.h>
-#include <phsvccl.h>
-#include <phsettings.h>
-#include <procprv.h>
-#include <srvprv.h>
+#include "actions.h"
+#include "mainwnd.h"
+#include "phplug.h"
+#include "phsettings.h"
+#include "phsvccl.h"
+#include "procprv.h"
+#include "srvprv.h"
 
 typedef struct SERVICE_PROPERTIES_CONTEXT
 {

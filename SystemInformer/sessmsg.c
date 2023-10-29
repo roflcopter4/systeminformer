@@ -11,8 +11,8 @@
  */
 
 #include "phapp.h"
-#include "lsasup.h"
-#include "winsta.h"
+#include <lsasup.h>
+#include <winsta.h>
 
 static PH_KEY_VALUE_PAIR PhpMessageBoxIconPairs[] =
 {

@@ -13,8 +13,8 @@
 #ifndef PH_MODLIST_H
 #define PH_MODLIST_H
 
-#include <phuisup.h>
-#include <colmgr.h>
+#include "phuisup.h"
+#include "colmgr.h"
 
 // Columns
 
