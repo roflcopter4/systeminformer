@@ -18,7 +18,7 @@
 static PH_STRINGREF EmptyDirectoriesText = PH_STRINGREF_INIT(L"There are no directories to display.");
 static PH_STRINGREF LoadingDirectoriesText = PH_STRINGREF_INIT(L"Loading directories from image...");
 
-typedef enum _PV_DIRECTORY_TREE_COLUMN_ITEM
+typedef enum PV_DIRECTORY_TREE_COLUMN_ITEM
 {
     PV_DIRECTORY_TREE_COLUMN_ITEM_INDEX,
     PV_DIRECTORY_TREE_COLUMN_ITEM_NAME,
@@ -35,7 +35,7 @@ typedef enum _PV_DIRECTORY_TREE_COLUMN_ITEM
     PV_DIRECTORY_TREE_COLUMN_ITEM_MAXIMUM
 } PV_DIRECTORY_TREE_COLUMN_ITEM;
 
-typedef struct _PV_DIRECTORY_NODE
+typedef struct PV_DIRECTORY_NODE
 {
     PH_TREENEW_NODE Node;
 
@@ -63,7 +63,7 @@ typedef struct _PV_DIRECTORY_NODE
     PH_STRINGREF TextCache[PV_DIRECTORY_TREE_COLUMN_ITEM_MAXIMUM];
 } PV_DIRECTORY_NODE, *PPV_DIRECTORY_NODE;
 
-typedef struct _PV_DIRECTORY_CONTEXT
+typedef struct PV_DIRECTORY_CONTEXT
 {
     HWND DialogHandle;
     HWND SearchHandle;
@@ -331,7 +331,7 @@ VOID PvpPeEnumerateImageDataDirectory(
     PhReleaseQueuedLockExclusive(&Context->SearchResultsLock);
 }
 
-NTSTATUS PvpPeDirectoryEnumerateThread(
+NTSTATUS NTAPI PvpPeDirectoryEnumerateThread(
     _In_ PPV_DIRECTORY_CONTEXT Context
     )
 {
@@ -372,7 +372,7 @@ INT_PTR CALLBACK PvPeDirectoryDlgProc(
 
         if (lParam)
         {
-            LPPROPSHEETPAGE propSheetPage = (LPPROPSHEETPAGE)lParam;
+            LPPROPSHEETPAGEW propSheetPage = (LPPROPSHEETPAGEW)lParam;
             context->PropSheetContext = (PPV_PROPPAGECONTEXT)propSheetPage->lParam;
         }
     }
@@ -593,7 +593,7 @@ VOID PvDeleteDirectoryTree(
     PhDereferenceObject(Context->NodeList);
 }
 
-struct _PH_TN_FILTER_SUPPORT* GetDirectoryListFilterSupport(
+struct PH_TN_FILTER_SUPPORT* GetDirectoryListFilterSupport(
     _In_ PPV_DIRECTORY_CONTEXT Context
     )
 {

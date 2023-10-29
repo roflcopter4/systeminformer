@@ -20,7 +20,7 @@ extern PH_CALLBACK PhSymbolEventCallback;
 
 #define PH_MAX_SYMBOL_NAME_LEN 128
 
-typedef struct _PH_SYMBOL_PROVIDER
+typedef struct PH_SYMBOL_PROVIDER
 {
     LIST_ENTRY ModulesListHead;
     PH_QUEUED_LOCK ModulesListLock;
@@ -42,7 +42,7 @@ typedef struct _PH_SYMBOL_PROVIDER
     PH_AVL_TREE ModulesSet;
 } PH_SYMBOL_PROVIDER, *PPH_SYMBOL_PROVIDER;
 
-typedef enum _PH_SYMBOL_RESOLVE_LEVEL
+typedef enum PH_SYMBOL_RESOLVE_LEVEL
 {
     PhsrlFunction,
     PhsrlModule,
@@ -50,7 +50,7 @@ typedef enum _PH_SYMBOL_RESOLVE_LEVEL
     PhsrlInvalid
 } PH_SYMBOL_RESOLVE_LEVEL, *PPH_SYMBOL_RESOLVE_LEVEL;
 
-typedef struct _PH_SYMBOL_INFORMATION
+typedef struct PH_SYMBOL_INFORMATION
 {
     ULONG64 Address;
     ULONG64 ModuleBase;
@@ -58,20 +58,20 @@ typedef struct _PH_SYMBOL_INFORMATION
     ULONG Size;
 } PH_SYMBOL_INFORMATION, *PPH_SYMBOL_INFORMATION;
 
-typedef struct _PH_SYMBOL_LINE_INFORMATION
+typedef struct PH_SYMBOL_LINE_INFORMATION
 {
     ULONG LineNumber;
     ULONG64 Address;
 } PH_SYMBOL_LINE_INFORMATION, *PPH_SYMBOL_LINE_INFORMATION;
 
-typedef enum _PH_SYMBOL_EVENT_TYPE
+typedef enum PH_SYMBOL_EVENT_TYPE
 {
     PH_SYMBOL_EVENT_TYPE_LOAD_START,
     PH_SYMBOL_EVENT_TYPE_LOAD_END,
     PH_SYMBOL_EVENT_TYPE_PROGRESS,
 } PH_SYMBOL_EVENT_TYPE;
 
-typedef struct _PH_SYMBOL_EVENT_DATA
+typedef struct PH_SYMBOL_EVENT_DATA
 {
     PH_SYMBOL_EVENT_TYPE EventType;
     PVOID EventMessage;
@@ -107,7 +107,7 @@ PhGetModuleFromAddress(
     _Out_opt_ PPH_STRING *FileName
     );
 
-typedef struct _PH_SYMBOL_MODULE *PPH_SYMBOL_MODULE;
+typedef struct PH_SYMBOL_MODULE *PPH_SYMBOL_MODULE;
 
 PHLIBAPI
 PPH_SYMBOL_MODULE
@@ -302,7 +302,7 @@ PhWriteMiniDumpProcess(
 #define PH_THREAD_STACK_FRAME_FPO_DATA_PRESENT 0x100
 
 /** Contains information about a thread stack frame. */
-typedef struct _PH_THREAD_STACK_FRAME
+typedef struct PH_THREAD_STACK_FRAME
 {
     PVOID PcAddress;
     PVOID ReturnAddress;
@@ -352,7 +352,7 @@ PhUndecorateSymbolName(
     _In_ PWSTR DecoratedName
     );
 
-typedef struct _PH_SYMBOL_INFO
+typedef struct PH_SYMBOL_INFO
 {
     PH_STRINGREF Name;
     ULONG TypeIndex;   // Type Index of symbol
@@ -414,7 +414,7 @@ PhSymbolProviderFreeDiaString(
 
 // Inline stack support
 
-typedef union _INLINE_FRAME_CONTEXT
+typedef union INLINE_FRAME_CONTEXT
 {
     ULONG ContextValue;
     struct
@@ -487,7 +487,7 @@ PhGetLineFromInlineContext(
     _Out_opt_ PPH_SYMBOL_LINE_INFORMATION Information
     );
 
-//typedef struct _PH_INLINE_STACK_FRAME
+//typedef struct PH_INLINE_STACK_FRAME
 //{
 //    PH_SYMBOL_RESOLVE_LEVEL ResolveLevel;
 //    PPH_STRING Symbol;
@@ -509,7 +509,7 @@ PhGetLineFromInlineContext(
 //    _In_ PPH_LIST InlineSymbolList
 //    );
 
-typedef struct _PH_DIA_SYMBOL_INFORMATION
+typedef struct PH_DIA_SYMBOL_INFORMATION
 {
     ULONG64 FunctionLength;
     PPH_STRING UndecoratedName;

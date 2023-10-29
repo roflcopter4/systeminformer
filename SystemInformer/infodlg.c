@@ -14,7 +14,7 @@
 #include <phsettings.h>
 #include <settings.h>
 
-typedef struct _PH_INFORMATION_CONTEXT
+typedef struct PH_INFORMATION_CONTEXT
 {
     PWSTR String;
     ULONG Flags;

@@ -32,7 +32,7 @@ EXTERN_C_START
 #define PhpAddIntegerPairSetting(A, B) ADD_SETTING_WRAPPER(IntegerPairSettingType, A, B)
 #define PhpAddScalableIntegerPairSetting(A, B) ADD_SETTING_WRAPPER(ScalableIntegerPairSettingType, A, B)
 
-typedef enum _PH_SETTING_TYPE
+typedef enum PH_SETTING_TYPE
 {
     StringSettingType,
     IntegerSettingType,
@@ -41,7 +41,7 @@ typedef enum _PH_SETTING_TYPE
 } PH_SETTING_TYPE, PPH_SETTING_TYPE;
 // end_phapppub
 
-typedef struct _PH_SETTING
+typedef struct PH_SETTING
 {
     PH_SETTING_TYPE Type;
     PH_STRINGREF Name;
@@ -374,7 +374,7 @@ VOID PhAddSetting(
     _In_ PPH_STRINGREF DefaultValue
     );
 
-typedef struct _PH_SETTING_CREATE
+typedef struct PH_SETTING_CREATE
 {
     PH_SETTING_TYPE Type;
     PWSTR Name;

@@ -21,14 +21,14 @@
 #include <apiimport.h>
 #include <mapldr.h>
 
-typedef struct _PHP_SERVICE_NAME_ENTRY
+typedef struct PHP_SERVICE_NAME_ENTRY
 {
     PH_HASH_ENTRY HashEntry;
     PH_STRINGREF Name;
     ENUM_SERVICE_STATUS_PROCESS *ServiceEntry;
 } PHP_SERVICE_NAME_ENTRY, *PPHP_SERVICE_NAME_ENTRY;
 
-typedef enum _PHP_SERVICE_NOTIFY_STATE
+typedef enum PHP_SERVICE_NOTIFY_STATE
 {
     SnNone,
     SnAdding,
@@ -36,7 +36,7 @@ typedef enum _PHP_SERVICE_NOTIFY_STATE
     SnNotify
 } PHP_SERVICE_NOTIFY_STATE;
 
-typedef struct _PHP_SERVICE_NOTIFY_CONTEXT
+typedef struct PHP_SERVICE_NOTIFY_CONTEXT
 {
     LIST_ENTRY ListEntry;
     SC_HANDLE ServiceHandle;
@@ -55,7 +55,7 @@ typedef struct _PHP_SERVICE_NOTIFY_CONTEXT
     SERVICE_NOTIFY Buffer;
 } PHP_SERVICE_NOTIFY_CONTEXT, *PPHP_SERVICE_NOTIFY_CONTEXT;
 
-typedef struct _PH_SERVICE_QUERY_DATA
+typedef struct PH_SERVICE_QUERY_DATA
 {
     SLIST_ENTRY ListEntry;
     ULONG Stage;
@@ -63,14 +63,14 @@ typedef struct _PH_SERVICE_QUERY_DATA
     PPH_STRING FileName;
 } PH_SERVICE_QUERY_DATA, *PPH_SERVICE_QUERY_DATA;
 
-typedef struct _PH_SERVICE_QUERY_S1_DATA
+typedef struct PH_SERVICE_QUERY_S1_DATA
 {
     PH_SERVICE_QUERY_DATA Header;
 
     PPH_IMAGELIST_ITEM IconEntry;
 } PH_SERVICE_QUERY_S1_DATA, *PPH_SERVICE_QUERY_S1_DATA;
 
-typedef struct _PH_SERVICE_QUERY_S2_DATA
+typedef struct PH_SERVICE_QUERY_S2_DATA
 {
     PH_SERVICE_QUERY_DATA Header;
 

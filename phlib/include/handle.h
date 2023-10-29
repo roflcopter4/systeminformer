@@ -16,10 +16,10 @@
 extern "C" {
 #endif
 
-struct _PH_HANDLE_TABLE;
-typedef struct _PH_HANDLE_TABLE *PPH_HANDLE_TABLE;
+struct PH_HANDLE_TABLE;
+typedef struct PH_HANDLE_TABLE *PPH_HANDLE_TABLE;
 
-typedef struct _PH_HANDLE_TABLE_ENTRY
+typedef struct PH_HANDLE_TABLE_ENTRY
 {
     union
     {
@@ -131,21 +131,21 @@ PhSweepHandleTable(
     _In_opt_ PVOID Context
     );
 
-typedef enum _PH_HANDLE_TABLE_INFORMATION_CLASS
+typedef enum PH_HANDLE_TABLE_INFORMATION_CLASS
 {
     HandleTableBasicInformation,
     HandleTableFlagsInformation,
     MaxHandleTableInfoClass
 } PH_HANDLE_TABLE_INFORMATION_CLASS;
 
-typedef struct _PH_HANDLE_TABLE_BASIC_INFORMATION
+typedef struct PH_HANDLE_TABLE_BASIC_INFORMATION
 {
     ULONG Count;
     ULONG Flags;
     ULONG TableLevel;
 } PH_HANDLE_TABLE_BASIC_INFORMATION, *PPH_HANDLE_TABLE_BASIC_INFORMATION;
 
-typedef struct _PH_HANDLE_TABLE_FLAGS_INFORMATION
+typedef struct PH_HANDLE_TABLE_FLAGS_INFORMATION
 {
     ULONG Flags;
 } PH_HANDLE_TABLE_FLAGS_INFORMATION, *PPH_HANDLE_TABLE_FLAGS_INFORMATION;

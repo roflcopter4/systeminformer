@@ -18,7 +18,7 @@
 #include <mainwnd.h>
 #include <procprv.h>
 
-typedef struct _COMMON_PAGE_CONTEXT
+typedef struct COMMON_PAGE_CONTEXT
 {
     PPH_OPEN_OBJECT OpenObject;
     PVOID Context;
@@ -541,7 +541,7 @@ INT_PTR CALLBACK PhpTimerPageProc(
     return FALSE;
 }
 
-typedef struct _MAPPINGS_PAGE_CONTEXT
+typedef struct MAPPINGS_PAGE_CONTEXT
 {
     HANDLE ProcessId;
     HANDLE SectionHandle;

@@ -23,7 +23,7 @@
 
 #define WM_PH_VDMDBG_UPDATE (WM_APP + 251)
 
-typedef struct _PH_NTVDM_CONTEXT
+typedef struct PH_NTVDM_CONTEXT
 {
     PH_CALLBACK_REGISTRATION ProcessesUpdatedRegistration;
     HWND WindowHandle;
@@ -32,7 +32,7 @@ typedef struct _PH_NTVDM_CONTEXT
     PPH_LIST VdmHostProcessList;
 } PH_NTVDM_CONTEXT, *PPH_NTVDM_CONTEXT;
 
-typedef struct _PH_NTVDM_ENTRY
+typedef struct PH_NTVDM_ENTRY
 {
     ULONG ThreadId;
     USHORT Mod16;

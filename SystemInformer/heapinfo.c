@@ -19,7 +19,7 @@
 #include <procprv.h>
 #include <settings.h>
 
-typedef struct _PH_PROCESS_HEAPS_CONTEXT
+typedef struct PH_PROCESS_HEAPS_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;
@@ -40,7 +40,7 @@ typedef struct _PH_PROCESS_HEAPS_CONTEXT
     PH_LAYOUT_MANAGER LayoutManager;
 } PH_PROCESS_HEAPS_CONTEXT, *PPH_PROCESS_HEAPS_CONTEXT;
 
-typedef struct _HEAP_COUNTERS
+typedef struct HEAP_COUNTERS
 {
     ULONG_PTR TotalMemoryReserved;
     ULONG_PTR TotalMemoryCommitted;
@@ -67,7 +67,7 @@ typedef struct _HEAP_COUNTERS
     ULONG_PTR LastPolledSize;
 } HEAP_COUNTERS, *PHEAP_COUNTERS;
 
-typedef struct _HEAP_COUNTERS32
+typedef struct HEAP_COUNTERS32
 {
     ULONG TotalMemoryReserved;
     ULONG TotalMemoryCommitted;
@@ -94,19 +94,19 @@ typedef struct _HEAP_COUNTERS32
     ULONG LastPolledSize;
 } HEAP_COUNTERS32, *PHEAP_COUNTERS32;
 
-typedef struct _HEAP_OPPORTUNISTIC_LARGE_PAGE_STATS
+typedef struct HEAP_OPPORTUNISTIC_LARGE_PAGE_STATS
 {
     ULONG_PTR SmallPagesInUseWithinLarge;
     ULONG_PTR OpportunisticLargePageCount;
 } HEAP_OPPORTUNISTIC_LARGE_PAGE_STATS, *PHEAP_OPPORTUNISTIC_LARGE_PAGE_STATS;
 
-typedef struct _HEAP_OPPORTUNISTIC_LARGE_PAGE_STATS32
+typedef struct HEAP_OPPORTUNISTIC_LARGE_PAGE_STATS32
 {
     ULONG SmallPagesInUseWithinLarge;
     ULONG OpportunisticLargePageCount;
 } HEAP_OPPORTUNISTIC_LARGE_PAGE_STATS32, *PHEAP_OPPORTUNISTIC_LARGE_PAGE_STATS32;
 
-typedef struct _HEAP_RUNTIME_MEMORY_STATS
+typedef struct HEAP_RUNTIME_MEMORY_STATS
 {
     ULONG_PTR TotalReservedPages;
     ULONG_PTR TotalCommittedPages;
@@ -116,7 +116,7 @@ typedef struct _HEAP_RUNTIME_MEMORY_STATS
     //RTL_HP_SEG_ALLOC_POLICY LargePageUtilizationPolicy;
 } HEAP_RUNTIME_MEMORY_STATS, *PHEAP_RUNTIME_MEMORY_STATS;
 
-typedef struct _HEAP_RUNTIME_MEMORY_STATS32
+typedef struct HEAP_RUNTIME_MEMORY_STATS32
 {
     ULONG TotalReservedPages;
     ULONG TotalCommittedPages;

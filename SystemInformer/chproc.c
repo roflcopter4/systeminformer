@@ -14,7 +14,7 @@
 #include <procprv.h>
 #include <lsasup.h>
 
-typedef struct _PH_CHOOSE_PROCESS_DIALOG_CONTEXT
+typedef struct PH_CHOOSE_PROCESS_DIALOG_CONTEXT
 {
     PWSTR Message;
     HANDLE ProcessId;

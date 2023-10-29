@@ -38,11 +38,11 @@ typedef VOID (NTAPI *PPH_TYPE_DELETE_PROCEDURE)(
     _In_ ULONG Flags
     );
 
-struct _PH_OBJECT_TYPE;
-typedef struct _PH_OBJECT_TYPE *PPH_OBJECT_TYPE;
+struct PH_OBJECT_TYPE;
+typedef struct PH_OBJECT_TYPE *PPH_OBJECT_TYPE;
 
-struct _PH_QUEUED_LOCK;
-typedef struct _PH_QUEUED_LOCK PH_QUEUED_LOCK, *PPH_QUEUED_LOCK;
+struct PH_QUEUED_LOCK;
+typedef struct PH_QUEUED_LOCK PH_QUEUED_LOCK, *PPH_QUEUED_LOCK;
 
 #ifdef DEBUG
 typedef VOID (NTAPI *PPH_CREATE_OBJECT_HOOK)(
@@ -53,13 +53,13 @@ typedef VOID (NTAPI *PPH_CREATE_OBJECT_HOOK)(
     );
 #endif
 
-typedef struct _PH_OBJECT_TYPE_PARAMETERS
+typedef struct PH_OBJECT_TYPE_PARAMETERS
 {
     SIZE_T FreeListSize;
     ULONG FreeListCount;
 } PH_OBJECT_TYPE_PARAMETERS, *PPH_OBJECT_TYPE_PARAMETERS;
 
-typedef struct _PH_OBJECT_TYPE_INFORMATION
+typedef struct PH_OBJECT_TYPE_INFORMATION
 {
     PWSTR Name;
     ULONG NumberOfObjects;
@@ -300,7 +300,7 @@ PhCreateObjectZero(
  * This object is not thread-safe and cannot be used across thread boundaries. Always store them as
  * local variables.
  */
-typedef struct _PH_AUTO_POOL
+typedef struct PH_AUTO_POOL
 {
     ULONG StaticCount;
     PVOID StaticObjects[PH_AUTO_POOL_STATIC_SIZE];
@@ -309,7 +309,7 @@ typedef struct _PH_AUTO_POOL
     ULONG DynamicAllocated;
     PVOID *DynamicObjects;
 
-    struct _PH_AUTO_POOL *NextPool;
+    struct PH_AUTO_POOL *NextPool;
 } PH_AUTO_POOL, *PPH_AUTO_POOL;
 
 PHLIBAPI

@@ -35,7 +35,7 @@
 #define PH_HANDLE_TABLE_LOCKS 8
 #define PH_HANDLE_TABLE_LOCK_INDEX(HandleValue) ((HandleValue) % PH_HANDLE_TABLE_LOCKS)
 
-typedef struct _PH_HANDLE_TABLE
+typedef struct PH_HANDLE_TABLE
 {
     PH_QUEUED_LOCK Lock;
     PH_WAKE_EVENT HandleWakeEvent;

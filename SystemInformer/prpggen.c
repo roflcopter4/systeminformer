@@ -248,7 +248,7 @@ VOID PhpUpdateProcessMitigationPolicies(
         EnableWindow(GetDlgItem(hwndDlg, IDC_VIEWMITIGATION), FALSE);
 }
 
-typedef struct _PH_PROCGENERAL_CONTEXT
+typedef struct PH_PROCGENERAL_CONTEXT
 {
     HWND WindowHandle;
     HWND StartedLabelHandle;

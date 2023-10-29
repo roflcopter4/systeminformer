@@ -22,7 +22,7 @@
 #include "metahost/metahost.h"
 #endif
 
-typedef struct _PVP_PE_CLR_CONTEXT
+typedef struct PVP_PE_CLR_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;
@@ -39,7 +39,7 @@ typedef struct _PVP_PE_CLR_CONTEXT
 #define STORAGE_MAGIC_SIG   0x424A5342  // BSJB
 
 #include <pshpack1.h>
-typedef struct _STORAGESIGNATURE
+typedef struct STORAGESIGNATURE
 {
     ULONG Signature;
     USHORT MajorVersion;
@@ -49,21 +49,21 @@ typedef struct _STORAGESIGNATURE
     //UCHAR VersionString[1];
 } STORAGESIGNATURE, *PSTORAGESIGNATURE;
 
-typedef struct _STORAGEHEADER
+typedef struct STORAGEHEADER
 {
     UCHAR Flags;     // STGHDR_xxx flags.
     UCHAR Reserved;
     USHORT Streams; // How many streams are there.
 } STORAGEHEADER, *PSTORAGEHEADER;
 
-typedef struct _STORAGESTREAM
+typedef struct STORAGESTREAM
 {
     ULONG Offset;  // Offset in file for this stream.
     ULONG Size;    // Size of the file.
     CHAR Name[32]; // Start of name, null terminated.
 } STORAGESTREAM, *PSTORAGESTREAM;
 
-typedef struct _MDSTREAMHEADER
+typedef struct MDSTREAMHEADER
 {
     ULONG Reserved;
     UCHAR Major;

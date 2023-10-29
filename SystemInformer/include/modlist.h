@@ -52,7 +52,7 @@
 #define PHMOTLC_MAXIMUM 28
 
 // begin_phapppub
-typedef struct _PH_MODULE_NODE
+typedef struct PH_MODULE_NODE
 {
     PH_TREENEW_NODE Node;
 
@@ -78,7 +78,7 @@ typedef struct _PH_MODULE_NODE
     PPH_STRING ServiceText;
     PPH_STRING EnclaveSizeText;
 
-    struct _PH_MODULE_NODE *Parent;
+    struct PH_MODULE_NODE *Parent;
     PPH_LIST Children;
 // begin_phapppub
 } PH_MODULE_NODE, *PPH_MODULE_NODE;
@@ -103,7 +103,7 @@ typedef struct _PH_MODULE_NODE
 #define PH_MODULE_FLAGS_ZERO_PAD_ADDRESSES 17
 #define PH_MODULE_FLAGS_SAVE_OPTION 40 // Always last (dmex)
 
-typedef struct _PH_MODULE_LIST_CONTEXT
+typedef struct PH_MODULE_LIST_CONTEXT
 {
     HWND ParentWindowHandle;
     HWND TreeNewHandle;

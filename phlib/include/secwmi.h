@@ -31,7 +31,7 @@ typedef ULONG (WINAPI* _PowerRestoreDefaultPowerSchemes)(
     );
 
 // powrprof.h
-typedef enum _POWER_DATA_ACCESSOR POWER_DATA_ACCESSOR;
+typedef enum POWER_DATA_ACCESSOR POWER_DATA_ACCESSOR;
 
 // rev
 typedef ULONG (WINAPI* _PowerReadSecurityDescriptor)(

@@ -19,7 +19,7 @@ extern PPH_OBJECT_TYPE PhDeviceTreeType;
 extern PPH_OBJECT_TYPE PhDeviceItemType;
 extern PPH_OBJECT_TYPE PhDeviceNotifyType;
 
-typedef enum _PH_DEVICE_PROPERTY_CLASS
+typedef enum PH_DEVICE_PROPERTY_CLASS
 {
     PhDevicePropertyName,
     PhDevicePropertyManufacturer,
@@ -237,7 +237,7 @@ typedef enum _PH_DEVICE_PROPERTY_CLASS
     PhMaxDeviceProperty
 } PH_DEVICE_PROPERTY_CLASS, *PPH_DEVICE_PROPERTY_CLASS;
 
-typedef enum _PH_DEVICE_PROPERTY_TYPE
+typedef enum PH_DEVICE_PROPERTY_TYPE
 {
     PhDevicePropertyTypeString,
     PhDevicePropertyTypeUInt64,
@@ -254,7 +254,7 @@ typedef enum _PH_DEVICE_PROPERTY_TYPE
 } PH_DEVICE_PROPERTY_TYPE, PPH_DEVICE_PROPERTY_TYPE;
 C_ASSERT(PhMaxDevicePropertyType <= MAXSHORT);
 
-typedef struct _PH_DEVICE_PROPERTY
+typedef struct PH_DEVICE_PROPERTY
 {
     union
     {
@@ -290,12 +290,12 @@ typedef struct _PH_DEVICE_PROPERTY
 } PH_DEVICE_PROPERTY, *PPH_DEVICE_PROPERTY;
 
 // end_phapppub
-typedef struct _PH_DEVINFO
+typedef struct PH_DEVINFO
 {
     HDEVINFO Handle;
 } PH_DEVINFO, *PPH_DEVINFO;
 
-typedef struct _PH_DEVINFO_DATA
+typedef struct PH_DEVINFO_DATA
 {
     BOOLEAN Interface;
     union
@@ -306,12 +306,12 @@ typedef struct _PH_DEVINFO_DATA
 } PH_DEVINFO_DATA, *PPH_DEVINFO_DATA;
 // begin_phapppub
 
-typedef struct _PH_DEVICE_ITEM
+typedef struct PH_DEVICE_ITEM
 {
-    struct _PH_DEVICE_TREE* Tree;
-    struct _PH_DEVICE_ITEM* Parent;
-    struct _PH_DEVICE_ITEM* Sibling;
-    struct _PH_DEVICE_ITEM* Child;
+    struct PH_DEVICE_TREE* Tree;
+    struct PH_DEVICE_ITEM* Parent;
+    struct PH_DEVICE_ITEM* Sibling;
+    struct PH_DEVICE_ITEM* Child;
 
     GUID ClassGuid;
     ULONG InstanceIdHash;
@@ -343,7 +343,7 @@ typedef struct _PH_DEVICE_ITEM
 // begin_phapppub
 } PH_DEVICE_ITEM, *PPH_DEVICE_ITEM;
 
-typedef struct _PH_DEVICE_TREE
+typedef struct PH_DEVICE_TREE
 {
     PPH_DEVICE_ITEM Root;
     PPH_LIST DeviceList;
@@ -440,7 +440,7 @@ PhReferenceDeviceItem2(
     _In_ PPH_STRINGREF InstanceId
     );
 
-typedef enum _PH_DEVICE_NOTIFY_ACTION
+typedef enum PH_DEVICE_NOTIFY_ACTION
 {
     PhDeviceNotifyInterfaceArrival,
     PhDeviceNotifyInterfaceRemoval,
@@ -449,7 +449,7 @@ typedef enum _PH_DEVICE_NOTIFY_ACTION
     PhDeviceNotifyInstanceRemoved,
 } PH_DEVICE_NOTIFY_ACTION, *PPH_DEVICE_NOTIFY_ACTION;
 
-typedef struct _PH_DEVICE_NOTIFY
+typedef struct PH_DEVICE_NOTIFY
 {
     PH_DEVICE_NOTIFY_ACTION Action;
 

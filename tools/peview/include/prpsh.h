@@ -16,7 +16,7 @@
 
 #define PV_PROPCONTEXT_MAXPAGES 40
 
-typedef struct _PV_PROPSHEETCONTEXT
+typedef struct PV_PROPSHEETCONTEXT
 {
     BOOLEAN LayoutInitialized;
     WNDPROC DefaultWindowProc;
@@ -24,7 +24,7 @@ typedef struct _PV_PROPSHEETCONTEXT
     PPH_LAYOUT_ITEM TabPageItem;
 } PV_PROPSHEETCONTEXT, *PPV_PROPSHEETCONTEXT;
 
-typedef struct _PV_PROPCONTEXT
+typedef struct PV_PROPCONTEXT
 {
     PPH_STRING Title;
     PPH_STRING StartPage;
@@ -32,7 +32,7 @@ typedef struct _PV_PROPCONTEXT
     HPROPSHEETPAGE *PropSheetPages;
 } PV_PROPCONTEXT, *PPV_PROPCONTEXT;
 
-typedef struct _PV_PROPPAGECONTEXT
+typedef struct PV_PROPPAGECONTEXT
 {
     PPV_PROPCONTEXT PropContext;
     PVOID Context;

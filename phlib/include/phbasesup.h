@@ -27,9 +27,9 @@ PhBaseInitialization(
 // Threads
 
 #ifdef DEBUG
-typedef struct _PH_AUTO_POOL *PPH_AUTO_POOL;
+typedef struct PH_AUTO_POOL *PPH_AUTO_POOL;
 
-typedef struct _PHP_BASE_THREAD_DBG
+typedef struct PHP_BASE_THREAD_DBG
 {
     CLIENT_ID ClientId;
     LIST_ENTRY ListEntry;
@@ -365,7 +365,7 @@ PhQueryDepthSList(
  * \remarks This event object does not use a kernel event object until necessary, and frees the
  * object automatically when it is no longer needed.
  */
-typedef struct _PH_EVENT
+typedef struct PH_EVENT
 {
     union
     {
@@ -472,7 +472,7 @@ PhTestEvent(
 #define PH_BARRIER_SLAVE 2
 #define PH_BARRIER_OBSERVER 3
 
-typedef struct _PH_BARRIER
+typedef struct PH_BARRIER
 {
     ULONG_PTR Value;
     PH_WAKE_EVENT WakeEvent;
@@ -514,14 +514,14 @@ PhInitializeBarrier(
 #define PH_RUNDOWN_REF_SHIFT 1
 #define PH_RUNDOWN_REF_INC 0x2
 
-typedef struct _PH_RUNDOWN_PROTECT
+typedef struct PH_RUNDOWN_PROTECT
 {
     ULONG_PTR Value;
 } PH_RUNDOWN_PROTECT, *PPH_RUNDOWN_PROTECT;
 
 #define PH_RUNDOWN_PROTECT_INIT { 0 }
 
-typedef struct _PH_RUNDOWN_WAIT_BLOCK
+typedef struct PH_RUNDOWN_WAIT_BLOCK
 {
     ULONG_PTR Count;
     PH_EVENT WakeEvent;
@@ -632,7 +632,7 @@ PhWaitForRundownProtection(
 #define PH_INITONCE_INITIALIZING (0x1 << PH_INITONCE_SHIFT)
 #define PH_INITONCE_INITIALIZING_SHIFT PH_INITONCE_SHIFT
 
-typedef struct _PH_INITONCE
+typedef struct PH_INITONCE
 {
     PH_EVENT Event;
 } PH_INITONCE, *PPH_INITONCE;
@@ -876,7 +876,7 @@ PhEqualStringZ(
     }
 }
 
-typedef struct _PH_STRINGREF
+typedef struct PH_STRINGREF
 {
     /** The length, in bytes, of the string. */
     SIZE_T Length;
@@ -884,7 +884,7 @@ typedef struct _PH_STRINGREF
     PWCH Buffer;
 } PH_STRINGREF, *PPH_STRINGREF;
 
-typedef struct _PH_BYTESREF
+typedef struct PH_BYTESREF
 {
     /** The length, in bytes, of the string. */
     SIZE_T Length;
@@ -892,7 +892,7 @@ typedef struct _PH_BYTESREF
     PCH Buffer;
 } PH_BYTESREF, *PPH_BYTESREF;
 
-typedef struct _PH_RELATIVE_BYTESREF
+typedef struct PH_RELATIVE_BYTESREF
 {
     /** The length, in bytes, of the string. */
     ULONG Length;
@@ -901,11 +901,11 @@ typedef struct _PH_RELATIVE_BYTESREF
 } PH_RELATIVE_BYTESREF, *PPH_RELATIVE_BYTESREF, PH_RELATIVE_STRINGREF, *PPH_RELATIVE_STRINGREF;
 
 #ifdef __cplusplus
-#define PH_STRINGREF_INIT(String) { sizeof(String) - sizeof(UNICODE_NULL), const_cast<PWCH>(String) }
-#define PH_BYTESREF_INIT(String) { sizeof(String) - sizeof(ANSI_NULL), const_cast<PCH>(String) }
+# define PH_STRINGREF_INIT(String) { sizeof(String) - sizeof(UNICODE_NULL), const_cast<PWCH>(String) }
+# define PH_BYTESREF_INIT(String)  { sizeof(String) - sizeof(ANSI_NULL),    const_cast<PCH>(String) }
 #else
-#define PH_STRINGREF_INIT(String) { sizeof(String) - sizeof(UNICODE_NULL), (String) }
-#define PH_BYTESREF_INIT(String) { sizeof(String) - sizeof(ANSI_NULL), (String) }
+# define PH_STRINGREF_INIT(String) { sizeof(String) - sizeof(UNICODE_NULL), (String) }
+# define PH_BYTESREF_INIT(String)  { sizeof(String) - sizeof(ANSI_NULL),    (String) }
 #endif
 
 FORCEINLINE
@@ -1235,7 +1235,7 @@ extern PPH_OBJECT_TYPE PhStringType;
  * terminator at the end, for compatibility reasons. The invariant is:
  * \code Buffer[Length / sizeof(WCHAR)] = 0 \endcode
  */
-typedef struct _PH_STRING
+typedef struct PH_STRING
 {
     // Header
     union
@@ -2038,7 +2038,7 @@ extern PPH_OBJECT_TYPE PhBytesType;
  * An 8-bit string object, which supports ASCII, UTF-8 and Windows multi-byte encodings, as well as
  * binary data.
  */
-typedef struct _PH_BYTES
+typedef struct PH_BYTES
 {
     // Header
     union
@@ -2116,7 +2116,7 @@ PPH_BYTES PhFormatBytes(
 #define PH_UNICODE_UTF16 1
 #define PH_UNICODE_UTF32 2
 
-typedef struct _PH_UNICODE_DECODER
+typedef struct PH_UNICODE_DECODER
 {
     UCHAR Encoding; // PH_UNICODE_*
     UCHAR State;
@@ -2361,7 +2361,7 @@ PhConvertUtf16ToUtf8Ex(
  * The string builder object allows you to easily construct complex strings without allocating
  * a great number of strings in the process.
  */
-typedef struct _PH_STRING_BUILDER
+typedef struct PH_STRING_BUILDER
 {
     /** Allocated length of the string, not including the null terminator. */
     SIZE_T AllocatedLength;
@@ -2524,7 +2524,7 @@ PhRemoveEndStringBuilder(
  * This is similar to string builder, but is based on PH_BYTES and is suitable for general binary
  * data.
  */
-typedef struct _PH_BYTES_BUILDER
+typedef struct PH_BYTES_BUILDER
 {
     /** Allocated length of the byte string, not including the null terminator. */
     SIZE_T AllocatedLength;
@@ -2598,7 +2598,7 @@ PhAppendBytesBuilderEx(
 // Array
 
 /** An array structure. Storage is automatically allocated for new elements. */
-typedef struct _PH_ARRAY
+typedef struct PH_ARRAY
 {
     /** The number of items in the list. */
     SIZE_T Count;
@@ -2706,7 +2706,7 @@ PhRemoveItemsArray(
 extern PPH_OBJECT_TYPE PhListType;
 
 /** A list structure. Storage is automatically allocated for new elements. */
-typedef struct _PH_LIST
+typedef struct PH_LIST
 {
     /** The number of items in the list. */
     ULONG Count;
@@ -2836,7 +2836,7 @@ extern PPH_OBJECT_TYPE PhPointerListType;
  * A pointer list structure. The pointer list is similar to the normal list structure, but both
  * insertions and deletions occur in constant time. The list is not ordered.
  */
-typedef struct _PH_POINTER_LIST
+typedef struct PH_POINTER_LIST
 {
     /** The number of pointers in the list. */
     ULONG Count;
@@ -2921,9 +2921,9 @@ PhEnumPointerList(
 
 // Hash
 
-typedef struct _PH_HASH_ENTRY
+typedef struct PH_HASH_ENTRY
 {
-    struct _PH_HASH_ENTRY *Next;
+    struct PH_HASH_ENTRY *Next;
     ULONG Hash;
 } PH_HASH_ENTRY, *PPH_HASH_ENTRY;
 
@@ -3163,7 +3163,7 @@ PhResizeHashSet(
 
 extern PPH_OBJECT_TYPE PhHashtableType;
 
-typedef struct _PH_HASHTABLE_ENTRY
+typedef struct PH_HASHTABLE_ENTRY
 {
     /** Hash code of the entry. -1 if entry is unused. */
     ULONG HashCode;
@@ -3214,7 +3214,7 @@ typedef ULONG (NTAPI *PPH_HASHTABLE_HASH_FUNCTION)(
 /**
  * A hashtable structure.
  */
-typedef struct _PH_HASHTABLE
+typedef struct PH_HASHTABLE
 {
     /** Size of user data in each entry. */
     ULONG EntrySize;
@@ -3309,7 +3309,7 @@ PhRemoveEntryHashtable(
 
 // New faster enumeration method
 
-typedef struct _PH_HASHTABLE_ENUM_CONTEXT
+typedef struct PH_HASHTABLE_ENUM_CONTEXT
 {
     ULONG_PTR Current;
     ULONG_PTR End;
@@ -3364,7 +3364,7 @@ PhHashStringRef(
     _In_ BOOLEAN IgnoreCase
     );
 
-typedef enum _PH_STRING_HASH
+typedef enum PH_STRING_HASH
 {
     PH_STRING_HASH_DEFAULT,
     PH_STRING_HASH_FNV1A,
@@ -3427,7 +3427,7 @@ PhHashIntPtr(
 #define SIP(String, Integer) { (String), (PVOID)(Integer) }
 #define SREF(String) ((PVOID)&(PH_STRINGREF)PH_STRINGREF_INIT((String)))
 
-typedef struct _PH_KEY_VALUE_PAIR
+typedef struct PH_KEY_VALUE_PAIR
 {
     PVOID Key;
     PVOID Value;
@@ -3485,7 +3485,7 @@ PhRemoveItemSimpleHashtable(
 
 // Free list
 
-typedef struct _PH_FREE_LIST
+typedef struct PH_FREE_LIST
 {
     SLIST_HEADER ListHead;
 
@@ -3494,7 +3494,7 @@ typedef struct _PH_FREE_LIST
     SIZE_T Size;
 } PH_FREE_LIST, *PPH_FREE_LIST;
 
-typedef struct _PH_FREE_LIST_ENTRY
+typedef struct PH_FREE_LIST_ENTRY
 {
     SLIST_ENTRY ListEntry;
     QUAD_PTR Body;
@@ -3553,7 +3553,7 @@ typedef VOID (NTAPI *PPH_CALLBACK_FUNCTION)(
     );
 
 /** A callback registration structure. */
-typedef struct _PH_CALLBACK_REGISTRATION
+typedef struct PH_CALLBACK_REGISTRATION
 {
     /** The list entry in the callbacks list. */
     LIST_ENTRY ListEntry;
@@ -3574,7 +3574,7 @@ typedef struct _PH_CALLBACK_REGISTRATION
  * A callback structure. The callback object allows multiple callback functions to be registered and
  * notified in a thread-safe way.
  */
-typedef struct _PH_CALLBACK
+typedef struct PH_CALLBACK
 {
     /** The list of registered callbacks. */
     LIST_ENTRY ListHead;
@@ -3844,7 +3844,7 @@ PhConvertCopyMemorySingles(
     _In_ SIZE_T Count
     );
 
-typedef struct _PH_CIRCULAR_BUFFER_ULONG* PPH_CIRCULAR_BUFFER_ULONG;
+typedef struct PH_CIRCULAR_BUFFER_ULONG* PPH_CIRCULAR_BUFFER_ULONG;
 
 PHLIBAPI
 VOID
@@ -3987,7 +3987,7 @@ PhaSubstring(
 
 // Format
 
-typedef enum _PH_FORMAT_TYPE
+typedef enum PH_FORMAT_TYPE
 {
     CharFormatType,
     StringFormatType,
@@ -4045,7 +4045,7 @@ typedef enum _PH_FORMAT_TYPE
 } PH_FORMAT_TYPE;
 
 /** Describes an element to be formatted to a string. */
-typedef struct _PH_FORMAT
+typedef struct PH_FORMAT
 {
     /** Specifies the type of the element and optional flags. */
     PH_FORMAT_TYPE Type;
@@ -4424,7 +4424,7 @@ PhGetLastWin32ErrorAsNtStatus(
 
 // Generic tree definitions
 
-typedef enum _PH_TREE_ENUMERATION_ORDER
+typedef enum PH_TREE_ENUMERATION_ORDER
 {
     TreeEnumerateInOrder,
     TreeEnumerateInReverseOrder
@@ -4435,22 +4435,22 @@ typedef enum _PH_TREE_ENUMERATION_ORDER
 
 // avltree
 
-typedef struct _PH_AVL_LINKS
+typedef struct PH_AVL_LINKS
 {
-    struct _PH_AVL_LINKS *Parent;
-    struct _PH_AVL_LINKS *Left;
-    struct _PH_AVL_LINKS *Right;
+    struct PH_AVL_LINKS *Parent;
+    struct PH_AVL_LINKS *Left;
+    struct PH_AVL_LINKS *Right;
     LONG Balance;
 } PH_AVL_LINKS, *PPH_AVL_LINKS;
 
-struct _PH_AVL_TREE;
+struct PH_AVL_TREE;
 
 typedef LONG (NTAPI *PPH_AVL_TREE_COMPARE_FUNCTION)(
     _In_ PPH_AVL_LINKS Links1,
     _In_ PPH_AVL_LINKS Links2
     );
 
-typedef struct _PH_AVL_TREE
+typedef struct PH_AVL_TREE
 {
     PH_AVL_LINKS Root; // Right contains real root
     ULONG Count;

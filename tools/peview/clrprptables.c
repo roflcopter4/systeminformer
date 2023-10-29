@@ -11,7 +11,7 @@
 
 #include <peview.h>
 
-typedef struct _PVP_PE_CLR_CONTEXT
+typedef struct PVP_PE_CLR_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;

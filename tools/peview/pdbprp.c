@@ -74,7 +74,7 @@ VOID PvDeleteSymbolTree(
     PhDereferenceObject(Context->NodeList);
 }
 
-struct _PH_TN_FILTER_SUPPORT* GetSymbolListFilterSupport(
+struct PH_TN_FILTER_SUPPORT* GetSymbolListFilterSupport(
     _In_ PPDB_SYMBOL_CONTEXT Context
     )
 {

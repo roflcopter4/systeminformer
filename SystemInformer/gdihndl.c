@@ -17,7 +17,7 @@
 
 #include <ntgdi.h>
 
-typedef struct _PH_GDI_HANDLES_CONTEXT
+typedef struct PH_GDI_HANDLES_CONTEXT
 {
     HWND ListViewHandle;
     HWND ParentWindowHandle;
@@ -26,7 +26,7 @@ typedef struct _PH_GDI_HANDLES_CONTEXT
     PH_LAYOUT_MANAGER LayoutManager;
 } PH_GDI_HANDLES_CONTEXT, *PPH_GDI_HANDLES_CONTEXT;
 
-typedef struct _PH_GDI_HANDLE_ITEM
+typedef struct PH_GDI_HANDLE_ITEM
 {
     PGDI_HANDLE_ENTRY Entry;
     ULONG Handle;

@@ -29,7 +29,7 @@
 
 #include <procprv.h>
 
-typedef struct _ANALYZE_WAIT_CONTEXT
+typedef struct ANALYZE_WAIT_CONTEXT
 {
     BOOLEAN Found;
     BOOLEAN IsWow64;

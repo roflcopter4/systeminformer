@@ -11,7 +11,7 @@
 
 #include <peview.h>
 
-typedef enum _PHP_OPTIONS_INDEX
+typedef enum PHP_OPTIONS_INDEX
 {
     PHP_OPTIONS_INDEX_ENABLE_THEME_SUPPORT,
     PHP_OPTIONS_INDEX_ENABLE_LEGACY_TABS,
@@ -19,7 +19,7 @@ typedef enum _PHP_OPTIONS_INDEX
     PHP_OPTIONS_INDEX_ENABLE_LASTTAB_SUPPORT,
 } PHP_OPTIONS_GENERAL_INDEX;
 
-typedef struct _PVP_PE_OPTIONS_CONTEXT
+typedef struct PVP_PE_OPTIONS_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;

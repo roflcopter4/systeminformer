@@ -19,11 +19,11 @@
 // Section
 
 typedef VOID (NTAPI *PPH_MINIINFO_SET_SECTION_TEXT)(
-    _In_ struct _PH_MINIINFO_SECTION *Section,
+    _In_ struct PH_MINIINFO_SECTION *Section,
     _In_opt_ PPH_STRING Text
     );
 
-typedef struct _PH_MINIINFO_PARAMETERS
+typedef struct PH_MINIINFO_PARAMETERS
 {
     HWND ContainerWindowHandle;
     HWND MiniInfoWindowHandle;
@@ -38,7 +38,7 @@ typedef struct _PH_MINIINFO_PARAMETERS
     PPH_MINIINFO_SET_SECTION_TEXT SetSectionText;
 } PH_MINIINFO_PARAMETERS, *PPH_MINIINFO_PARAMETERS;
 
-typedef enum _PH_MINIINFO_SECTION_MESSAGE
+typedef enum PH_MINIINFO_SECTION_MESSAGE
 {
     MiniInfoCreate,
     MiniInfoDestroy,
@@ -50,13 +50,13 @@ typedef enum _PH_MINIINFO_SECTION_MESSAGE
 } PH_MINIINFO_SECTION_MESSAGE;
 
 typedef BOOLEAN (NTAPI *PPH_MINIINFO_SECTION_CALLBACK)(
-    _In_ struct _PH_MINIINFO_SECTION *Section,
+    _In_ struct PH_MINIINFO_SECTION *Section,
     _In_ PH_MINIINFO_SECTION_MESSAGE Message,
     _In_opt_ PVOID Parameter1,
     _In_opt_ PVOID Parameter2
     );
 
-typedef struct _PH_MINIINFO_CREATE_DIALOG
+typedef struct PH_MINIINFO_CREATE_DIALOG
 {
     BOOLEAN CustomCreate;
 
@@ -71,7 +71,7 @@ typedef struct _PH_MINIINFO_CREATE_DIALOG
 // end_phapppub
 
 // begin_phapppub
-typedef struct _PH_MINIINFO_SECTION
+typedef struct PH_MINIINFO_SECTION
 {
     // Public
 
@@ -98,7 +98,7 @@ typedef struct _PH_MINIINFO_SECTION
 } PH_MINIINFO_SECTION, *PPH_MINIINFO_SECTION;
 // end_phapppub
 
-typedef enum _PH_MINIINFO_PIN_TYPE
+typedef enum PH_MINIINFO_PIN_TYPE
 {
     MiniInfoManualPinType, // User pin
     MiniInfoIconPinType, // Notification icon
@@ -124,7 +124,7 @@ VOID PhPinMiniInformation(
 // begin_phapppub
 // List section
 
-typedef enum _PH_MINIINFO_LIST_SECTION_MESSAGE
+typedef enum PH_MINIINFO_LIST_SECTION_MESSAGE
 {
     MiListSectionCreate,
     MiListSectionDestroy,
@@ -142,7 +142,7 @@ typedef enum _PH_MINIINFO_LIST_SECTION_MESSAGE
 } PH_MINIINFO_LIST_SECTION_MESSAGE;
 
 typedef BOOLEAN (NTAPI *PPH_MINIINFO_LIST_SECTION_CALLBACK)(
-    _In_ struct _PH_MINIINFO_LIST_SECTION *ListSection,
+    _In_ struct PH_MINIINFO_LIST_SECTION *ListSection,
     _In_ PH_MINIINFO_LIST_SECTION_MESSAGE Message,
     _In_opt_ PVOID Parameter1,
     _In_opt_ PVOID Parameter2
@@ -158,26 +158,26 @@ typedef BOOLEAN (NTAPI *PPH_MINIINFO_LIST_SECTION_CALLBACK)(
 //    usage.
 // The user also has access to the sort data when handling MiListSectionGetTitleText and MiListSectionGetUsageText.
 
-typedef struct _PH_MINIINFO_LIST_SECTION_SORT_DATA
+typedef struct PH_MINIINFO_LIST_SECTION_SORT_DATA
 {
     PH_TREENEW_NODE DoNotModify;
     ULONGLONG UserData[4];
 } PH_MINIINFO_LIST_SECTION_SORT_DATA, *PPH_MINIINFO_LIST_SECTION_SORT_DATA;
 
-typedef struct _PH_MINIINFO_LIST_SECTION_ASSIGN_SORT_DATA
+typedef struct PH_MINIINFO_LIST_SECTION_ASSIGN_SORT_DATA
 {
     PPH_PROCESS_GROUP ProcessGroup;
     PPH_MINIINFO_LIST_SECTION_SORT_DATA SortData;
 } PH_MINIINFO_LIST_SECTION_ASSIGN_SORT_DATA, *PPH_MINIINFO_LIST_SECTION_ASSIGN_SORT_DATA;
 
-typedef struct _PH_MINIINFO_LIST_SECTION_SORT_LIST
+typedef struct PH_MINIINFO_LIST_SECTION_SORT_LIST
 {
     // MiListSectionSortProcessList: List of PPH_PROCESS_NODE
     // MiListSectionSortGroupList: List of PPH_MINIINFO_LIST_SECTION_SORT_DATA
     PPH_LIST List;
 } PH_MINIINFO_LIST_SECTION_SORT_LIST, *PPH_MINIINFO_LIST_SECTION_SORT_LIST;
 
-typedef struct _PH_MINIINFO_LIST_SECTION_GET_TITLE_TEXT
+typedef struct PH_MINIINFO_LIST_SECTION_GET_TITLE_TEXT
 {
     PPH_PROCESS_GROUP ProcessGroup;
     PPH_MINIINFO_LIST_SECTION_SORT_DATA SortData;
@@ -187,7 +187,7 @@ typedef struct _PH_MINIINFO_LIST_SECTION_GET_TITLE_TEXT
     COLORREF SubtitleColor;
 } PH_MINIINFO_LIST_SECTION_GET_TITLE_TEXT, *PPH_MINIINFO_LIST_SECTION_GET_TITLE_TEXT;
 
-typedef struct _PH_MINIINFO_LIST_SECTION_GET_USAGE_TEXT
+typedef struct PH_MINIINFO_LIST_SECTION_GET_USAGE_TEXT
 {
     PPH_PROCESS_GROUP ProcessGroup;
     PPH_MINIINFO_LIST_SECTION_SORT_DATA SortData;
@@ -197,17 +197,17 @@ typedef struct _PH_MINIINFO_LIST_SECTION_GET_USAGE_TEXT
     COLORREF Line2Color;
 } PH_MINIINFO_LIST_SECTION_GET_USAGE_TEXT, *PPH_MINIINFO_LIST_SECTION_GET_USAGE_TEXT;
 
-typedef struct _PH_MINIINFO_LIST_SECTION_MENU_INFORMATION
+typedef struct PH_MINIINFO_LIST_SECTION_MENU_INFORMATION
 {
     PPH_PROCESS_GROUP ProcessGroup;
     PPH_MINIINFO_LIST_SECTION_SORT_DATA SortData;
     PPH_TREENEW_CONTEXT_MENU ContextMenu;
-    struct _PH_EMENU_ITEM *SelectedItem;
+    struct PH_EMENU_ITEM *SelectedItem;
 } PH_MINIINFO_LIST_SECTION_MENU_INFORMATION, *PPH_MINIINFO_LIST_SECTION_MENU_INFORMATION;
 // end_phapppub
 
 // begin_phapppub
-typedef struct _PH_MINIINFO_LIST_SECTION
+typedef struct PH_MINIINFO_LIST_SECTION
 {
     // Public
 

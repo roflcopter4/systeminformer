@@ -69,7 +69,7 @@ typedef KPH_PROCESS_STATE* PKPH_PROCESS_STATE;
                                    KPH_PROCESS_NO_USER_WRITABLE_REFERENCES   |\
                                    KPH_PROCESS_NO_FILE_TRANSACTION)
 
-typedef enum _KPH_PROCESS_INFORMATION_CLASS
+typedef enum KPH_PROCESS_INFORMATION_CLASS
 {
     KphProcessBasicInformation,      // q: KPH_PROCESS_BASIC_INFORMATION
     KphProcessStateInformation,      // q: KPH_PROCESS_STATE
@@ -87,7 +87,7 @@ typedef enum _KPH_PROCESS_INFORMATION_CLASS
     KphProcessWSLProcessId,          // q: ULONG
 } KPH_PROCESS_INFORMATION_CLASS;
 
-typedef enum _KPH_THREAD_INFORMATION_CLASS
+typedef enum KPH_THREAD_INFORMATION_CLASS
 {
     KphThreadPriority,               // s: KPRIORITY
     KphThreadBasePriority,           // s: KPRIORITY
@@ -106,7 +106,7 @@ typedef enum _KPH_THREAD_INFORMATION_CLASS
     KphThreadExplicitCaseSensitivity,// s: ULONG; s: 0 disables, otherwise enables
 } KPH_THREAD_INFORMATION_CLASS;
 
-typedef struct _KPH_PROCESS_BASIC_INFORMATION
+typedef struct KPH_PROCESS_BASIC_INFORMATION
 {
     KPH_PROCESS_STATE ProcessState;
 
@@ -152,7 +152,7 @@ typedef struct _KPH_PROCESS_BASIC_INFORMATION
 
 // Process handle information
 
-typedef struct _KPH_PROCESS_HANDLE
+typedef struct KPH_PROCESS_HANDLE
 {
     HANDLE Handle;
     PVOID Object;
@@ -163,7 +163,7 @@ typedef struct _KPH_PROCESS_HANDLE
     ULONG Reserved2;
 } KPH_PROCESS_HANDLE, *PKPH_PROCESS_HANDLE;
 
-typedef struct _KPH_PROCESS_HANDLE_INFORMATION
+typedef struct KPH_PROCESS_HANDLE_INFORMATION
 {
     ULONG HandleCount;
     _Field_size_(HandleCount) KPH_PROCESS_HANDLE Handles[1];
@@ -171,7 +171,7 @@ typedef struct _KPH_PROCESS_HANDLE_INFORMATION
 
 // Object information
 
-typedef enum _KPH_OBJECT_INFORMATION_CLASS
+typedef enum KPH_OBJECT_INFORMATION_CLASS
 {
     KphObjectBasicInformation,                // q: OBJECT_BASIC_INFORMATION
     KphObjectNameInformation,                 // q: OBJECT_NAME_INFORMATION
@@ -197,7 +197,7 @@ typedef enum _KPH_OBJECT_INFORMATION_CLASS
     MaxKphObjectInfoClass
 } KPH_OBJECT_INFORMATION_CLASS;
 
-typedef struct _KPH_VPB
+typedef struct KPH_VPB
 {
     CSHORT Type;
     CSHORT Size;
@@ -208,7 +208,7 @@ typedef struct _KPH_VPB
     WCHAR VolumeLabel[32];
 } KPH_VPB, *PKPH_VPB;
 
-typedef struct _KPH_DEVICE_INFO
+typedef struct KPH_DEVICE_INFO
 {
     DEVICE_TYPE Type;
     ULONG Characteristics;
@@ -216,7 +216,7 @@ typedef struct _KPH_DEVICE_INFO
     KPH_VPB Vpb;
 } KPH_DEVICE_INFO, *PKPH_DEVICE_INFO;
 
-typedef struct _KPH_FILE_OBJECT_INFORMATION
+typedef struct KPH_FILE_OBJECT_INFORMATION
 {
     BOOLEAN LockOperation;
     BOOLEAN DeletePending;
@@ -239,14 +239,14 @@ typedef struct _KPH_FILE_OBJECT_INFORMATION
     KPH_DEVICE_INFO RelatedDevice;
 } KPH_FILE_OBJECT_INFORMATION, *PKPH_FILE_OBJECT_INFORMATION;
 
-typedef struct _KPH_FILE_OBJECT_DRIVER
+typedef struct KPH_FILE_OBJECT_DRIVER
 {
     HANDLE DriverHandle;
 } KPH_FILE_OBJECT_DRIVER, *PKPH_FILE_OBJECT_DRIVER;
 
 // Driver information
 
-typedef enum _DRIVER_INFORMATION_CLASS
+typedef enum DRIVER_INFORMATION_CLASS
 {
     DriverBasicInformation,             // q: DRIVER_BASIC_INFORMATION
     DriverNameInformation,              // q: UNICODE_STRING
@@ -255,26 +255,26 @@ typedef enum _DRIVER_INFORMATION_CLASS
     MaxDriverInfoClass
 } DRIVER_INFORMATION_CLASS;
 
-typedef struct _DRIVER_BASIC_INFORMATION
+typedef struct DRIVER_BASIC_INFORMATION
 {
     ULONG Flags;
     PVOID DriverStart;
     ULONG DriverSize;
 } DRIVER_BASIC_INFORMATION, *PDRIVER_BASIC_INFORMATION;
 
-typedef struct _DRIVER_NAME_INFORMATION
+typedef struct DRIVER_NAME_INFORMATION
 {
     UNICODE_STRING DriverName;
 } DRIVER_NAME_INFORMATION, *PDRIVER_NAME_INFORMATION;
 
-typedef struct _DRIVER_SERVICE_KEY_NAME_INFORMATION
+typedef struct DRIVER_SERVICE_KEY_NAME_INFORMATION
 {
     UNICODE_STRING ServiceKeyName;
 } DRIVER_SERVICE_KEY_NAME_INFORMATION, *PDRIVER_SERVICE_KEY_NAME_INFORMATION;
 
 // ETW registration object information
 
-typedef struct _ETWREG_BASIC_INFORMATION
+typedef struct ETWREG_BASIC_INFORMATION
 {
     GUID Guid;
     ULONG_PTR SessionId;
@@ -282,14 +282,14 @@ typedef struct _ETWREG_BASIC_INFORMATION
 
 // ALPC ojbect information
 
-typedef enum _KPH_ALPC_INFORMATION_CLASS
+typedef enum KPH_ALPC_INFORMATION_CLASS
 {
     KphAlpcBasicInformation,               // q: KPH_ALPC_BASIC_INFORMATION
     KphAlpcCommunicationInformation,       // q: KPH_ALPC_COMMUNICATION_INFORMATION
     KphAlpcCommunicationNamesInformation,  // q: KPH_ALPC_COMMUNICATION_NAMES_INFORMATION
 } KPH_ALPC_INFORMATION_CLASS;
 
-typedef struct _KPH_ALPC_BASIC_INFORMATION
+typedef struct KPH_ALPC_BASIC_INFORMATION
 {
     HANDLE OwnerProcessId;
     ULONG Flags;
@@ -320,14 +320,14 @@ typedef struct _KPH_ALPC_BASIC_INFORMATION
     };
 } KPH_ALPC_BASIC_INFORMATION, *PKPH_ALPC_BASIC_INFORMATION;
 
-typedef struct _KPH_ALPC_COMMUNICATION_INFORMATION
+typedef struct KPH_ALPC_COMMUNICATION_INFORMATION
 {
     KPH_ALPC_BASIC_INFORMATION ConnectionPort;
     KPH_ALPC_BASIC_INFORMATION ServerCommunicationPort;
     KPH_ALPC_BASIC_INFORMATION ClientCommunicationPort;
 } KPH_ALPC_COMMUNICATION_INFORMATION, *PKPH_ALPC_COMMUNICATION_INFORMATION;
 
-typedef struct _KPH_ALPC_COMMUNICATION_NAMES_INFORMATION
+typedef struct KPH_ALPC_COMMUNICATION_NAMES_INFORMATION
 {
     UNICODE_STRING ConnectionPort;
     UNICODE_STRING ServerCommunicationPort;
@@ -336,14 +336,14 @@ typedef struct _KPH_ALPC_COMMUNICATION_NAMES_INFORMATION
 
 // System control
 
-typedef enum _KPH_SYSTEM_CONTROL_CLASS
+typedef enum KPH_SYSTEM_CONTROL_CLASS
 {
     KphSystemControlEmptyCompressionStore
 } KPH_SYSTEM_CONTROL_CLASS;
 
 // Section
 
-typedef enum _KPH_SECTION_INFORMATION_CLASS
+typedef enum KPH_SECTION_INFORMATION_CLASS
 {
     KphSectionMappingsInformation, // q: KPH_SECTION_MAPPINGS_INFORMATION
 } KPH_SECTION_INFORMATION_CLASS;
@@ -352,7 +352,7 @@ typedef enum _KPH_SECTION_INFORMATION_CLASS
 #define VIEW_MAP_TYPE_SESSION         2
 #define VIEW_MAP_TYPE_SYSTEM_CACHE    3
 
-typedef struct _KPH_SECTION_MAP_ENTRY
+typedef struct KPH_SECTION_MAP_ENTRY
 {
     UCHAR ViewMapType;
     HANDLE ProcessId;
@@ -360,7 +360,7 @@ typedef struct _KPH_SECTION_MAP_ENTRY
     PVOID EndVa;
 } KPH_SECTION_MAP_ENTRY, *PKPH_SECTION_MAP_ENTRY;
 
-typedef struct _KPH_SECTION_MAPPINGS_INFORMATION
+typedef struct KPH_SECTION_MAPPINGS_INFORMATION
 {
     ULONG NumberOfMappings;
     KPH_SECTION_MAP_ENTRY Mappings[ANYSIZE_ARRAY];
@@ -401,7 +401,7 @@ typedef struct _KPH_SECTION_MAPPINGS_INFORMATION
 
 // Informer
 
-typedef struct _KPH_INFORMER_SETTINGS
+typedef struct KPH_INFORMER_SETTINGS
 {
     union
     {
@@ -433,7 +433,7 @@ typedef struct _KPH_INFORMER_SETTINGS
     };
 } KPH_INFORMER_SETTINGS, *PKPH_INFORMER_SETTINGS;
 
-typedef struct _KPH_MESSAGE_TIMEOUTS
+typedef struct KPH_MESSAGE_TIMEOUTS
 {
     LARGE_INTEGER AsyncTimeout;
     LARGE_INTEGER DefaultTimeout;

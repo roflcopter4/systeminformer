@@ -40,7 +40,7 @@
 
 #include <math.h>
 
-typedef enum _PHP_AGGREGATE_TYPE
+typedef enum PHP_AGGREGATE_TYPE
 {
     AggregateTypeFloat,
     AggregateTypeInt32,
@@ -48,7 +48,7 @@ typedef enum _PHP_AGGREGATE_TYPE
     AggregateTypeIntPtr
 } PHP_AGGREGATE_TYPE;
 
-typedef enum _PHP_AGGREGATE_LOCATION
+typedef enum PHP_AGGREGATE_LOCATION
 {
     AggregateLocationProcessNode,
     AggregateLocationProcessItem
@@ -386,7 +386,7 @@ VOID PhReloadSettingsProcessTreeList(
     PhLoadSettingsProcessTreeUpdateMask();
 }
 
-struct _PH_TN_FILTER_SUPPORT *PhGetFilterSupportProcessTreeList(
+struct PH_TN_FILTER_SUPPORT *PhGetFilterSupportProcessTreeList(
     VOID
     )
 {

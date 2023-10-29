@@ -13,7 +13,7 @@
 #include <vssym32.h>
 //#include <wincodec.h>
 
-typedef struct _EDIT_CONTEXT
+typedef struct EDIT_CONTEXT
 {
     union
     {

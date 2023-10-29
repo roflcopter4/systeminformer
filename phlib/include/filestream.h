@@ -43,14 +43,14 @@ extern "C" {
 #define PH_FILE_STREAM_WRITTEN 0x80000000
 
 // Seek
-typedef enum _PH_SEEK_ORIGIN
+typedef enum PH_SEEK_ORIGIN
 {
     SeekStart,
     SeekCurrent,
     SeekEnd
 } PH_SEEK_ORIGIN;
 
-typedef struct _PH_FILE_STREAM
+typedef struct PH_FILE_STREAM
 {
     HANDLE FileHandle;
     ULONG Flags;

@@ -11,7 +11,7 @@
 
 #include <peview.h>
 
-typedef struct _PV_PE_PREVIEW_CONTEXT
+typedef struct PV_PE_PREVIEW_CONTEXT
 {
     HWND WindowHandle;
     HWND EditWindow;

@@ -18,7 +18,7 @@
 
 #define COLORREF_TO_BITS(Color) (_byteswap_ulong(Color) >> 8)
 
-typedef struct _PHP_GRAPH_CONTEXT
+typedef struct PHP_GRAPH_CONTEXT
 {
     HWND Handle;
     HWND ParentHandle;

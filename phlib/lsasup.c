@@ -821,7 +821,7 @@ PCWSTR PhGetSidAccountTypeString(
     return L"Unknown";
 }
 
-typedef struct _PH_CAPABILITY_ENTRY
+typedef struct PH_CAPABILITY_ENTRY
 {
     PPH_STRING Name;
     PSID CapabilityGroupSid;
@@ -927,13 +927,13 @@ PPH_STRING PhGetCapabilitySidName(
     return NULL;
 }
 
-typedef struct _PH_CAPABILITY_GUID_ENTRY
+typedef struct PH_CAPABILITY_GUID_ENTRY
 {
     PPH_STRING Name;
     PPH_STRING CapabilityGuid;
 } PH_CAPABILITY_GUID_ENTRY, *PPH_CAPABILITY_GUID_ENTRY;
 
-typedef struct _PH_CAPABILITY_KEY_CALLBACK
+typedef struct PH_CAPABILITY_KEY_CALLBACK
 {
     PPH_STRING KeyName;
     PVOID Context;
@@ -1164,7 +1164,7 @@ NTSTATUS PhEnumerateAccounts(
     static ULONG (WINAPI* NetApiBufferFree_I)(
         _Frees_ptr_opt_ PVOID Buffer
         );
-    typedef struct _USER_INFO_0
+    typedef struct USER_INFO_0
     {
         PWSTR usri0_name;
     } USER_INFO_0, *PUSER_INFO_0;

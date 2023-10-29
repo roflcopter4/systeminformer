@@ -20,7 +20,7 @@
 #include <procprv.h>
 #include <thrdprv.h>
 
-typedef struct _PH_AFFINITY_DIALOG_CONTEXT
+typedef struct PH_AFFINITY_DIALOG_CONTEXT
 {
     HWND WindowHandle;
     HWND GroupComboHandle;

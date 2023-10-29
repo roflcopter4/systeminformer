@@ -35,7 +35,7 @@ extern "C" {
 #define PhGetQueuedLockWaitBlock(Value) \
     ((PPH_QUEUED_WAIT_BLOCK)((ULONG_PTR)(Value) & ~PH_QUEUED_LOCK_FLAGS))
 
-typedef struct _PH_QUEUED_LOCK
+typedef struct PH_QUEUED_LOCK
 {
     ULONG_PTR Value;
 } PH_QUEUED_LOCK, *PPH_QUEUED_LOCK;
@@ -46,17 +46,17 @@ typedef struct _PH_QUEUED_LOCK
 #define PH_QUEUED_WAITER_SPINNING 0x2
 #define PH_QUEUED_WAITER_SPINNING_SHIFT 1
 
-typedef struct DECLSPEC_ALIGN(16) _PH_QUEUED_WAIT_BLOCK
+typedef struct DECLSPEC_ALIGN(16) PH_QUEUED_WAIT_BLOCK
 {
     /** A pointer to the next wait block, i.e. the wait block pushed onto the list before this one. */
-    struct _PH_QUEUED_WAIT_BLOCK *Next;
+    struct PH_QUEUED_WAIT_BLOCK *Next;
     /**
      * A pointer to the previous wait block, i.e. the wait block pushed onto the list after this
      * one.
      */
-    struct _PH_QUEUED_WAIT_BLOCK *Previous;
+    struct PH_QUEUED_WAIT_BLOCK *Previous;
     /** A pointer to the last wait block, i.e. the first waiter pushed onto the list. */
-    struct _PH_QUEUED_WAIT_BLOCK *Last;
+    struct PH_QUEUED_WAIT_BLOCK *Last;
 
     ULONG SharedOwners;
     ULONG Flags;
@@ -237,7 +237,7 @@ PhTryAcquireReleaseQueuedLockExclusive(
 
 // Condition variable
 
-typedef struct _PH_QUEUED_LOCK PH_CONDITION, *PPH_CONDITION;
+typedef struct PH_QUEUED_LOCK PH_CONDITION, *PPH_CONDITION;
 
 #define PH_CONDITION_INIT PH_QUEUED_LOCK_INIT
 
@@ -297,7 +297,7 @@ PhfWaitForConditionEx(
 
 // Wake event
 
-typedef struct _PH_QUEUED_LOCK PH_WAKE_EVENT, *PPH_WAKE_EVENT;
+typedef struct PH_QUEUED_LOCK PH_WAKE_EVENT, *PPH_WAKE_EVENT;
 
 #define PH_WAKE_EVENT_INIT PH_QUEUED_LOCK_INIT
 

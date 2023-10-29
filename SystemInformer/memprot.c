@@ -13,7 +13,7 @@
 #include <memprv.h>
 #include <procprv.h>
 
-typedef struct _MEMORY_PROTECT_CONTEXT
+typedef struct MEMORY_PROTECT_CONTEXT
 {
     PPH_PROCESS_ITEM ProcessItem;
     PPH_MEMORY_ITEM MemoryItem;

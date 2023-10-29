@@ -12,7 +12,7 @@
 #ifndef _PH_WORKQUEUEP_H
 #define _PH_WORKQUEUEP_H
 
-typedef struct _PH_WORK_QUEUE_ITEM
+typedef struct PH_WORK_QUEUE_ITEM
 {
     LIST_ENTRY ListEntry;
     PUSER_THREAD_START_ROUTINE Function;

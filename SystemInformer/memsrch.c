@@ -21,7 +21,7 @@
 #define PH_SEARCH_UPDATE 1
 #define PH_SEARCH_COMPLETED 2
 
-typedef struct _MEMORY_STRING_CONTEXT
+typedef struct MEMORY_STRING_CONTEXT
 {
     HANDLE ProcessId;
     HANDLE ProcessHandle;

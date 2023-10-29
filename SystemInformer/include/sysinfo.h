@@ -14,7 +14,7 @@
 #define PH_SYSINFO_H
 
 // begin_phapppub
-typedef enum _PH_SYSINFO_VIEW_TYPE
+typedef enum PH_SYSINFO_VIEW_TYPE
 {
     SysInfoSummaryView,
     SysInfoSectionView
@@ -27,7 +27,7 @@ typedef VOID (NTAPI *PPH_SYSINFO_COLOR_SETUP_FUNCTION)(
     _In_ LONG dpiValue
     );
 
-typedef struct _PH_SYSINFO_PARAMETERS
+typedef struct PH_SYSINFO_PARAMETERS
 {
     HWND SysInfoWindowHandle;
     HWND ContainerWindowHandle;
@@ -60,7 +60,7 @@ typedef struct _PH_SYSINFO_PARAMETERS
 // begin_phapppub
 } PH_SYSINFO_PARAMETERS, *PPH_SYSINFO_PARAMETERS;
 
-typedef enum _PH_SYSINFO_SECTION_MESSAGE
+typedef enum PH_SYSINFO_SECTION_MESSAGE
 {
     SysInfoCreate,
     SysInfoDestroy,
@@ -74,7 +74,7 @@ typedef enum _PH_SYSINFO_SECTION_MESSAGE
     MaxSysInfoMessage
 } PH_SYSINFO_SECTION_MESSAGE;
 
-typedef struct _PH_SYSINFO_SECTION *PPH_SYSINFO_SECTION;
+typedef struct PH_SYSINFO_SECTION *PPH_SYSINFO_SECTION;
 
 typedef BOOLEAN (NTAPI *PPH_SYSINFO_SECTION_CALLBACK)(
     _In_ PPH_SYSINFO_SECTION Section,
@@ -83,7 +83,7 @@ typedef BOOLEAN (NTAPI *PPH_SYSINFO_SECTION_CALLBACK)(
     _In_opt_ PVOID Parameter2
     );
 
-typedef struct _PH_SYSINFO_CREATE_DIALOG
+typedef struct PH_SYSINFO_CREATE_DIALOG
 {
     BOOLEAN CustomCreate;
 
@@ -94,13 +94,13 @@ typedef struct _PH_SYSINFO_CREATE_DIALOG
     PVOID Parameter;
 } PH_SYSINFO_CREATE_DIALOG, *PPH_SYSINFO_CREATE_DIALOG;
 
-typedef struct _PH_SYSINFO_GRAPH_GET_TOOLTIP_TEXT
+typedef struct PH_SYSINFO_GRAPH_GET_TOOLTIP_TEXT
 {
     ULONG Index;
     PH_STRINGREF Text;
 } PH_SYSINFO_GRAPH_GET_TOOLTIP_TEXT, *PPH_SYSINFO_GRAPH_GET_TOOLTIP_TEXT;
 
-typedef struct _PH_SYSINFO_DRAW_PANEL
+typedef struct PH_SYSINFO_DRAW_PANEL
 {
     HDC hdc;
     RECT Rect;
@@ -114,7 +114,7 @@ typedef struct _PH_SYSINFO_DRAW_PANEL
 // end_phapppub
 
 // begin_phapppub
-typedef struct _PH_SYSINFO_SECTION
+typedef struct PH_SYSINFO_SECTION
 {
     // Public
 

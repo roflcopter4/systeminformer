@@ -18,7 +18,7 @@
 extern "C" {
 #endif
 
-typedef struct _PH_FAST_LOCK
+typedef struct PH_FAST_LOCK
 {
     ULONG Value;
     HANDLE ExclusiveWakeEvent;

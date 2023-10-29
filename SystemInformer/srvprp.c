@@ -24,7 +24,7 @@
 #include <procprv.h>
 #include <srvprv.h>
 
-typedef struct _SERVICE_PROPERTIES_CONTEXT
+typedef struct SERVICE_PROPERTIES_CONTEXT
 {
     PPH_SERVICE_ITEM ServiceItem;
 

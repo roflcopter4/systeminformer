@@ -29,7 +29,7 @@
 #include <srvprv.h>
 #include <thrdprv.h>
 
-typedef struct _STRING_TABLE_ENTRY
+typedef struct STRING_TABLE_ENTRY
 {
     PPH_STRING String;
     ULONG_PTR Count;
@@ -448,7 +448,7 @@ static NTSTATUS PhpLeakEnumerationRoutine(
     return 0;
 }
 
-typedef struct _STOPWATCH
+typedef struct STOPWATCH
 {
     LARGE_INTEGER StartCounter;
     LARGE_INTEGER EndCounter;
@@ -495,7 +495,7 @@ typedef VOID (FASTCALL *PPHF_RW_LOCK_FUNCTION)(
     _In_ PVOID Parameter
     );
 
-typedef struct _RW_TEST_CONTEXT
+typedef struct RW_TEST_CONTEXT
 {
     PWSTR Name;
 

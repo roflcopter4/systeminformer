@@ -20,7 +20,7 @@
 #define PHHNTLC_MAXIMUM 9
 
 // begin_phapppub
-typedef enum _PH_HANDLE_TREE_MENUITEM
+typedef enum PH_HANDLE_TREE_MENUITEM
 {
     PH_HANDLE_TREE_MENUITEM_NONE,
 
@@ -38,7 +38,7 @@ typedef enum _PH_HANDLE_TREE_MENUITEM
 // end_phapppub
 
 // begin_phapppub
-typedef struct _PH_HANDLE_NODE
+typedef struct PH_HANDLE_NODE
 {
     PH_TREENEW_NODE Node;
 
@@ -56,7 +56,7 @@ typedef struct _PH_HANDLE_NODE
 } PH_HANDLE_NODE, *PPH_HANDLE_NODE;
 // end_phapppub
 
-typedef struct _PH_HANDLE_LIST_CONTEXT
+typedef struct PH_HANDLE_LIST_CONTEXT
 {
     HWND ParentWindowHandle;
     HWND TreeNewHandle;

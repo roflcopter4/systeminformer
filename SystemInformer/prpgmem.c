@@ -852,7 +852,7 @@ INT_PTR CALLBACK PhpProcessMemoryDlgProc(
 
                     GetWindowRect(GetDlgItem(hwndDlg, IDC_FILTEROPTIONS), &rect);
 
-                    typedef enum _PH_MEMORY_FILTER_MENU_ITEM
+                    typedef enum PH_MEMORY_FILTER_MENU_ITEM
                     {
                         PH_MEMORY_FILTER_MENU_HIDE_FREE = 1,
                         PH_MEMORY_FILTER_MENU_HIDE_RESERVED,

@@ -16,7 +16,7 @@
 #pragma warning(push)
 #pragma warning(disable : 4201)
 
-typedef enum _KPH_MESSAGE_ID
+typedef enum KPH_MESSAGE_ID
 {
     InvalidKphMsg,
 
@@ -92,7 +92,7 @@ typedef enum _KPH_MESSAGE_ID
 C_ASSERT(sizeof(KPH_MESSAGE_ID) == 4);
 C_ASSERT(MaxKphMsg > 0);
 
-typedef enum _KPH_MESSAGE_FIELD_ID
+typedef enum KPH_MESSAGE_FIELD_ID
 {
     InvalidKphMsgField,
 
@@ -108,7 +108,7 @@ typedef enum _KPH_MESSAGE_FIELD_ID
 C_ASSERT(sizeof(KPH_MESSAGE_FIELD_ID) == 4);
 C_ASSERT(MaxKphMsgField > 0);
 
-typedef enum _KPH_MESSAGE_TYPE_ID
+typedef enum KPH_MESSAGE_TYPE_ID
 {
     InvalidKphMsgType,
 
@@ -122,7 +122,7 @@ typedef enum _KPH_MESSAGE_TYPE_ID
 C_ASSERT(sizeof(KPH_MESSAGE_TYPE_ID) == 4);
 C_ASSERT(MaxKphMsgType > 0);
 
-typedef struct _KPH_MESSAGE_DYNAMIC_TABLE_ENTRY
+typedef struct KPH_MESSAGE_DYNAMIC_TABLE_ENTRY
 {
     KPH_MESSAGE_FIELD_ID FieldId;
     KPH_MESSAGE_TYPE_ID TypeId;
@@ -132,7 +132,7 @@ typedef struct _KPH_MESSAGE_DYNAMIC_TABLE_ENTRY
 
 typedef const KPH_MESSAGE_DYNAMIC_TABLE_ENTRY* PCKPH_MESSAGE_DYNAMIC_TABLE_ENTRY;
 
-typedef struct _KPH_MESSAGE
+typedef struct KPH_MESSAGE
 {
     struct
     {

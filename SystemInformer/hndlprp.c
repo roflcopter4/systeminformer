@@ -22,7 +22,7 @@
 #include <procprv.h>
 #include <secedit.h>
 
-typedef enum _PHP_HANDLE_GENERAL_CATEGORY
+typedef enum PHP_HANDLE_GENERAL_CATEGORY
 {
     // common
     PH_HANDLE_GENERAL_CATEGORY_BASICINFO,
@@ -39,7 +39,7 @@ typedef enum _PHP_HANDLE_GENERAL_CATEGORY
     PH_HANDLE_GENERAL_CATEGORY_MAXIMUM
 } PHP_HANDLE_GENERAL_CATEGORY;
 
-typedef enum _PHP_HANDLE_GENERAL_INDEX
+typedef enum PHP_HANDLE_GENERAL_INDEX
 {
     PH_HANDLE_GENERAL_INDEX_NAME,
     PH_HANDLE_GENERAL_INDEX_TYPE,
@@ -86,7 +86,7 @@ typedef enum _PHP_HANDLE_GENERAL_INDEX
     PH_HANDLE_GENERAL_INDEX_MAXIMUM
 } PHP_HANDLE_GENERAL_INDEX;
 
-typedef struct _HANDLE_PROPERTIES_CONTEXT
+typedef struct HANDLE_PROPERTIES_CONTEXT
 {
     HWND ListViewHandle;
     HWND ParentWindow;
@@ -168,7 +168,7 @@ static NTSTATUS PhpDuplicateHandleFromProcess(
     return status;
 }
 
-typedef struct _HANDLE_PROPERTIES_THREAD_CONTEXT
+typedef struct HANDLE_PROPERTIES_THREAD_CONTEXT
 {
     HWND ParentWindowHandle;
     HANDLE ProcessId;

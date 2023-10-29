@@ -40,7 +40,7 @@ $@"#define KPH_DYN_CONFIGURATION_VERSION { Version }
 
 #include <pshpack1.h>
 
-typedef struct _KPH_DYN_CONFIGURATION
+typedef struct KPH_DYN_CONFIGURATION
 {{
     USHORT MajorVersion;
     USHORT MinorVersion;
@@ -89,7 +89,7 @@ typedef struct _KPH_DYN_CONFIGURATION
 
 }} KPH_DYN_CONFIGURATION, *PKPH_DYN_CONFIGURATION;
 
-typedef struct _KPH_DYNDATA
+typedef struct KPH_DYNDATA
 {{
     ULONG Version;
     ULONG Count;

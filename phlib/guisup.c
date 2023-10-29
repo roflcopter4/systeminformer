@@ -38,7 +38,7 @@ ULONG NTAPI PhpWindowCallbackHashtableHashFunction(
     _In_ PVOID Entry
     );
 
-typedef struct _PH_WINDOW_PROPERTY_CONTEXT
+typedef struct PH_WINDOW_PROPERTY_CONTEXT
 {
     ULONG PropertyHash;
     HWND WindowHandle;
@@ -2148,7 +2148,7 @@ VOID PhEnumChildWindows(
     //}
 }
 
-typedef struct _GET_PROCESS_MAIN_WINDOW_CONTEXT
+typedef struct GET_PROCESS_MAIN_WINDOW_CONTEXT
 {
     HWND Window;
     HWND ImmersiveWindow;
@@ -2860,7 +2860,7 @@ BOOLEAN PhLoadIconFromResourceDirectory(
 
 // https://docs.microsoft.com/en-us/windows/win32/menurc/newheader
 // One or more RESDIR structures immediately follow the NEWHEADER structure.
-typedef struct _NEWHEADER
+typedef struct NEWHEADER
 {
     USHORT Reserved;
     USHORT ResourceType;

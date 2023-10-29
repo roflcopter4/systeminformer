@@ -12,7 +12,7 @@
 #include <peview.h>
 #include <secedit.h>
 
-typedef struct _PV_WINDOW_SECTION
+typedef struct PV_WINDOW_SECTION
 {
     PH_STRINGREF Name;
 

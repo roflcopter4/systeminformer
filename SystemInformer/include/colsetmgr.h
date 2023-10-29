@@ -1,7 +1,7 @@
 #ifndef PH_COLSETMGR_H
 #define PH_COLSETMGR_H
 
-typedef struct _PH_COLUMN_SET_ENTRY
+typedef struct PH_COLUMN_SET_ENTRY
 {
     PPH_STRING Name;
     PPH_STRING Setting;

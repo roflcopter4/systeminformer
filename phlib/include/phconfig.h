@@ -86,7 +86,7 @@ PhExitApplication(
 
 // Processor group support (dmex)
 
-typedef struct _PH_SYSTEM_BASIC_INFORMATION
+typedef struct PH_SYSTEM_BASIC_INFORMATION
 {
     USHORT NumberOfProcessors;
     ULONG NumberOfPhysicalPages;
@@ -97,7 +97,7 @@ typedef struct _PH_SYSTEM_BASIC_INFORMATION
 
 PHLIBAPI extern PH_SYSTEM_BASIC_INFORMATION PhSystemBasicInformation;
 
-typedef struct _PH_SYSTEM_PROCESSOR_INFORMATION
+typedef struct PH_SYSTEM_PROCESSOR_INFORMATION
 {
     BOOLEAN SingleProcessorGroup;
     USHORT NumberOfProcessors;

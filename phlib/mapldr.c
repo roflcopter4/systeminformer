@@ -408,7 +408,7 @@ PVOID PhGetProcedureAddress(
 #endif
 }
 
-typedef struct _PH_PROCEDURE_ADDRESS_REMOTE_CONTEXT
+typedef struct PH_PROCEDURE_ADDRESS_REMOTE_CONTEXT
 {
     PVOID DllBase;
     PPH_STRING FileName;
@@ -1735,7 +1735,7 @@ NTSTATUS PhLoaderEntrySnapImportThunk(
 }
 
 #if (PH_NATIVE_LOADER_WORKQUEUE)
-typedef struct _PH_LOADER_IMPORT_THUNK_WORKQUEUE_CONTEXT
+typedef struct PH_LOADER_IMPORT_THUNK_WORKQUEUE_CONTEXT
 {
     PVOID BaseAddress;
     PVOID ImportBaseAddress;
@@ -1885,7 +1885,7 @@ CleanupExit:
 }
 
 #if (PH_NATIVE_LOADER_WORKQUEUE)
-typedef struct _PH_LOADER_IMPORTS_WORKQUEUE_CONTEXT
+typedef struct PH_LOADER_IMPORTS_WORKQUEUE_CONTEXT
 {
     PVOID BaseAddress;
     PIMAGE_IMPORT_DESCRIPTOR ImportDirectory;

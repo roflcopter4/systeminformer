@@ -92,7 +92,7 @@ DEFINE_GUID(IID_IDesktopAppXActivator1_I, 0x72e3a5b0, 0x8fea, 0x485c, 0x9f, 0x8b
 // "F158268A-D5A5-45CE-99CF-00D6C3F3FC0A"
 DEFINE_GUID(IID_IDesktopAppXActivator2_I, 0xF158268A, 0xD5A5, 0x45CE, 0x99, 0xCF, 0x00, 0xD6, 0xC3, 0xF3, 0xFC, 0x0A);
 
-typedef enum _DESKTOP_APPX_ACTIVATE_OPTIONS
+typedef enum DESKTOP_APPX_ACTIVATE_OPTIONS
 {
     DAXAO_NONE = 0,
     DAXAO_ELEVATE = 1,
@@ -174,7 +174,7 @@ DECLARE_INTERFACE_IID(IDesktopAppXActivator, IUnknown)
 #define IDesktopAppXActivator_ActivateWithOptions(This, ApplicationUserModelId, Executable, Arguments, ActivationOptions, ParentProcessId, ProcessHandle) \
     ((This)->lpVtbl->ActivateWithOptions(This, ApplicationUserModelId, Executable, Arguments, ActivationOptions, ParentProcessId, ProcessHandle))
 
-typedef enum _START_MENU_APP_ITEMS_FLAGS
+typedef enum START_MENU_APP_ITEMS_FLAGS
 {
     SMAIF_DEFAULT = 0,
     SMAIF_EXTENDED = 1,
@@ -661,7 +661,7 @@ DEFINE_GUID(CLSID_OSTaskCompletion_I, 0x07fc2b94, 0x5285, 0x417e, 0x8a, 0xc3, 0x
 // "c7e40572-c36a-43ea-9a40-f3b168da5558"
 DEFINE_GUID(IID_IOSTaskCompletion_I, 0xc7e40572, 0xc36a, 0x43ea, 0x9a, 0x40, 0xf3, 0xb1, 0x68, 0xda, 0x55, 0x58);
 
-typedef enum _PLM_TASKCOMPLETION_CATEGORY_FLAGS
+typedef enum PLM_TASKCOMPLETION_CATEGORY_FLAGS
 {
     PT_TC_NONE = 0,
     PT_TC_PBM = 1,
@@ -763,7 +763,7 @@ DECLARE_INTERFACE_IID(IOSTaskCompletion2, IOSTaskCompletion)
 
 // EDP
 
-typedef enum _EDP_CONTEXT_STATES
+typedef enum EDP_CONTEXT_STATES
 {
     EDP_CONTEXT_NONE = 0,
     EDP_CONTEXT_IS_EXEMPT = 1,
@@ -774,7 +774,7 @@ typedef enum _EDP_CONTEXT_STATES
     EDP_CONTEXT_IS_DENIED = 32,
 } EDP_CONTEXT_STATES;
 
-typedef struct _EDP_CONTEXT
+typedef struct EDP_CONTEXT
 {
     EDP_CONTEXT_STATES contextStates;
     ULONG allowedEnterpriseIdCount;
@@ -799,7 +799,7 @@ static VOID (WINAPI* EdpFreeContext_I)(
 // Properties
 
 // private
-typedef struct _PACKAGE_CONTEXT_REFERENCE
+typedef struct PACKAGE_CONTEXT_REFERENCE
 {
     void * reserved;
 } * PACKAGE_CONTEXT_REFERENCE;
@@ -825,7 +825,7 @@ typedef enum PackageProperty
 } PackageProperty;
 
 // private
-typedef struct _PACKAGE_APPLICATION_CONTEXT_REFERENCE
+typedef struct PACKAGE_APPLICATION_CONTEXT_REFERENCE
 {
     void * reserved;
 } * PACKAGE_APPLICATION_CONTEXT_REFERENCE;
@@ -852,7 +852,7 @@ typedef enum PackageApplicationProperty
 } PackageApplicationProperty;
 
 // private
-typedef struct _PACKAGE_RESOURCES_CONTEXT_REFERENCE
+typedef struct PACKAGE_RESOURCES_CONTEXT_REFERENCE
 {
     void * reserved;
 } * PACKAGE_RESOURCES_CONTEXT_REFERENCE;
@@ -869,7 +869,7 @@ typedef enum PackageResourcesProperty
 } PackageResourcesProperty;
 
 // private
-typedef struct _PACKAGE_SECURITY_CONTEXT_REFERENCE
+typedef struct PACKAGE_SECURITY_CONTEXT_REFERENCE
 {
     void * reserved;
 } * PACKAGE_SECURITY_CONTEXT_REFERENCE;
@@ -884,7 +884,7 @@ typedef enum PackageSecurityProperty
 } PackageSecurityProperty;
 
 // private
-typedef struct _TARGET_PLATFORM_CONTEXT_REFERENCE
+typedef struct TARGET_PLATFORM_CONTEXT_REFERENCE
 {
     void * reserved;
 } * TARGET_PLATFORM_CONTEXT_REFERENCE;
@@ -898,7 +898,7 @@ typedef enum TargetPlatformProperty
 } TargetPlatformProperty;
 
 // private
-typedef struct _PACKAGE_GLOBALIZATION_CONTEXT_REFERENCE
+typedef struct PACKAGE_GLOBALIZATION_CONTEXT_REFERENCE
 {
     void * reserved;
 } * PACKAGE_GLOBALIZATION_CONTEXT_REFERENCE;

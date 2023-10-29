@@ -17,7 +17,7 @@ extern PPH_OBJECT_TYPE PhNetworkItemType;
 extern BOOLEAN PhEnableNetworkProviderResolve;
 extern BOOLEAN PhEnableNetworkBoundConnections;
 
-typedef enum _PH_NETWORK_PROVIDER_FLAG
+typedef enum PH_NETWORK_PROVIDER_FLAG
 {
     PH_NETWORK_PROVIDER_FLAG_HOSTNAME = 0x1,
 } PH_NETWORK_PROVIDER_FLAG;
@@ -27,7 +27,7 @@ extern ULONG PhNetworkProviderFlagsMask;
 // begin_phapppub
 #define PH_NETWORK_OWNER_INFO_SIZE 16
 
-typedef struct _PH_NETWORK_ITEM
+typedef struct PH_NETWORK_ITEM
 {
     ULONG ProtocolType;
     PH_IP_ENDPOINT LocalEndpoint;

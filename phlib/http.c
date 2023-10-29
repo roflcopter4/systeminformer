@@ -1437,7 +1437,7 @@ VOID PhDnsFree(
 }
 
 #if (PHNT_DNSQUERY_FUTURE)
-typedef struct _PH_DNS_QUERY_CONTEXT
+typedef struct PH_DNS_QUERY_CONTEXT
 {
     volatile LONG RefCount;
     DNS_QUERY_RESULT QueryResults;

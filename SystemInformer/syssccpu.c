@@ -1692,7 +1692,7 @@ ULONG PhSipGetProcessorRelationshipIndex(
 #define CPUID_HYBRID_CORETYPE_ECORE 0x20
 #define CPUID_HYBRID_CORETYPE_PCORE 0x40
 
-typedef union _CPUID_HYBRID_INFORMATION
+typedef union CPUID_HYBRID_INFORMATION
 {
     struct
     {

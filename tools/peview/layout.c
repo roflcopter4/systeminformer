@@ -15,7 +15,7 @@
 
 #define WM_PV_LAYOUT_CONTEXTMENU (WM_APP + 801)
 
-typedef struct _PV_PE_LAYOUT_CONTEXT
+typedef struct PV_PE_LAYOUT_CONTEXT
 {
     HWND WindowHandle;
     HWND SearchHandle;
@@ -33,14 +33,14 @@ typedef struct _PV_PE_LAYOUT_CONTEXT
     PPV_PROPPAGECONTEXT PropSheetContext;
 } PV_PE_LAYOUT_CONTEXT, *PPV_PE_LAYOUT_CONTEXT;
 
-typedef enum _PV_LAYOUT_TREE_COLUMN_NAME
+typedef enum PV_LAYOUT_TREE_COLUMN_NAME
 {
     PV_LAYOUT_TREE_COLUMN_NAME_NAME,
     PV_LAYOUT_TREE_COLUMN_NAME_VALUE,
     PV_LAYOUT_TREE_COLUMN_NAME_MAXIMUM
 } PV_LAYOUT_TREE_COLUMN_NAME;
 
-typedef struct _PV_LAYOUT_NODE
+typedef struct PV_LAYOUT_NODE
 {
     PH_TREENEW_NODE Node;
 
@@ -48,7 +48,7 @@ typedef struct _PV_LAYOUT_NODE
     PPH_STRING Name;
     PPH_STRING Value;
 
-    struct _PV_LAYOUT_NODE* Parent;
+    struct PV_LAYOUT_NODE* Parent;
     PPH_LIST Children;
 
     PH_STRINGREF TextCache[PV_LAYOUT_TREE_COLUMN_NAME_MAXIMUM];
@@ -787,14 +787,14 @@ PPH_STRING PvLayoutFormatSize(
 #define ATTRIBUTE_TYPECODE_EA_INFORMATION 0xD0
 #define ATTRIBUTE_TYPECODE_EA 0xE0
 
-typedef enum _FILE_METADATA_OPTIMIZATION_STATE
+typedef enum FILE_METADATA_OPTIMIZATION_STATE
 {
     FileMetadataOptimizationNone = 0,
     FileMetadataOptimizationInProgress,
     FileMetadataOptimizationPending
 } FILE_METADATA_OPTIMIZATION_STATE, *PFILE_METADATA_OPTIMIZATION_STATE;
 
-typedef struct _FILE_QUERY_METADATA_OPTIMIZATION_OUTPUT
+typedef struct FILE_QUERY_METADATA_OPTIMIZATION_OUTPUT
 {
     FILE_METADATA_OPTIMIZATION_STATE State;
     ULONG AttributeListSize;

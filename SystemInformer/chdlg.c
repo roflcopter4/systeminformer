@@ -13,7 +13,7 @@
 #include <phapp.h>
 #include <settings.h>
 
-typedef struct _PH_CHOICE_DIALOG_CONTEXT
+typedef struct PH_CHOICE_DIALOG_CONTEXT
 {
     PWSTR Title;
     PWSTR Message;

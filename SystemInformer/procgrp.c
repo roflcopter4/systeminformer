@@ -15,7 +15,7 @@
 #include <procprv.h>
 #include <proctree.h>
 
-typedef struct _PHP_PROCESS_DATA
+typedef struct PHP_PROCESS_DATA
 {
     PPH_PROCESS_NODE Process;
     LIST_ENTRY ListEntry;
@@ -98,7 +98,7 @@ VOID PhpProcessDataListToHashtable(
     *Hashtable = hashtable;
 }
 
-typedef struct _QUERY_WINDOWS_CONTEXT
+typedef struct QUERY_WINDOWS_CONTEXT
 {
     PPH_HASHTABLE ProcessDataHashtable;
 } QUERY_WINDOWS_CONTEXT, *PQUERY_WINDOWS_CONTEXT;

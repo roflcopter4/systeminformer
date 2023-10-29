@@ -10,9 +10,9 @@
  *
  */
 
-#include <phapp.h>
-#include <lsasup.h>
-#include <winsta.h>
+#include "phapp.h"
+#include "lsasup.h"
+#include "winsta.h"
 
 static PH_KEY_VALUE_PAIR PhpMessageBoxIconPairs[] =
 {
@@ -37,10 +37,10 @@ VOID PhShowSessionSendMessageDialog(
 {
     PhDialogBox(
         PhInstanceHandle,
-        MAKEINTRESOURCE(IDD_EDITMESSAGE),
+        MAKEINTRESOURCEW(IDD_EDITMESSAGE),
         ParentWindowHandle,
         PhpSessionSendMessageDlgProc,
-        UlongToPtr(SessionId)
+        ULongToPtr(SessionId)
         );
 }
 
@@ -58,7 +58,7 @@ INT_PTR CALLBACK PhpSessionSendMessageDlgProc(
             HWND iconComboBox;
             PPH_STRING currentUserName;
 
-            PhSetWindowContext(hwndDlg, PH_WINDOW_CONTEXT_DEFAULT, UlongToPtr((ULONG)lParam));
+            PhSetWindowContext(hwndDlg, PH_WINDOW_CONTEXT_DEFAULT, ULongToPtr((ULONG)lParam));
 
             PhCenterWindow(hwndDlg, GetParent(hwndDlg));
 

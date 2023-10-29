@@ -22,7 +22,7 @@
 * Image coherency context, used during the calculation of the process
 * image coherency.
 */
-typedef struct _PH_IMAGE_COHERENCY_CONTEXT
+typedef struct PH_IMAGE_COHERENCY_CONTEXT
 {
     PH_IMAGE_COHERENCY_SCAN_TYPE Type;        /**< Type of scan to preform */
 

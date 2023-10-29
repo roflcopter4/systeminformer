@@ -12,7 +12,7 @@
 #ifndef _PH_HEXEDITP_H
 #define _PH_HEXEDITP_H
 
-typedef struct _PHP_HEXEDIT_CONTEXT
+typedef struct PHP_HEXEDIT_CONTEXT
 {
     PUCHAR Data;
     LONG Length;

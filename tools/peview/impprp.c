@@ -16,7 +16,7 @@
 static PH_STRINGREF EmptyImportsText = PH_STRINGREF_INIT(L"There are no imports to display.");
 static PH_STRINGREF LoadingImportsText = PH_STRINGREF_INIT(L"Loading imports from image...");
 
-typedef enum _PV_IMPORT_TREE_COLUMN_ITEM
+typedef enum PV_IMPORT_TREE_COLUMN_ITEM
 {
     PV_IMPORT_TREE_COLUMN_ITEM_INDEX,
     PV_IMPORT_TREE_COLUMN_ITEM_RVA,
@@ -33,7 +33,7 @@ typedef enum _PV_IMPORT_TREE_COLUMN_ITEM
     PV_IMPORT_TREE_COLUMN_ITEM_MAXIMUM
 } PV_IMPORT_TREE_COLUMN_ITEM;
 
-typedef struct _PV_IMPORT_NODE
+typedef struct PV_IMPORT_NODE
 {
     PH_TREENEW_NODE Node;
 
@@ -52,7 +52,7 @@ typedef struct _PV_IMPORT_NODE
     PH_STRINGREF TextCache[PV_IMPORT_TREE_COLUMN_ITEM_MAXIMUM];
 } PV_IMPORT_NODE, *PPV_IMPORT_NODE;
 
-typedef struct _PV_IMPORT_CONTEXT
+typedef struct PV_IMPORT_CONTEXT
 {
     HWND DialogHandle;
     HWND SearchHandle;
@@ -631,7 +631,7 @@ VOID PvDeleteImportTree(
     PhDereferenceObject(Context->NodeList);
 }
 
-struct _PH_TN_FILTER_SUPPORT* GetImportListFilterSupport(
+struct PH_TN_FILTER_SUPPORT* GetImportListFilterSupport(
     _In_ PPV_IMPORT_CONTEXT Context
     )
 {

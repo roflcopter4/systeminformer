@@ -320,7 +320,7 @@ BOOLEAN PhGetMappedWslImageSections(
     return TRUE;
 }
 
-typedef struct _PH_ELF_VERSION_RECORD
+typedef struct PH_ELF_VERSION_RECORD
 {
     USHORT Version;
     PSTR Name;

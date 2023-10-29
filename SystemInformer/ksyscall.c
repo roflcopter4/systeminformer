@@ -15,7 +15,7 @@
 #define NTOS_SERVICE_INDEX 0
 #define WIN32K_SERVICE_INDEX 1
 
-typedef union _NT_SYSTEMCALL_NUMBER
+typedef union NT_SYSTEMCALL_NUMBER
 {
     USHORT SystemCallNumber;
     struct
@@ -25,7 +25,7 @@ typedef union _NT_SYSTEMCALL_NUMBER
     };
 } NT_SYSTEMCALL_NUMBER, *PNT_SYSTEMCALL_NUMBER;
 
-typedef struct _PH_SYSCALL_NAME_ENTRY
+typedef struct PH_SYSCALL_NAME_ENTRY
 {
     ULONG_PTR Address;
     PPH_STRING Name;

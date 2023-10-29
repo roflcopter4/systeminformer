@@ -12,7 +12,7 @@ typedef LONG (NTAPI *PPH_CM_POST_SORT_FUNCTION)(
     );
 // end_phapppub
 
-typedef struct _PH_CM_MANAGER
+typedef struct PH_CM_MANAGER
 {
     HWND Handle;
     ULONG MinId;
@@ -22,11 +22,11 @@ typedef struct _PH_CM_MANAGER
     PPH_LIST NotifyList;
 } PH_CM_MANAGER, *PPH_CM_MANAGER;
 
-typedef struct _PH_CM_COLUMN
+typedef struct PH_CM_COLUMN
 {
     LIST_ENTRY ListEntry;
     ULONG Id;
-    struct _PH_PLUGIN *Plugin;
+    struct PH_PLUGIN *Plugin;
     ULONG SubId;
     PVOID Context;
     PVOID SortFunction;
@@ -46,7 +46,7 @@ VOID PhCmDeleteManager(
 PPH_CM_COLUMN PhCmCreateColumn(
     _Inout_ PPH_CM_MANAGER Manager,
     _In_ PPH_TREENEW_COLUMN Column,
-    _In_ struct _PH_PLUGIN *Plugin,
+    _In_ struct PH_PLUGIN *Plugin,
     _In_ ULONG SubId,
     _In_opt_ PVOID Context,
     _In_opt_ PVOID SortFunction
@@ -60,7 +60,7 @@ PPH_CM_COLUMN PhCmFindColumn(
 
 VOID PhCmSetNotifyPlugin(
     _In_ PPH_CM_MANAGER Manager,
-    _In_ struct _PH_PLUGIN *Plugin
+    _In_ struct PH_PLUGIN *Plugin
     );
 
 BOOLEAN PhCmForwardMessage(

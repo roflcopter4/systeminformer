@@ -23,7 +23,7 @@
  * The object header contains object manager information including the reference count of an object
  * and its type.
  */
-typedef struct _PH_OBJECT_HEADER
+typedef struct PH_OBJECT_HEADER
 {
     union
     {
@@ -113,7 +113,7 @@ C_ASSERT(FIELD_OFFSET(PH_OBJECT_HEADER, Body) == 0x8);
 #define PhAddObjectHeaderSize(Size) ((Size) + UFIELD_OFFSET(PH_OBJECT_HEADER, Body))
 
 /** An object type specifies a kind of object and its delete procedure. */
-typedef struct _PH_OBJECT_TYPE
+typedef struct PH_OBJECT_TYPE
 {
     /** The flags that were used to create the object type. */
     USHORT Flags;

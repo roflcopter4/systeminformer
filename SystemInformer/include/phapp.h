@@ -36,7 +36,7 @@
 
 // main
 
-typedef struct _PH_STARTUP_PARAMETERS
+typedef struct PH_STARTUP_PARAMETERS
 {
     union
     {
@@ -103,7 +103,7 @@ typedef BOOLEAN (NTAPI *PPH_MESSAGE_LOOP_FILTER)(
     _In_ PVOID Context
     );
 
-typedef struct _PH_MESSAGE_LOOP_FILTER_ENTRY
+typedef struct PH_MESSAGE_LOOP_FILTER_ENTRY
 {
     PPH_MESSAGE_LOOP_FILTER Filter;
     PVOID Context;
@@ -150,7 +150,7 @@ VOID PhUnloadPlugins(
     _In_ BOOLEAN SessionEnding
     );
 
-struct _PH_PLUGIN *PhFindPlugin2(
+struct PH_PLUGIN *PhFindPlugin2(
     _In_ PPH_STRINGREF Name
     );
 
@@ -173,9 +173,9 @@ struct _PH_PLUGIN *PhFindPlugin2(
 
 #define PH_LOG_ENTRY_MESSAGE 100 // phapppub
 
-typedef struct _PH_LOG_ENTRY *PPH_LOG_ENTRY; // phapppub
+typedef struct PH_LOG_ENTRY *PPH_LOG_ENTRY; // phapppub
 
-typedef struct _PH_LOG_ENTRY
+typedef struct PH_LOG_ENTRY
 {
     UCHAR Type;
     UCHAR Reserved1;
@@ -623,7 +623,7 @@ PhShowProcessRecordDialog(
 
 // runas
 
-typedef struct _PH_RUNAS_SERVICE_PARAMETERS
+typedef struct PH_RUNAS_SERVICE_PARAMETERS
 {
     ULONG ProcessId;
     PWSTR UserName;

@@ -16,7 +16,7 @@
 #include <extmgri.h>
 #include <phplug.h>
 
-typedef struct _PH_CM_SORT_CONTEXT
+typedef struct PH_CM_SORT_CONTEXT
 {
     PPH_PLUGIN_TREENEW_SORT_FUNCTION SortFunction;
     ULONG SubId;
@@ -64,7 +64,7 @@ VOID PhCmDeleteManager(
 PPH_CM_COLUMN PhCmCreateColumn(
     _Inout_ PPH_CM_MANAGER Manager,
     _In_ PPH_TREENEW_COLUMN Column,
-    _In_ struct _PH_PLUGIN *Plugin,
+    _In_ struct PH_PLUGIN *Plugin,
     _In_ ULONG SubId,
     _In_opt_ PVOID Context,
     _In_opt_ PVOID SortFunction
@@ -123,7 +123,7 @@ PPH_CM_COLUMN PhCmFindColumn(
 
 VOID PhCmSetNotifyPlugin(
     _In_ PPH_CM_MANAGER Manager,
-    _In_ struct _PH_PLUGIN *Plugin
+    _In_ struct PH_PLUGIN *Plugin
     )
 {
     if (!Manager->NotifyList)

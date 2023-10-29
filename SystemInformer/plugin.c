@@ -22,13 +22,13 @@
 #include <settings.h>
 #include <mapldr.h>
 
-typedef struct _PHP_PLUGIN_LOAD_ERROR
+typedef struct PHP_PLUGIN_LOAD_ERROR
 {
     PPH_STRING FileName;
     PPH_STRING ErrorMessage;
 } PHP_PLUGIN_LOAD_ERROR, *PPHP_PLUGIN_LOAD_ERROR;
 
-typedef struct _PHP_PLUGIN_MENU_HOOK
+typedef struct PHP_PLUGIN_MENU_HOOK
 {
     PPH_PLUGIN Plugin;
     PVOID Context;

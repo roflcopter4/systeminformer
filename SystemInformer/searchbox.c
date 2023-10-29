@@ -13,7 +13,7 @@
 #include <settings.h>
 #include <vssym32.h>
 
-typedef struct _PH_SEARCHCONTROL_CONTEXT
+typedef struct PH_SEARCHCONTROL_CONTEXT
 {
     union
     {

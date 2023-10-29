@@ -19,13 +19,13 @@ extern WCHAR *PhSizeUnitNames[7];
 extern ULONG PhMaxSizeUnit;
 extern USHORT PhMaxPrecisionUnit;
 
-typedef struct _PH_INTEGER_PAIR
+typedef struct PH_INTEGER_PAIR
 {
     LONG X;
     LONG Y;
 } PH_INTEGER_PAIR, *PPH_INTEGER_PAIR;
 
-typedef struct _PH_SCALABLE_INTEGER_PAIR
+typedef struct PH_SCALABLE_INTEGER_PAIR
 {
     union
     {
@@ -39,7 +39,7 @@ typedef struct _PH_SCALABLE_INTEGER_PAIR
     ULONG Scale;
 } PH_SCALABLE_INTEGER_PAIR, *PPH_SCALABLE_INTEGER_PAIR;
 
-typedef struct _PH_RECTANGLE
+typedef struct PH_RECTANGLE
 {
     union
     {
@@ -473,7 +473,7 @@ PhFindStringRefSiKeyValuePairs(
 #define GUID_VARIANT_RESERVED_MASK 0xe0
 #define GUID_VARIANT_RESERVED 0xe0
 
-typedef union _GUID_EX
+typedef union GUID_EX
 {
     GUID Guid;
     UCHAR Data[16];
@@ -709,14 +709,14 @@ PhStringToGuid(
     _Out_ PGUID Guid
     );
 
-typedef struct _VS_VERSION_INFO_STRUCT16
+typedef struct VS_VERSION_INFO_STRUCT16
 {
     USHORT Length;
     USHORT ValueLength;
     CHAR Key[1];
 } VS_VERSION_INFO_STRUCT16, *PVS_VERSION_INFO_STRUCT16;
 
-typedef struct _VS_VERSION_INFO_STRUCT32
+typedef struct VS_VERSION_INFO_STRUCT32
 {
     USHORT Length;
     USHORT ValueLength;
@@ -765,7 +765,7 @@ PhGetFileVersionFixedInfo(
     _In_ PVOID VersionInfo
     );
 
-typedef struct _LANGANDCODEPAGE
+typedef struct LANGANDCODEPAGE
 {
     USHORT Language;
     USHORT CodePage;
@@ -795,7 +795,7 @@ PhGetFileVersionInfoString2(
     _In_ PPH_STRINGREF KeyName
     );
 
-typedef struct _PH_IMAGE_VERSION_INFO
+typedef struct PH_IMAGE_VERSION_INFO
 {
     PPH_STRING CompanyName;
     PPH_STRING FileDescription;
@@ -1140,7 +1140,7 @@ PhWaitForMultipleObjectsAndPump(
     _In_ ULONG WakeMask
     );
 
-typedef struct _PH_CREATE_PROCESS_INFO
+typedef struct PH_CREATE_PROCESS_INFO
 {
     PUNICODE_STRING DllPath;
     PUNICODE_STRING WindowTitle;
@@ -1205,7 +1205,7 @@ PhCreateProcessWin32Ex(
     _Out_opt_ PHANDLE ThreadHandle
     );
 
-typedef struct _PH_CREATE_PROCESS_AS_USER_INFO
+typedef struct PH_CREATE_PROCESS_AS_USER_INFO
 {
     _In_opt_ PWSTR ApplicationName;
     _In_opt_ PWSTR CommandLine;
@@ -1438,7 +1438,7 @@ PhQueryRegistryUlong64Z(
     return PhQueryRegistryUlong64(KeyHandle, &valueName);
 }
 
-typedef struct _PH_FLAG_MAPPING
+typedef struct PH_FLAG_MAPPING
 {
     ULONG Flag1;
     ULONG Flag2;
@@ -1527,7 +1527,7 @@ PhGetFileDialogFilterIndex(
     _In_ PVOID FileDialog
     );
 
-typedef struct _PH_FILETYPE_FILTER
+typedef struct PH_FILETYPE_FILTER
 {
     PWSTR Name;
     PWSTR Filter;
@@ -1570,7 +1570,7 @@ PhIsExecutablePacked(
 /**
 * Image Coherency Scan Type
 */
-typedef enum _PH_IMGCOHERENCY_SCAN_TYPE
+typedef enum PH_IMGCOHERENCY_SCAN_TYPE
 {
     /**
     * Quick scan of the image coherency
@@ -1659,7 +1659,7 @@ PhCrc32C(
     _In_ SIZE_T Length
     );
 
-typedef enum _PH_HASH_ALGORITHM
+typedef enum PH_HASH_ALGORITHM
 {
     Md5HashAlgorithm,
     Sha1HashAlgorithm,
@@ -1667,7 +1667,7 @@ typedef enum _PH_HASH_ALGORITHM
     Sha256HashAlgorithm
 } PH_HASH_ALGORITHM;
 
-typedef struct _PH_HASH_CONTEXT
+typedef struct PH_HASH_CONTEXT
 {
     PH_HASH_ALGORITHM Algorithm;
     ULONG Context[64];
@@ -1700,14 +1700,14 @@ PhFinalHash(
     _Out_opt_ PULONG ReturnLength
     );
 
-typedef enum _PH_COMMAND_LINE_OPTION_TYPE
+typedef enum PH_COMMAND_LINE_OPTION_TYPE
 {
     NoArgumentType,
     MandatoryArgumentType,
     OptionalArgumentType
 } PH_COMMAND_LINE_OPTION_TYPE, *PPH_COMMAND_LINE_OPTION_TYPE;
 
-typedef struct _PH_COMMAND_LINE_OPTION
+typedef struct PH_COMMAND_LINE_OPTION
 {
     ULONG Id;
     PWSTR Name;

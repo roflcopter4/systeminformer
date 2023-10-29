@@ -5128,7 +5128,7 @@ static VOID PhpMappedImageUpdateHashData(
     }
 }
 
-typedef struct _PH_MAPPED_IMAGE_HASH_REGION
+typedef struct PH_MAPPED_IMAGE_HASH_REGION
 {
     ULONG64 Offset;
     ULONG64 Length;

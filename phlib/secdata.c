@@ -19,7 +19,7 @@
 #define ACCESS_ENTRY(Type, HasSynchronize) \
    { TEXT(#Type), (PPH_ACCESS_ENTRY)Ph##Type##AccessEntries, sizeof(Ph##Type##AccessEntries), HasSynchronize }
 
-typedef struct _PH_SPECIFIC_TYPE
+typedef struct PH_SPECIFIC_TYPE
 {
     PWSTR Type;
     PPH_ACCESS_ENTRY AccessEntries;

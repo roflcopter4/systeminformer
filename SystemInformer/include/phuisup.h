@@ -15,7 +15,7 @@
 // begin_phapppub
 // Common state highlighting support
 
-typedef struct _PH_SH_STATE
+typedef struct PH_SH_STATE
 {
     PH_ITEM_STATE State;
     HANDLE StateListHandle;
@@ -108,14 +108,14 @@ FORCEINLINE VOID PhChangeShStateTn(
 
 // Provider event queues
 
-typedef enum _PH_PROVIDER_EVENT_TYPE
+typedef enum PH_PROVIDER_EVENT_TYPE
 {
     ProviderAddedEvent = 1,
     ProviderModifiedEvent = 2,
     ProviderRemovedEvent = 3
 } PH_PROVIDER_EVENT_TYPE;
 
-typedef struct _PH_PROVIDER_EVENT
+typedef struct PH_PROVIDER_EVENT
 {
     ULONG_PTR TypeAndObject;
     ULONG RunId;
@@ -126,7 +126,7 @@ typedef struct _PH_PROVIDER_EVENT
 #define PH_PROVIDER_EVENT_TYPE(Event) ((ULONG)(Event).TypeAndObject & PH_PROVIDER_EVENT_TYPE_MASK)
 #define PH_PROVIDER_EVENT_OBJECT(Event) ((PVOID)((Event).TypeAndObject & PH_PROVIDER_EVENT_OBJECT_MASK))
 
-typedef struct _PH_PROVIDER_EVENT_QUEUE
+typedef struct PH_PROVIDER_EVENT_QUEUE
 {
     PH_ARRAY Array;
     PH_QUEUED_LOCK Lock;

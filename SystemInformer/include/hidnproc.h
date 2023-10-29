@@ -1,7 +1,7 @@
 #ifndef PH_HIDNPROC_H
 #define PH_HIDNPROC_H
 
-typedef enum _PH_HIDDEN_PROCESS_METHOD
+typedef enum PH_HIDDEN_PROCESS_METHOD
 {
     BruteForceScanMethod,
     CsrHandlesScanMethod,
@@ -11,7 +11,7 @@ typedef enum _PH_HIDDEN_PROCESS_METHOD
     NtdllScanMethod,
 } PH_HIDDEN_PROCESS_METHOD;
 
-typedef enum _PH_HIDDEN_PROCESS_TYPE
+typedef enum PH_HIDDEN_PROCESS_TYPE
 {
     UnknownProcess,
     NormalProcess,
@@ -19,7 +19,7 @@ typedef enum _PH_HIDDEN_PROCESS_TYPE
     TerminatedProcess
 } PH_HIDDEN_PROCESS_TYPE;
 
-typedef struct _PH_HIDDEN_PROCESS_ENTRY
+typedef struct PH_HIDDEN_PROCESS_ENTRY
 {
     HANDLE ProcessId;
     PPH_STRING FileName;
@@ -27,7 +27,7 @@ typedef struct _PH_HIDDEN_PROCESS_ENTRY
     PH_HIDDEN_PROCESS_TYPE Type;
 } PH_HIDDEN_PROCESS_ENTRY, *PPH_HIDDEN_PROCESS_ENTRY;
 
-typedef struct _PH_CSR_HANDLE_INFO
+typedef struct PH_CSR_HANDLE_INFO
 {
     HANDLE CsrProcessHandle;
     HANDLE Handle;

@@ -19,7 +19,7 @@ EXTERN_C_START
 #include <exlf.h>
 #include <exprodid.h>
 
-typedef struct _PH_MAPPED_IMAGE
+typedef struct PH_MAPPED_IMAGE
 {
     USHORT Signature;
     PVOID ViewBase;
@@ -43,11 +43,11 @@ typedef struct _PH_MAPPED_IMAGE
 
         struct // ELF image
         {
-            struct _ELF_IMAGE_HEADER *Header;
+            struct ELF_IMAGE_HEADER *Header;
             union
             {
-                struct _ELF_IMAGE_HEADER32 *Headers32;
-                struct _ELF_IMAGE_HEADER64 *Headers64;
+                struct ELF_IMAGE_HEADER32 *Headers32;
+                struct ELF_IMAGE_HEADER64 *Headers64;
             };
         };
     };
@@ -206,7 +206,7 @@ PhGetMappedImageLoadConfig64(
     _Out_ PIMAGE_LOAD_CONFIG_DIRECTORY64 *LoadConfig
     );
 
-typedef struct _PH_REMOTE_MAPPED_IMAGE
+typedef struct PH_REMOTE_MAPPED_IMAGE
 {
     HANDLE ProcessHandle;
     PVOID ViewBase;
@@ -329,7 +329,7 @@ PhGetRemoteMappedImageGuardFlagsEx(
     _Out_ PULONG GuardFlags
     );
 
-typedef struct _PH_MAPPED_IMAGE_EXPORTS
+typedef struct PH_MAPPED_IMAGE_EXPORTS
 {
     PPH_MAPPED_IMAGE MappedImage;
     ULONG NumberOfEntries;
@@ -342,14 +342,14 @@ typedef struct _PH_MAPPED_IMAGE_EXPORTS
     PUSHORT OrdinalTable;
 } PH_MAPPED_IMAGE_EXPORTS, *PPH_MAPPED_IMAGE_EXPORTS;
 
-typedef struct _PH_MAPPED_IMAGE_EXPORT_ENTRY
+typedef struct PH_MAPPED_IMAGE_EXPORT_ENTRY
 {
     USHORT Ordinal;
     ULONG Hint;
     PSTR Name;
 } PH_MAPPED_IMAGE_EXPORT_ENTRY, *PPH_MAPPED_IMAGE_EXPORT_ENTRY;
 
-typedef struct _PH_MAPPED_IMAGE_EXPORT_FUNCTION
+typedef struct PH_MAPPED_IMAGE_EXPORT_FUNCTION
 {
     PVOID Function;
     PSTR ForwardedName;
@@ -406,7 +406,7 @@ PhGetMappedImageExportFunctionRemote(
 
 #define PH_MAPPED_IMAGE_DELAY_IMPORTS 0x1
 
-typedef struct _PH_MAPPED_IMAGE_IMPORTS
+typedef struct PH_MAPPED_IMAGE_IMPORTS
 {
     PPH_MAPPED_IMAGE MappedImage;
     ULONG Flags;
@@ -419,7 +419,7 @@ typedef struct _PH_MAPPED_IMAGE_IMPORTS
     };
 } PH_MAPPED_IMAGE_IMPORTS, *PPH_MAPPED_IMAGE_IMPORTS;
 
-typedef struct _PH_MAPPED_IMAGE_IMPORT_DLL
+typedef struct PH_MAPPED_IMAGE_IMPORT_DLL
 {
     PPH_MAPPED_IMAGE MappedImage;
     ULONG Flags;
@@ -434,7 +434,7 @@ typedef struct _PH_MAPPED_IMAGE_IMPORT_DLL
     PVOID LookupTable;
 } PH_MAPPED_IMAGE_IMPORT_DLL, *PPH_MAPPED_IMAGE_IMPORT_DLL;
 
-typedef struct _PH_MAPPED_IMAGE_IMPORT_ENTRY
+typedef struct PH_MAPPED_IMAGE_IMPORT_ENTRY
 {
     PSTR Name;
     union
@@ -502,7 +502,7 @@ PhCheckSumMappedImage(
     _In_ PPH_MAPPED_IMAGE MappedImage
     );
 
-typedef struct _IMAGE_CFG_ENTRY
+typedef struct IMAGE_CFG_ENTRY
 {
     ULONG Rva;
     struct
@@ -516,7 +516,7 @@ typedef struct _IMAGE_CFG_ENTRY
     ULONG64 XfgHash;
 } IMAGE_CFG_ENTRY, *PIMAGE_CFG_ENTRY;
 
-typedef struct _PH_MAPPED_IMAGE_CFG
+typedef struct PH_MAPPED_IMAGE_CFG
 {
     PPH_MAPPED_IMAGE MappedImage;
     ULONG EntrySize;
@@ -549,7 +549,7 @@ typedef struct _PH_MAPPED_IMAGE_CFG
     ULONGLONG NumberOfGuardLongJumpEntries;
 } PH_MAPPED_IMAGE_CFG, *PPH_MAPPED_IMAGE_CFG;
 
-typedef enum _CFG_ENTRY_TYPE
+typedef enum CFG_ENTRY_TYPE
 {
     ControlFlowGuardFunction,
     ControlFlowGuardTakenIatEntry,
@@ -574,7 +574,7 @@ PhGetMappedImageCfgEntry(
     _Out_ PIMAGE_CFG_ENTRY Entry
     );
 
-typedef struct _PH_IMAGE_RESOURCE_ENTRY
+typedef struct PH_IMAGE_RESOURCE_ENTRY
 {
     ULONG_PTR Type;
     ULONG_PTR Name;
@@ -585,7 +585,7 @@ typedef struct _PH_IMAGE_RESOURCE_ENTRY
     //PVOID Data; // PhMappedImageRvaToVa(MappedImage, resourceData->OffsetToData, NULL);
 } PH_IMAGE_RESOURCE_ENTRY, *PPH_IMAGE_RESOURCE_ENTRY;
 
-typedef struct _PH_MAPPED_IMAGE_RESOURCES
+typedef struct PH_MAPPED_IMAGE_RESOURCES
 {
     PPH_MAPPED_IMAGE MappedImage;
     PIMAGE_DATA_DIRECTORY DataDirectory;
@@ -603,13 +603,13 @@ PhGetMappedImageResources(
     _In_ PPH_MAPPED_IMAGE MappedImage
     );
 
-typedef struct _PH_IMAGE_TLS_CALLBACK_ENTRY
+typedef struct PH_IMAGE_TLS_CALLBACK_ENTRY
 {
     ULONGLONG Index;
     ULONGLONG Address;
 } PH_IMAGE_TLS_CALLBACK_ENTRY, *PPH_IMAGE_TLS_CALLBACK_ENTRY;
 
-typedef struct _PH_MAPPED_IMAGE_TLS_CALLBACKS
+typedef struct PH_MAPPED_IMAGE_TLS_CALLBACKS
 {
     PPH_MAPPED_IMAGE MappedImage;
     PIMAGE_DATA_DIRECTORY DataDirectory;
@@ -635,14 +635,14 @@ PhGetMappedImageTlsCallbacks(
     _In_ PPH_MAPPED_IMAGE MappedImage
     );
 
-typedef struct _PH_MAPPED_IMAGE_PRODID_ENTRY
+typedef struct PH_MAPPED_IMAGE_PRODID_ENTRY
 {
     USHORT ProductId;
     USHORT ProductBuild;
     ULONG ProductCount;
 } PH_MAPPED_IMAGE_PRODID_ENTRY, *PPH_MAPPED_IMAGE_PRODID_ENTRY;
 
-typedef struct _PH_MAPPED_IMAGE_PRODID
+typedef struct PH_MAPPED_IMAGE_PRODID
 {
     //WCHAR Key[PH_PTR_STR_LEN_1];
     BOOLEAN Valid;
@@ -670,7 +670,7 @@ PhGetMappedImageProdIdExtents(
     _Out_ PULONG ProdIdHeaderEnd
     );
 
-typedef struct _PH_IMAGE_DEBUG_ENTRY
+typedef struct PH_IMAGE_DEBUG_ENTRY
 {
     ULONG Characteristics;
     ULONG TimeDateStamp;
@@ -682,7 +682,7 @@ typedef struct _PH_IMAGE_DEBUG_ENTRY
     ULONG PointerToRawData;
 } PH_IMAGE_DEBUG_ENTRY, *PPH_IMAGE_DEBUG_ENTRY;
 
-typedef struct _PH_MAPPED_IMAGE_DEBUG
+typedef struct PH_MAPPED_IMAGE_DEBUG
 {
     PPH_MAPPED_IMAGE MappedImage;
     PIMAGE_DATA_DIRECTORY DataDirectory;
@@ -705,7 +705,7 @@ typedef struct _PH_MAPPED_IMAGE_DEBUG
 #define IMAGE_DEBUG_TYPE_PERFMAP 21
 #endif
 
-typedef struct _IMAGE_DEBUG_TYPE_PERFMAPV1
+typedef struct IMAGE_DEBUG_TYPE_PERFMAPV1
 {
     ULONG Magic; // 0x4D523252
     BYTE Signature[16];
@@ -716,13 +716,13 @@ typedef struct _IMAGE_DEBUG_TYPE_PERFMAPV1
 #define CODEVIEW_SIGNATURE_NB10 '01BN'
 #define CODEVIEW_SIGNATURE_RSDS 'SDSR'
 
-typedef struct _CODEVIEW_HEADER
+typedef struct CODEVIEW_HEADER
 {
     ULONG Signature;
     LONG Offset;
 } CODEVIEW_HEADER, *PCODEVIEW_HEADER;
 
-typedef struct _CODEVIEW_INFO_PDB20
+typedef struct CODEVIEW_INFO_PDB20
 {
     CODEVIEW_HEADER Header;
     ULONG Timestamp; // seconds since 1970
@@ -730,7 +730,7 @@ typedef struct _CODEVIEW_INFO_PDB20
     CHAR PdbFileName[1];
 } CODEVIEW_INFO_PDB20, *PCODEVIEW_INFO_PDB20;
 
-typedef struct _CODEVIEW_INFO_PDB70
+typedef struct CODEVIEW_INFO_PDB70
 {
     ULONG Signature;
     GUID PdbGuid;
@@ -766,16 +766,16 @@ PhGetMappedImageDebugEntryByType(
 
 // maplib
 
-typedef struct _PH_MAPPED_ARCHIVE *PPH_MAPPED_ARCHIVE;
+typedef struct PH_MAPPED_ARCHIVE *PPH_MAPPED_ARCHIVE;
 
-typedef enum _PH_MAPPED_ARCHIVE_MEMBER_TYPE
+typedef enum PH_MAPPED_ARCHIVE_MEMBER_TYPE
 {
     NormalArchiveMemberType,
     LinkerArchiveMemberType,
     LongnamesArchiveMemberType
 } PH_MAPPED_ARCHIVE_MEMBER_TYPE;
 
-typedef struct _PH_MAPPED_ARCHIVE_MEMBER
+typedef struct PH_MAPPED_ARCHIVE_MEMBER
 {
     PPH_MAPPED_ARCHIVE MappedArchive;
     PH_MAPPED_ARCHIVE_MEMBER_TYPE Type;
@@ -787,7 +787,7 @@ typedef struct _PH_MAPPED_ARCHIVE_MEMBER
     CHAR NameBuffer[20];
 } PH_MAPPED_ARCHIVE_MEMBER, *PPH_MAPPED_ARCHIVE_MEMBER;
 
-typedef struct _PH_MAPPED_ARCHIVE
+typedef struct PH_MAPPED_ARCHIVE
 {
     PVOID ViewBase;
     SIZE_T Size;
@@ -801,7 +801,7 @@ typedef struct _PH_MAPPED_ARCHIVE
     PPH_MAPPED_ARCHIVE_MEMBER LastStandardMember;
 } PH_MAPPED_ARCHIVE, *PPH_MAPPED_ARCHIVE;
 
-typedef struct _PH_MAPPED_ARCHIVE_IMPORT_ENTRY
+typedef struct PH_MAPPED_ARCHIVE_IMPORT_ENTRY
 {
     PSTR Name;
     PSTR DllName;
@@ -863,7 +863,7 @@ PhGetMappedArchiveImportEntry(
     _Out_ PPH_MAPPED_ARCHIVE_IMPORT_ENTRY Entry
     );
 
-typedef struct _PH_MAPPED_IMAGE_EH_CONT
+typedef struct PH_MAPPED_IMAGE_EH_CONT
 {
     PULONGLONG EhContTable;
     ULONGLONG NumberOfEhContEntries;
@@ -878,7 +878,7 @@ PhGetMappedImageEhCont(
     _In_ PPH_MAPPED_IMAGE MappedImage
     );
 
-typedef struct _PH_IMAGE_DEBUG_POGO_ENTRY
+typedef struct PH_IMAGE_DEBUG_POGO_ENTRY
 {
     ULONG Rva;
     ULONG Size;
@@ -886,7 +886,7 @@ typedef struct _PH_IMAGE_DEBUG_POGO_ENTRY
     WCHAR Name[0x100];
 } PH_IMAGE_DEBUG_POGO_ENTRY, *PPH_IMAGE_DEBUG_POGO_ENTRY;
 
-typedef struct _PH_MAPPED_IMAGE_DEBUG_POGO
+typedef struct PH_MAPPED_IMAGE_DEBUG_POGO
 {
     PPH_MAPPED_IMAGE MappedImage;
     PIMAGE_DEBUG_POGO_SIGNATURE PogoDirectory;
@@ -903,7 +903,7 @@ PhGetMappedImagePogo(
     _Out_ PPH_MAPPED_IMAGE_DEBUG_POGO PogoDebug
     );
 
-typedef struct _PH_IMAGE_RELOC_ENTRY
+typedef struct PH_IMAGE_RELOC_ENTRY
 {
     ULONG BlockIndex;
     ULONG BlockRva;
@@ -912,7 +912,7 @@ typedef struct _PH_IMAGE_RELOC_ENTRY
     PVOID MappedImageVa;
 } PH_IMAGE_RELOC_ENTRY, *PPH_IMAGE_RELOC_ENTRY;
 
-typedef struct _PH_MAPPED_IMAGE_RELOC
+typedef struct PH_MAPPED_IMAGE_RELOC
 {
     PPH_MAPPED_IMAGE MappedImage;
     PIMAGE_DATA_DIRECTORY DataDirectory;
@@ -937,7 +937,7 @@ PhFreeMappedImageRelocations(
     _In_opt_ PPH_MAPPED_IMAGE_RELOC Relocations
     );
 
-typedef struct _PH_IMAGE_DYNAMIC_RELOC_ENTRY
+typedef struct PH_IMAGE_DYNAMIC_RELOC_ENTRY
 {
     ULONGLONG Symbol;
 
@@ -1013,7 +1013,7 @@ typedef struct _PH_IMAGE_DYNAMIC_RELOC_ENTRY
     PVOID MappedImageVa;
 } PH_IMAGE_DYNAMIC_RELOC_ENTRY, *PPH_IMAGE_DYNAMIC_RELOC_ENTRY;
 
-typedef struct _PH_MAPPED_IMAGE_DYNAMIC_RELOC
+typedef struct PH_MAPPED_IMAGE_DYNAMIC_RELOC
 {
     PPH_MAPPED_IMAGE MappedImage;
     PIMAGE_DYNAMIC_RELOCATION_TABLE RelocationTable;
@@ -1045,7 +1045,7 @@ PhFreeMappedImageDynamicRelocations(
     _In_opt_ PPH_MAPPED_IMAGE_DYNAMIC_RELOC Relocations
     );
 
-typedef struct _PH_MAPPED_IMAGE_EXCEPTIONS
+typedef struct PH_MAPPED_IMAGE_EXCEPTIONS
 {
     PPH_MAPPED_IMAGE MappedImage;
     PIMAGE_DATA_DIRECTORY DataDirectory;
@@ -1065,7 +1065,7 @@ PhGetMappedImageExceptions(
 
 // Note: Remove if/when added to the Windows SDK. (dmex)
 #ifndef _IMAGE_VOLATILE_METADATA
-typedef struct _IMAGE_VOLATILE_METADATA
+typedef struct IMAGE_VOLATILE_METADATA
 {
     ULONG Size;
     ULONG Version;
@@ -1078,7 +1078,7 @@ typedef struct _IMAGE_VOLATILE_METADATA
 
 // Note: Remove if/when added to the Windows SDK. (dmex)
 #ifndef _IMAGE_VOLATILE_RVA_METADATA
-typedef struct _IMAGE_VOLATILE_RVA_METADATA
+typedef struct IMAGE_VOLATILE_RVA_METADATA
 {
     ULONG Rva;
 } IMAGE_VOLATILE_RVA_METADATA, *PIMAGE_VOLATILE_RVA_METADATA;
@@ -1086,20 +1086,20 @@ typedef struct _IMAGE_VOLATILE_RVA_METADATA
 
 // Note: Remove if/when added to the Windows SDK. (dmex)
 #ifndef _IMAGE_VOLATILE_RANGE_METADATA
-typedef struct _IMAGE_VOLATILE_RANGE_METADATA
+typedef struct IMAGE_VOLATILE_RANGE_METADATA
 {
     ULONG Rva;
     ULONG Size;
 } IMAGE_VOLATILE_RANGE_METADATA, *PIMAGE_VOLATILE_RANGE_METADATA;
 #endif
 
-typedef struct _PH_IMAGE_VOLATILE_ENTRY
+typedef struct PH_IMAGE_VOLATILE_ENTRY
 {
     ULONG Rva;
     ULONG Size;
 } PH_IMAGE_VOLATILE_ENTRY, *PPH_IMAGE_VOLATILE_ENTRY;
 
-typedef struct _PH_MAPPED_IMAGE_VOLATILE_METADATA
+typedef struct PH_MAPPED_IMAGE_VOLATILE_METADATA
 {
     PPH_MAPPED_IMAGE MappedImage;
     PIMAGE_VOLATILE_METADATA VolatileMetadata;
@@ -1155,7 +1155,7 @@ ULONG64 PhGetMappedWslImageBaseAddress(
     _In_ PPH_MAPPED_IMAGE MappedWslImage
     );
 
-typedef struct _PH_ELF_IMAGE_SECTION
+typedef struct PH_ELF_IMAGE_SECTION
 {
     UINT32 Type;
     ULONGLONG Flags;
@@ -1171,7 +1171,7 @@ BOOLEAN PhGetMappedWslImageSections(
     _Out_ PPH_ELF_IMAGE_SECTION *ImageSections
     );
 
-typedef struct _PH_ELF_IMAGE_SYMBOL_ENTRY
+typedef struct PH_ELF_IMAGE_SYMBOL_ENTRY
 {
     union
     {
@@ -1202,7 +1202,7 @@ VOID PhFreeMappedWslImageSymbols(
     _In_ PPH_LIST ImageSymbols
     );
 
-typedef struct _PH_ELF_IMAGE_DYNAMIC_ENTRY
+typedef struct PH_ELF_IMAGE_DYNAMIC_ENTRY
 {
     LONGLONG Tag;
     PWSTR Type;

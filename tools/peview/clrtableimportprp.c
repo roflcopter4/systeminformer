@@ -21,7 +21,7 @@
 #include "metahost/metahost.h"
 #endif
 
-typedef struct _PVP_PE_CLR_IMPORTS_CONTEXT
+typedef struct PVP_PE_CLR_IMPORTS_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;

@@ -15,7 +15,7 @@
 
 EXTERN_C_START
 
-typedef enum _PH_ACTION_ELEVATION_LEVEL
+typedef enum PH_ACTION_ELEVATION_LEVEL
 {
     NeverElevateAction = 0,
     PromptElevateAction = 1,
@@ -23,7 +23,7 @@ typedef enum _PH_ACTION_ELEVATION_LEVEL
 } PH_ACTION_ELEVATION_LEVEL;
 
 // begin_phapppub
-typedef enum _PH_PHSVC_MODE
+typedef enum PH_PHSVC_MODE
 {
     ElevatedPhSvcMode,
     Wow64PhSvcMode
@@ -81,7 +81,7 @@ PhUiHibernateComputer(
     _In_ HWND hWnd
     );
 
-typedef enum _PH_POWERACTION_TYPE
+typedef enum PH_POWERACTION_TYPE
 {
     PH_POWERACTION_TYPE_NONE,
     PH_POWERACTION_TYPE_WIN32,

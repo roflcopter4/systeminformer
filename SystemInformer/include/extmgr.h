@@ -2,7 +2,7 @@
 #define PH_EXTMGR_H
 
 // begin_phapppub
-typedef enum _PH_EM_OBJECT_TYPE
+typedef enum PH_EM_OBJECT_TYPE
 {
     EmProcessItemType,
     EmProcessNodeType,
@@ -27,7 +27,7 @@ typedef enum _PH_EM_OBJECT_TYPE
     EmMaximumObjectType
 } PH_EM_OBJECT_TYPE;
 
-typedef enum _PH_EM_OBJECT_OPERATION
+typedef enum PH_EM_OBJECT_OPERATION
 {
     EmObjectCreate,
     EmObjectDelete,
@@ -41,11 +41,11 @@ typedef VOID (NTAPI *PPH_EM_OBJECT_CALLBACK)(
     );
 // end_phapppub
 
-typedef struct _PH_EM_APP_CONTEXT
+typedef struct PH_EM_APP_CONTEXT
 {
     LIST_ENTRY ListEntry;
     PH_STRINGREF AppName;
-    struct _PH_EM_OBJECT_EXTENSION *Extensions[EmMaximumObjectType];
+    struct PH_EM_OBJECT_EXTENSION *Extensions[EmMaximumObjectType];
 } PH_EM_APP_CONTEXT, *PPH_EM_APP_CONTEXT;
 
 #endif

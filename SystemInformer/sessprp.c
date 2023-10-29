@@ -50,7 +50,7 @@ VOID PhShowSessionProperties(
         );
 }
 
-typedef struct _PHP_SESSION_PROPERTIES_CONTEXT
+typedef struct PHP_SESSION_PROPERTIES_CONTEXT
 {
     HWND ListViewHandle;
     ULONG SessionId;

@@ -17,7 +17,7 @@
 
 HWND PhPageFileWindowHandle = NULL;
 
-typedef struct _PHP_PAGEFILE_PROPERTIES_CONTEXT
+typedef struct PHP_PAGEFILE_PROPERTIES_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;

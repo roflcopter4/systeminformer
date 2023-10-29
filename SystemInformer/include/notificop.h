@@ -15,7 +15,7 @@
 
 #define PH_NF_ENABLE_WORKQUEUE 1
 
-typedef struct _PH_NF_WORKQUEUE_DATA
+typedef struct PH_NF_WORKQUEUE_DATA
 {
     SLIST_ENTRY ListEntry;
     PPH_NF_ICON Icon;
@@ -38,7 +38,7 @@ typedef struct _PH_NF_WORKQUEUE_DATA
     ULONG BalloonTimeout;
 } PH_NF_WORKQUEUE_DATA, *PPH_NF_WORKQUEUE_DATA;
 
-typedef struct _PH_NF_BITMAP
+typedef struct PH_NF_BITMAP
 {
     BOOLEAN Initialized;
     HDC Hdc;

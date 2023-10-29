@@ -29,7 +29,7 @@ extern RECT PhNormalGraphTextPadding;
 #define PH_GRAPH_OVERLAY_LINE_2 0x20
 #define PH_GRAPH_LABEL_MAX_Y 0x1000
 
-typedef struct _PH_GRAPH_DRAW_INFO *PPH_GRAPH_DRAW_INFO;
+typedef struct PH_GRAPH_DRAW_INFO *PPH_GRAPH_DRAW_INFO;
 
 typedef PPH_STRING (NTAPI *PPH_GRAPH_LABEL_Y_FUNCTION)(
     _In_ PPH_GRAPH_DRAW_INFO DrawInfo,
@@ -38,7 +38,7 @@ typedef PPH_STRING (NTAPI *PPH_GRAPH_LABEL_Y_FUNCTION)(
     _In_ FLOAT Parameter
     );
 
-typedef struct _PH_GRAPH_DRAW_INFO
+typedef struct PH_GRAPH_DRAW_INFO
 {
     // Basic
     ULONG Width;
@@ -121,7 +121,7 @@ HFONT PhNfGetTrayIconFont( // Note: Exported from notifico.c (dmex)
 
 // Configuration
 
-typedef struct _PH_GRAPH_OPTIONS
+typedef struct PH_GRAPH_OPTIONS
 {
     COLORREF FadeOutBackColor;
     ULONG FadeOutWidth;
@@ -171,13 +171,13 @@ typedef struct _PH_GRAPH_OPTIONS
 #define GCN_MOUSEEVENT (WM_USER + 1353)
 #define GCN_DRAWPANEL (WM_USER + 1354)
 
-typedef struct _PH_GRAPH_GETDRAWINFO
+typedef struct PH_GRAPH_GETDRAWINFO
 {
     NMHDR Header;
     PPH_GRAPH_DRAW_INFO DrawInfo;
 } PH_GRAPH_GETDRAWINFO, *PPH_GRAPH_GETDRAWINFO;
 
-typedef struct _PH_GRAPH_GETTOOLTIPTEXT
+typedef struct PH_GRAPH_GETTOOLTIPTEXT
 {
     NMHDR Header;
     ULONG Index;
@@ -186,7 +186,7 @@ typedef struct _PH_GRAPH_GETTOOLTIPTEXT
     PH_STRINGREF Text; // must be null-terminated
 } PH_GRAPH_GETTOOLTIPTEXT, *PPH_GRAPH_GETTOOLTIPTEXT;
 
-typedef struct _PH_GRAPH_MOUSEEVENT
+typedef struct PH_GRAPH_MOUSEEVENT
 {
     NMHDR Header;
     ULONG Index;
@@ -197,7 +197,7 @@ typedef struct _PH_GRAPH_MOUSEEVENT
     POINT Point;
 } PH_GRAPH_MOUSEEVENT, *PPH_GRAPH_MOUSEEVENT;
 
-typedef struct _PH_GRAPH_DRAWPANEL
+typedef struct PH_GRAPH_DRAWPANEL
 {
     NMHDR Header;
     HDC hdc;
@@ -208,7 +208,7 @@ typedef struct _PH_GRAPH_DRAWPANEL
 
 #define PH_GRAPH_DATA_COUNT(Width, Step) (((Width) + (Step) - 1) / (Step) + 1) // round up in division
 
-typedef struct _PH_GRAPH_BUFFERS
+typedef struct PH_GRAPH_BUFFERS
 {
     PFLOAT Data1; // invalidate by setting Valid to FALSE
     PFLOAT Data2; // invalidate by setting Valid to FALSE
@@ -238,7 +238,7 @@ VOID PhGetDrawInfoGraphBuffers(
 // The basic buffer management structure was moved out of this section because
 // the text management is not needed for most cases.
 
-typedef struct _PH_GRAPH_STATE
+typedef struct PH_GRAPH_STATE
 {
     // Union for compatibility
     union
