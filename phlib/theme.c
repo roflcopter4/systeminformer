@@ -19,14 +19,14 @@
 #include <vsstyle.h>
 #include <vssym32.h>
 
-typedef struct _PHP_THEME_WINDOW_TAB_CONTEXT
+typedef struct PHP_THEME_WINDOW_TAB_CONTEXT
 {
     WNDPROC DefaultWindowProc;
     BOOLEAN MouseActive;
     POINT CursorPos;
 } PHP_THEME_WINDOW_TAB_CONTEXT, *PPHP_THEME_WINDOW_TAB_CONTEXT;
 
-typedef struct _PHP_THEME_WINDOW_STATUSBAR_CONTEXT
+typedef struct PHP_THEME_WINDOW_STATUSBAR_CONTEXT
 {
     WNDPROC DefaultWindowProc;
 
@@ -52,7 +52,7 @@ typedef struct _PHP_THEME_WINDOW_STATUSBAR_CONTEXT
     RECT BufferedContextRect;
 } PHP_THEME_WINDOW_STATUSBAR_CONTEXT, *PPHP_THEME_WINDOW_STATUSBAR_CONTEXT;
 
-typedef struct _PHP_THEME_WINDOW_COMBO_CONTEXT
+typedef struct PHP_THEME_WINDOW_COMBO_CONTEXT
 {
     WNDPROC DefaultWindowProc;
     HTHEME ThemeHandle;
@@ -126,7 +126,7 @@ BOOL (WINAPI* FlushMenuThemes_I)(
     VOID
     ) = NULL;
 
-typedef enum _PreferredAppMode
+typedef enum PreferredAppMode
 {
     PreferredAppModeDisabled,
     PreferredAppModeDarkOnDark,

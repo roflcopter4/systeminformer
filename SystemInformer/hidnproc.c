@@ -875,7 +875,7 @@ NTSTATUS PhpEnumHiddenProcessesBruteForce(
     return status;
 }
 
-typedef struct _CSR_HANDLES_CONTEXT
+typedef struct CSR_HANDLES_CONTEXT
 {
     PPH_ENUM_HIDDEN_PROCESSES_CALLBACK Callback;
     PVOID Context;
@@ -981,7 +981,7 @@ NTSTATUS PhpEnumHiddenProcessesCsrHandles(
     return status;
 }
 
-typedef struct _PH_ENUM_NEXT_PROCESS_CONTEXT
+typedef struct PH_ENUM_NEXT_PROCESS_CONTEXT
 {
     PPH_ENUM_HIDDEN_PROCESSES_CALLBACK Callback;
     PVOID Context;
@@ -1745,7 +1745,7 @@ NTSTATUS PhOpenProcessByCsrHandle(
     return status;
 }
 
-typedef struct _OPEN_PROCESS_BY_CSR_CONTEXT
+typedef struct OPEN_PROCESS_BY_CSR_CONTEXT
 {
     NTSTATUS Status;
     PHANDLE ProcessHandle;

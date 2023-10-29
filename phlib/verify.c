@@ -1680,13 +1680,13 @@ BOOLEAN PhVerifyCertificateIsMicrosoftRootChain(
 #pragma comment(lib, "crypt32.lib")
 
 #include <pshpack1.h>
-typedef struct _SPC_PE_IMAGE_PAGE_HASHES_V1
+typedef struct SPC_PE_IMAGE_PAGE_HASHES_V1
 {
     ULONG PageOffset;
     BYTE PageHash[20]; // SHA-1
 } SPC_PE_IMAGE_PAGE_HASHES_V1, *PSPC_PE_IMAGE_PAGE_HASHES_V1;
 
-typedef struct _SPC_PE_IMAGE_PAGE_HASHES_V2
+typedef struct SPC_PE_IMAGE_PAGE_HASHES_V2
 {
     ULONG PageOffset;
     BYTE PageHash[32]; // SHA-256

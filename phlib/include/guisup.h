@@ -29,7 +29,7 @@ EXTERN_C_START
 #define RFN_VALIDATE (-510)
 #define RFN_LIMITEDRUNAS (-511)
 
-typedef struct _NMRUNFILEDLGW
+typedef struct NMRUNFILEDLGW
 {
     NMHDR hdr;
     PWSTR lpszFile;
@@ -146,7 +146,7 @@ PhGetThemeInt(
     _Out_ PINT Value
     );
 
-typedef enum _THEMEPARTSIZE
+typedef enum THEMEPARTSIZE
 {
     THEMEPARTSIZE_MIN, // minimum size
     THEMEPARTSIZE_TRUE, // size without stretching
@@ -707,7 +707,7 @@ VOID PhSetClipboardString(
     );
 
 #include <pshpack1.h>
-typedef struct _DLGTEMPLATEEX
+typedef struct DLGTEMPLATEEX
 {
     USHORT dlgVer;
     USHORT signature;
@@ -809,11 +809,11 @@ BOOLEAN PhModalPropertySheet(
 
 #define PH_LAYOUT_DUMMY_MASK (PH_LAYOUT_TAB_CONTROL) // items that don't have a window handle, or don't actually get their window resized
 
-typedef struct _PH_LAYOUT_ITEM
+typedef struct PH_LAYOUT_ITEM
 {
     HWND Handle;
-    struct _PH_LAYOUT_ITEM *ParentItem; // for rectangle calculation
-    struct _PH_LAYOUT_ITEM *LayoutParentItem; // for actual resizing
+    struct PH_LAYOUT_ITEM *ParentItem; // for rectangle calculation
+    struct PH_LAYOUT_ITEM *LayoutParentItem; // for actual resizing
     ULONG LayoutNumber;
     ULONG NumberOfChildren;
     HDWP DeferHandle;
@@ -823,7 +823,7 @@ typedef struct _PH_LAYOUT_ITEM
     ULONG Anchor;
 } PH_LAYOUT_ITEM, *PPH_LAYOUT_ITEM;
 
-typedef struct _PH_LAYOUT_MANAGER
+typedef struct PH_LAYOUT_MANAGER
 {
     PPH_LIST List;
     PH_LAYOUT_ITEM RootItem;
@@ -1108,7 +1108,7 @@ PhBitmapSetAlpha(
 
 #define PH_ALIGN_MONOSPACE_FONT 0x80000000
 
-typedef enum _PH_ITEM_STATE
+typedef enum PH_ITEM_STATE
 {
     // The item is normal. Use the ItemColorFunction to determine the color of the item.
     NormalItemState = 0,
@@ -1302,20 +1302,20 @@ PhMakeColorBrighter(
 
 // Window support
 
-typedef enum _PH_PLUGIN_WINDOW_EVENT_TYPE
+typedef enum PH_PLUGIN_WINDOW_EVENT_TYPE
 {
     PH_PLUGIN_WINDOW_EVENT_TYPE_NONE,
     PH_PLUGIN_WINDOW_EVENT_TYPE_TOPMOST,
     PH_PLUGIN_WINDOW_EVENT_TYPE_MAX
 } PH_PLUGIN_WINDOW_EVENT_TYPE;
 
-typedef struct _PH_PLUGIN_WINDOW_CALLBACK_REGISTRATION
+typedef struct PH_PLUGIN_WINDOW_CALLBACK_REGISTRATION
 {
     HWND WindowHandle;
     PH_PLUGIN_WINDOW_EVENT_TYPE Type;
 } PH_PLUGIN_WINDOW_CALLBACK_REGISTRATION, *PPH_PLUGIN_WINDOW_CALLBACK_REGISTRATION;
 
-typedef struct _PH_PLUGIN_WINDOW_NOTIFY_EVENT
+typedef struct PH_PLUGIN_WINDOW_NOTIFY_EVENT
 {
     PH_PLUGIN_WINDOW_EVENT_TYPE Type;
     union
@@ -1325,7 +1325,7 @@ typedef struct _PH_PLUGIN_WINDOW_NOTIFY_EVENT
     };
 } PH_PLUGIN_WINDOW_NOTIFY_EVENT, *PPH_PLUGIN_WINDOW_NOTIFY_EVENT;
 
-typedef struct _PH_PLUGIN_MAINWINDOW_NOTIFY_EVENT
+typedef struct PH_PLUGIN_MAINWINDOW_NOTIFY_EVENT
 {
     PPH_PLUGIN_WINDOW_NOTIFY_EVENT Event;
     PPH_PLUGIN_WINDOW_CALLBACK_REGISTRATION Callback;
@@ -1370,7 +1370,7 @@ PhIsImmersiveProcess(
     _In_ HANDLE ProcessHandle
     );
 
-typedef enum _PROCESS_UICONTEXT
+typedef enum PROCESS_UICONTEXT
 {
     PROCESS_UICONTEXT_DESKTOP,
     PROCESS_UICONTEXT_IMMERSIVE,
@@ -1378,14 +1378,14 @@ typedef enum _PROCESS_UICONTEXT
     PROCESS_UICONTEXT_IMMERSIVE_BROWSER
 } PROCESS_UICONTEXT;
 
-typedef enum _PROCESS_UI_FLAGS
+typedef enum PROCESS_UI_FLAGS
 {
     PROCESS_UIF_NONE,
     PROCESS_UIF_AUTHORING_MODE,
     PROCESS_UIF_RESTRICTIONS_DISABLED
 } PROCESS_UI_FLAGS;
 
-typedef struct _PROCESS_UICONTEXT_INFORMATION
+typedef struct PROCESS_UICONTEXT_INFORMATION
 {
     PROCESS_UICONTEXT ProcessUIContext;
     PROCESS_UI_FLAGS Flags;
@@ -1400,7 +1400,7 @@ PhGetProcessUIContextInformation(
     _Out_ PPROCESS_UICONTEXT_INFORMATION UIContext
     );
 
-typedef enum _PH_PROCESS_DPI_AWARENESS
+typedef enum PH_PROCESS_DPI_AWARENESS
 {
     PH_PROCESS_DPI_AWARENESS_UNAWARE = 0,
     PH_PROCESS_DPI_AWARENESS_SYSTEM_DPI_AWARE = 1,
@@ -1667,7 +1667,7 @@ PhCustomDrawTreeTimeLine(
 
 // Windows Imaging Component (WIC) bitmap support
 
-typedef enum _PH_IMAGE_FORMAT_TYPE
+typedef enum PH_IMAGE_FORMAT_TYPE
 {
     PH_IMAGE_FORMAT_TYPE_NONE,
     PH_IMAGE_FORMAT_TYPE_ICO,
@@ -1710,7 +1710,7 @@ PhLoadImageFromFile(
 
 // Acrylic support
 
-typedef enum _WINDOWCOMPOSITIONATTRIB
+typedef enum WINDOWCOMPOSITIONATTRIB
 {
     WCA_UNDEFINED = 0,
     WCA_NCRENDERING_ENABLED = 1,
@@ -1748,7 +1748,7 @@ typedef enum _WINDOWCOMPOSITIONATTRIB
     WCA_LAST
 } WINDOWCOMPOSITIONATTRIB;
 
-typedef struct _WINDOWCOMPOSITIONATTRIBUTEDATA
+typedef struct WINDOWCOMPOSITIONATTRIBUTEDATA
 {
     WINDOWCOMPOSITIONATTRIB Attribute;
     PVOID Data;
@@ -1792,7 +1792,7 @@ FORCEINLINE ULONG MakeABGRFromCOLORREF(_In_ BYTE Alpha, _In_ COLORREF rgb)
     return MakeABGR(Alpha, GetBValue(rgb), GetGValue(rgb), GetRValue(rgb));
 }
 
-typedef enum _ACCENT_STATE
+typedef enum ACCENT_STATE
 {
     ACCENT_DISABLED,
     ACCENT_ENABLE_GRADIENT = 1,
@@ -1803,7 +1803,7 @@ typedef enum _ACCENT_STATE
     ACCENT_INVALID_STATE
 } ACCENT_STATE;
 
-typedef enum _ACCENT_FLAG
+typedef enum ACCENT_FLAG
 {
     ACCENT_NONE,
     ACCENT_WINDOWS11_LUMINOSITY = 0x2,
@@ -1814,7 +1814,7 @@ typedef enum _ACCENT_FLAG
     ACCENT_BORDER_ALL = (ACCENT_BORDER_LEFT | ACCENT_BORDER_TOP | ACCENT_BORDER_RIGHT | ACCENT_BORDER_BOTTOM)
 } ACCENT_FLAG;
 
-typedef struct _ACCENT_POLICY
+typedef struct ACCENT_POLICY
 {
     ACCENT_STATE AccentState;
     ULONG AccentFlags;
@@ -1905,7 +1905,7 @@ PhEnumerateRecentList(
 
 #define DBT_DEVTYP_VOLUME        0x00000002  // logical volume
 
-typedef struct _DEV_BROADCAST_HDR
+typedef struct DEV_BROADCAST_HDR
 {
     ULONG dbch_size;
     ULONG dbch_devicetype;

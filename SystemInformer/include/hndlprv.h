@@ -22,7 +22,7 @@ extern PPH_OBJECT_TYPE PhHandleItemType;
 #define PH_HANDLE_FILE_SHARED_DELETE 0x4
 #define PH_HANDLE_FILE_SHARED_MASK 0x7
 
-typedef struct _PH_HANDLE_ITEM
+typedef struct PH_HANDLE_ITEM
 {
     PH_HASH_ENTRY HashEntry;
 
@@ -42,7 +42,7 @@ typedef struct _PH_HANDLE_ITEM
     WCHAR ObjectString[PH_PTR_STR_LEN_1];
 } PH_HANDLE_ITEM, *PPH_HANDLE_ITEM;
 
-typedef struct _PH_HANDLE_PROVIDER
+typedef struct PH_HANDLE_PROVIDER
 {
     PPH_HASH_ENTRY *HandleHashSet;
     ULONG HandleHashSetSize;

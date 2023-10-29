@@ -155,7 +155,7 @@
 #define PHPN_REFERENCEDELTA 0x400000
 
 // begin_phapppub
-typedef struct _PH_PROCESS_NODE
+typedef struct PH_PROCESS_NODE
 {
     PH_TREENEW_NODE Node;
 
@@ -166,7 +166,7 @@ typedef struct _PH_PROCESS_NODE
     HANDLE ProcessId;
     PPH_PROCESS_ITEM ProcessItem;
 
-    struct _PH_PROCESS_NODE *Parent;
+    struct PH_PROCESS_NODE *Parent;
     PPH_LIST Children;
 // end_phapppub
 
@@ -331,7 +331,7 @@ VOID PhReloadSettingsProcessTreeList(
 
 // begin_phapppub
 PHAPPAPI
-struct _PH_TN_FILTER_SUPPORT *
+struct PH_TN_FILTER_SUPPORT *
 NTAPI
 PhGetFilterSupportProcessTreeList(
     VOID

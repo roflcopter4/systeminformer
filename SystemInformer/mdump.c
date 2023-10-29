@@ -25,7 +25,7 @@
 #define WM_PH_MINIDUMP_COMPLETED (WM_APP + 302)
 #define WM_PH_MINIDUMP_ERROR (WM_APP + 303)
 
-typedef struct _PH_PROCESS_MINIDUMP_CONTEXT
+typedef struct PH_PROCESS_MINIDUMP_CONTEXT
 {
     HWND WindowHandle;
     HWND ParentWindowHandle;
@@ -417,7 +417,7 @@ static BOOL CALLBACK PhpProcessMiniDumpCallback(
 
     if (message)
     {
-        SendMessage(context->WindowHandle, WM_PH_MINIDUMP_STATUS_UPDATE, 0, (LPARAM)message->Buffer);
+        SendMessageW(context->WindowHandle, WM_PH_MINIDUMP_STATUS_UPDATE, 0, (LPARAM)message->Buffer);
         PhDereferenceObject(message);
     }
 
@@ -454,7 +454,7 @@ NTSTATUS PhpProcessMiniDumpThreadStart(
             }
             else
             {
-                SendMessage(context->WindowHandle, WM_PH_MINIDUMP_ERROR, 0, (LPARAM)PhNtStatusToDosError(status));
+                SendMessageW(context->WindowHandle, WM_PH_MINIDUMP_ERROR, 0, (LPARAM)PhNtStatusToDosError(status));
             }
 
             PhUiDisconnectFromPhSvc();
@@ -529,7 +529,7 @@ NTSTATUS PhpProcessMiniDumpThreadStart(
     }
     else
     {
-        SendMessage(context->WindowHandle, WM_PH_MINIDUMP_ERROR, 0, (LPARAM)GetLastError());
+        SendMessageW(context->WindowHandle, WM_PH_MINIDUMP_ERROR, 0, (LPARAM)GetLastError());
     }
 
     if (processSnapshotHandle)
@@ -547,7 +547,7 @@ Completed:
 #endif
     if (context->Succeeded)
     {
-        SendMessage(context->WindowHandle, WM_PH_MINIDUMP_COMPLETED, 0, 0);
+        SendMessageW(context->WindowHandle, WM_PH_MINIDUMP_COMPLETED, 0, 0);
     }
     else
     {
@@ -593,7 +593,7 @@ INT_PTR CALLBACK PhpProcessMiniDumpDlgProc(
             PhSetWindowText(hwndDlg, L"Creating the dump file...");
             PhSetDialogItemText(hwndDlg, IDC_PROGRESSTEXT, L"Creating the dump file...");
             PhSetWindowStyle(GetDlgItem(hwndDlg, IDC_PROGRESS), PBS_MARQUEE, PBS_MARQUEE);
-            SendMessage(GetDlgItem(hwndDlg, IDC_PROGRESS), PBM_SETMARQUEE, TRUE, 75);
+            SendMessageW(GetDlgItem(hwndDlg, IDC_PROGRESS), PBM_SETMARQUEE, TRUE, 75);
 
             PhReferenceObject(context);
             PhCreateThread2(PhpProcessMiniDumpThreadStart, context);
@@ -693,13 +693,13 @@ LRESULT CALLBACK PhpProcessMiniDumpTaskDialogSubclassProc(
     {
     case WM_DESTROY:
         {
-            SetWindowLongPtr(hwndDlg, GWLP_WNDPROC, (LONG_PTR)oldWndProc);
+            SetWindowLongPtrW(hwndDlg, GWLP_WNDPROC, (LONG_PTR)oldWndProc);
             PhRemoveWindowContext(hwndDlg, 0xF);
         }
         break;
     case WM_PH_MINIDUMP_STATUS_UPDATE:
         {
-            SendMessage(hwndDlg, TDM_SET_ELEMENT_TEXT, TDE_CONTENT, lParam);
+            SendMessageW(hwndDlg, TDM_SET_ELEMENT_TEXT, TDE_CONTENT, lParam);
             context->LastTickCount = NtGetTickCount64();
         }
         break;
@@ -710,7 +710,7 @@ LRESULT CALLBACK PhpProcessMiniDumpTaskDialogSubclassProc(
 
             if (context->Stop)
             {
-                SendMessage(hwndDlg, TDM_CLICK_BUTTON, IDOK, 0);
+                SendMessageW(hwndDlg, TDM_CLICK_BUTTON, IDOK, 0);
                 break;
             }
 
@@ -730,7 +730,7 @@ LRESULT CALLBACK PhpProcessMiniDumpTaskDialogSubclassProc(
             config.pszMainInstruction = L"Unable to create the minidump.";
             config.pszContent = PhGetStringOrDefault(context->ErrorMessage, L"Unknown error.");
 
-            SendMessage(context->WindowHandle, TDM_NAVIGATE_PAGE, 0, (LPARAM)&config);
+            SendMessageW(context->WindowHandle, TDM_NAVIGATE_PAGE, 0, (LPARAM)&config);
         }
         break;
     case WM_PH_MINIDUMP_COMPLETED:
@@ -738,7 +738,7 @@ LRESULT CALLBACK PhpProcessMiniDumpTaskDialogSubclassProc(
         break;
     }
 
-    return CallWindowProc(oldWndProc, hwndDlg, uMsg, wParam, lParam);
+    return CallWindowProcW(oldWndProc, hwndDlg, uMsg, wParam, lParam);
 }
 
 HRESULT CALLBACK PhpProcessMiniDumpTaskDialogCallbackProc(
@@ -760,12 +760,12 @@ HRESULT CALLBACK PhpProcessMiniDumpTaskDialogCallbackProc(
             PhSetApplicationWindowIcon(hwndDlg);
             PhCenterWindow(hwndDlg, context->ParentWindowHandle);
 
-            context->DefaultTaskDialogWindowProc = (WNDPROC)GetWindowLongPtr(hwndDlg, GWLP_WNDPROC);
+            context->DefaultTaskDialogWindowProc = (WNDPROC)GetWindowLongPtrW(hwndDlg, GWLP_WNDPROC);
             PhSetWindowContext(hwndDlg, 0xF, context);
-            SetWindowLongPtr(hwndDlg, GWLP_WNDPROC, (LONG_PTR)PhpProcessMiniDumpTaskDialogSubclassProc);
+            SetWindowLongPtrW(hwndDlg, GWLP_WNDPROC, (LONG_PTR)PhpProcessMiniDumpTaskDialogSubclassProc);
 
-            SendMessage(hwndDlg, TDM_SET_MARQUEE_PROGRESS_BAR, TRUE, 0);
-            SendMessage(hwndDlg, TDM_SET_PROGRESS_BAR_MARQUEE, TRUE, 1);
+            SendMessageW(hwndDlg, TDM_SET_MARQUEE_PROGRESS_BAR, TRUE, 0);
+            SendMessageW(hwndDlg, TDM_SET_PROGRESS_BAR_MARQUEE, TRUE, 1);
 
             PhReferenceObject(context);
             PhCreateThread2(PhpProcessMiniDumpThreadStart, context);
@@ -794,7 +794,7 @@ HRESULT CALLBACK PhpProcessMiniDumpTaskDialogCallbackProc(
             if (buttonId == IDCANCEL)
             {
                 context->Stop = TRUE;
-                SendMessage(hwndDlg, TDM_SET_ELEMENT_TEXT, TDE_CONTENT, (LPARAM)L"Cancelling...");
+                SendMessageW(hwndDlg, TDM_SET_ELEMENT_TEXT, TDE_CONTENT, (LPARAM)L"Cancelling...");
                 return S_FALSE;
             }
         }

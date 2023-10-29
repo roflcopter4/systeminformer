@@ -29,7 +29,7 @@ EXTERN_C_START
 #define KSI_COMMS_INIT_ASSERT()
 #endif
 
-typedef struct _KPH_CONFIG_PARAMETERS
+typedef struct KPH_CONFIG_PARAMETERS
 {
     _In_ PPH_STRINGREF FileName;
     _In_ PPH_STRINGREF ServiceName;
@@ -302,7 +302,7 @@ KphGetCurrentProcessState(
     VOID
     );
 
-typedef enum _KPH_LEVEL
+typedef enum KPH_LEVEL
 {
     KphLevelNone,
     KphLevelMin,

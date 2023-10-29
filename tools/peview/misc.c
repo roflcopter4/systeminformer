@@ -96,7 +96,7 @@ PPH_STRING PvResolveReparsePointTarget(
             reparseBuffer->ReparseTag == IO_REPARSE_TAG_APPEXECLINK
             )
         {
-            typedef struct _AppExecLinkReparseBuffer
+            typedef struct AppExecLinkReparseBuffer
             {
                 ULONG StringCount;
                 WCHAR StringList[1];
@@ -163,7 +163,7 @@ VOID PvHandleListViewNotifyForCopy(
     }
 }
 
-typedef struct _PH_COPY_ITEM_CONTEXT
+typedef struct PH_COPY_ITEM_CONTEXT
 {
     HWND ListViewHandle;
     ULONG Id;
@@ -172,7 +172,7 @@ typedef struct _PH_COPY_ITEM_CONTEXT
 } PH_COPY_ITEM_CONTEXT, *PPH_COPY_ITEM_CONTEXT;
 
 VOID NTAPI PhpCopyListViewEMenuItemDeleteFunction(
-    _In_ struct _PH_EMENU_ITEM *Item
+    _In_ struct PH_EMENU_ITEM *Item
     )
 {
     PPH_COPY_ITEM_CONTEXT context;
@@ -183,7 +183,7 @@ VOID NTAPI PhpCopyListViewEMenuItemDeleteFunction(
 }
 
 BOOLEAN PvInsertCopyListViewEMenuItem(
-    _In_ struct _PH_EMENU_ITEM *Menu,
+    _In_ struct PH_EMENU_ITEM *Menu,
     _In_ ULONG InsertAfterId,
     _In_ HWND ListViewHandle
     )
@@ -249,7 +249,7 @@ BOOLEAN PvInsertCopyListViewEMenuItem(
 }
 
 BOOLEAN PvHandleCopyListViewEMenuItem(
-    _In_ struct _PH_EMENU_ITEM *SelectedItem
+    _In_ struct PH_EMENU_ITEM *SelectedItem
     )
 {
     PPH_COPY_ITEM_CONTEXT context;
@@ -757,7 +757,7 @@ VOID PhApplyTreeNewFilters(
 #define ID_COPY_CELL 136
 #define ID_SYMBOL_COPY 40201
 
-typedef struct _PH_COPY_CELL_CONTEXT
+typedef struct PH_COPY_CELL_CONTEXT
 {
     HWND TreeNewHandle;
     ULONG Id; // column ID
@@ -765,7 +765,7 @@ typedef struct _PH_COPY_CELL_CONTEXT
 } PH_COPY_CELL_CONTEXT, *PPH_COPY_CELL_CONTEXT;
 
 VOID NTAPI PhpCopyCellEMenuItemDeleteFunction(
-    _In_ struct _PH_EMENU_ITEM *Item
+    _In_ struct PH_EMENU_ITEM *Item
     )
 {
     PPH_COPY_CELL_CONTEXT context;
@@ -776,7 +776,7 @@ VOID NTAPI PhpCopyCellEMenuItemDeleteFunction(
 }
 
 BOOLEAN PhInsertCopyCellEMenuItem(
-    _In_ struct _PH_EMENU_ITEM *Menu,
+    _In_ struct PH_EMENU_ITEM *Menu,
     _In_ ULONG InsertAfterId,
     _In_ HWND TreeNewHandle,
     _In_ PPH_TREENEW_COLUMN Column
@@ -819,7 +819,7 @@ BOOLEAN PhInsertCopyCellEMenuItem(
 }
 
 BOOLEAN PhHandleCopyCellEMenuItem(
-    _In_ struct _PH_EMENU_ITEM *SelectedItem
+    _In_ struct PH_EMENU_ITEM *SelectedItem
     )
 {
     PPH_COPY_CELL_CONTEXT context;

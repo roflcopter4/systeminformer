@@ -18,13 +18,13 @@ extern "C" {
 
 #define PH_DSPICK_MULTISELECT 0x1
 
-typedef struct _PH_DSPICK_OBJECT
+typedef struct PH_DSPICK_OBJECT
 {
     PPH_STRING Name;
     PSID Sid;
 } PH_DSPICK_OBJECT, *PPH_DSPICK_OBJECT;
 
-typedef struct _PH_DSPICK_OBJECTS
+typedef struct PH_DSPICK_OBJECTS
 {
     ULONG NumberOfObjects;
     PH_DSPICK_OBJECT Objects[1];

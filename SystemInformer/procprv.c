@@ -58,14 +58,14 @@
 #define PROCESS_ID_BUCKETS 64
 #define PROCESS_ID_TO_BUCKET_INDEX(ProcessId) ((HandleToUlong(ProcessId) / 4) & (PROCESS_ID_BUCKETS - 1))
 
-typedef struct _PH_PROCESS_QUERY_DATA
+typedef struct PH_PROCESS_QUERY_DATA
 {
     SLIST_ENTRY ListEntry;
     ULONG Stage;
     PPH_PROCESS_ITEM ProcessItem;
 } PH_PROCESS_QUERY_DATA, *PPH_PROCESS_QUERY_DATA;
 
-typedef struct _PH_PROCESS_QUERY_S1_DATA
+typedef struct PH_PROCESS_QUERY_S1_DATA
 {
     PH_PROCESS_QUERY_DATA Header;
 
@@ -95,7 +95,7 @@ typedef struct _PH_PROCESS_QUERY_S1_DATA
 
 } PH_PROCESS_QUERY_S1_DATA, *PPH_PROCESS_QUERY_S1_DATA;
 
-typedef struct _PH_PROCESS_QUERY_S2_DATA
+typedef struct PH_PROCESS_QUERY_S2_DATA
 {
     PH_PROCESS_QUERY_DATA Header;
 
@@ -111,7 +111,7 @@ typedef struct _PH_PROCESS_QUERY_S2_DATA
     FLOAT ImageCoherency;
 } PH_PROCESS_QUERY_S2_DATA, *PPH_PROCESS_QUERY_S2_DATA;
 
-typedef struct _PH_SID_FULL_NAME_CACHE_ENTRY
+typedef struct PH_SID_FULL_NAME_CACHE_ENTRY
 {
     PSID Sid;
     PPH_STRING FullName;

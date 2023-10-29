@@ -22,7 +22,7 @@
 
 #define PH_QUERY_HACK_MAX_THREADS 20
 
-typedef struct _PHP_CALL_WITH_TIMEOUT_THREAD_CONTEXT
+typedef struct PHP_CALL_WITH_TIMEOUT_THREAD_CONTEXT
 {
     SLIST_ENTRY ListEntry;
 
@@ -34,7 +34,7 @@ typedef struct _PHP_CALL_WITH_TIMEOUT_THREAD_CONTEXT
     HANDLE ThreadHandle;
 } PHP_CALL_WITH_TIMEOUT_THREAD_CONTEXT, *PPHP_CALL_WITH_TIMEOUT_THREAD_CONTEXT;
 
-typedef enum _PHP_QUERY_OBJECT_WORK
+typedef enum PHP_QUERY_OBJECT_WORK
 {
     NtQueryObjectWork,
     NtQuerySecurityObjectWork,
@@ -43,7 +43,7 @@ typedef enum _PHP_QUERY_OBJECT_WORK
     KphQueryFileInformationWork
 } PHP_QUERY_OBJECT_WORK;
 
-typedef struct _PHP_QUERY_OBJECT_COMMON_CONTEXT
+typedef struct PHP_QUERY_OBJECT_COMMON_CONTEXT
 {
     PHP_QUERY_OBJECT_WORK Work;
     NTSTATUS Status;
@@ -443,7 +443,7 @@ NTSTATUS PhpGetEtwObjectName(
     return status;
 }
 
-typedef struct _PH_ETW_TRACEGUID_ENTRY
+typedef struct PH_ETW_TRACEGUID_ENTRY
 {
     PPH_STRING Name;
     PGUID Guid;

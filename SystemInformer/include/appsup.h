@@ -55,7 +55,7 @@ NTSTATUS PhGetProcessSwitchContext(
     );
 
 // begin_phapppub
-typedef enum _PH_KNOWN_PROCESS_TYPE
+typedef enum PH_KNOWN_PROCESS_TYPE
 {
     UnknownProcessType,
     SystemProcessType, // ntoskrnl/ntkrnlpa/...
@@ -97,7 +97,7 @@ PhGetProcessKnownTypeEx(
     _In_ PPH_STRING FileName
     );
 
-typedef union _PH_KNOWN_PROCESS_COMMAND_LINE
+typedef union PH_KNOWN_PROCESS_COMMAND_LINE
 {
     struct
     {
@@ -283,9 +283,9 @@ BOOLEAN PhCreateProcessIgnoreIfeoDebugger(
     );
 
 // begin_phapppub
-typedef struct _PH_EMENU_ITEM* PPH_EMENU_ITEM;
+typedef struct PH_EMENU_ITEM* PPH_EMENU_ITEM;
 
-typedef struct _PH_TN_COLUMN_MENU_DATA
+typedef struct PH_TN_COLUMN_MENU_DATA
 {
     HWND TreeNewHandle;
     PPH_TREENEW_HEADER_MOUSE_EVENT MouseEvent;
@@ -335,7 +335,7 @@ PhDeleteTreeNewColumnMenu(
     _In_ PPH_TN_COLUMN_MENU_DATA Data
     );
 
-typedef struct _PH_TN_FILTER_SUPPORT
+typedef struct PH_TN_FILTER_SUPPORT
 {
     PPH_LIST FilterList;
     HWND TreeNewHandle;
@@ -347,7 +347,7 @@ typedef BOOLEAN (NTAPI *PPH_TN_FILTER_FUNCTION)(
     _In_opt_ PVOID Context
     );
 
-typedef struct _PH_TN_FILTER_ENTRY
+typedef struct PH_TN_FILTER_ENTRY
 {
     PPH_TN_FILTER_FUNCTION Filter;
     PVOID Context;
@@ -401,7 +401,7 @@ PhApplyTreeNewFilters(
     _In_ PPH_TN_FILTER_SUPPORT Support
     );
 
-typedef struct _PH_COPY_CELL_CONTEXT
+typedef struct PH_COPY_CELL_CONTEXT
 {
     HWND TreeNewHandle;
     ULONG Id; // column ID
@@ -425,7 +425,7 @@ PhHandleCopyCellEMenuItem(
     _In_ PPH_EMENU_ITEM SelectedItem
     );
 
-typedef struct _PH_COPY_ITEM_CONTEXT
+typedef struct PH_COPY_ITEM_CONTEXT
 {
     HWND ListViewHandle;
     ULONG Id;

@@ -52,7 +52,7 @@ EXTERN_C CONST DECLSPEC_SELECTANY IN6_ADDR in6addr_v4mappedprefix = { 0x00, 0x00
 #define PH_UDP4_NETWORK_PROTOCOL (PH_IPV4_NETWORK_TYPE | PH_UDP_PROTOCOL_TYPE)
 #define PH_UDP6_NETWORK_PROTOCOL (PH_IPV6_NETWORK_TYPE | PH_UDP_PROTOCOL_TYPE)
 
-typedef struct _PH_IP_ADDRESS
+typedef struct PH_IP_ADDRESS
 {
     ULONG Type;
     union
@@ -151,7 +151,7 @@ FORCEINLINE BOOLEAN PhIsNullIpAddress(
     }
 }
 
-typedef struct _PH_IP_ENDPOINT
+typedef struct PH_IP_ENDPOINT
 {
     PH_IP_ADDRESS Address;
     ULONG Port;
@@ -176,7 +176,7 @@ FORCEINLINE ULONG PhHashIpEndpoint(
 
 // DOH/HTTP/HTTP2 support (dmex)
 
-typedef struct _PH_HTTP_CONTEXT
+typedef struct PH_HTTP_CONTEXT
 {
     PVOID SessionHandle;
     PVOID ConnectionHandle;
@@ -199,7 +199,7 @@ PhHttpSocketDestroy(
     _In_ _Frees_ptr_ PPH_HTTP_CONTEXT HttpContext
     );
 
-typedef enum _PH_HTTP_SOCKET_CLOSE_TYPE
+typedef enum PH_HTTP_SOCKET_CLOSE_TYPE
 {
     PH_HTTP_SOCKET_CLOSE_SESSION = 0x1,
     PH_HTTP_SOCKET_CLOSE_CONNECTION = 0x2,
@@ -357,7 +357,7 @@ PhHttpSocketDownloadString(
     _In_ BOOLEAN Unicode
     );
 
-typedef struct _PH_HTTPDOWNLOAD_CONTEXT
+typedef struct PH_HTTPDOWNLOAD_CONTEXT
 {
     ULONG64 ReadLength;
     ULONG64 TotalLength;

@@ -23,7 +23,7 @@
 #include <dbghelp.h>
 #include <symprv.h>
 
-typedef struct _PHSVCP_CAPTURED_RUNAS_SERVICE_PARAMETERS
+typedef struct PHSVCP_CAPTURED_RUNAS_SERVICE_PARAMETERS
 {
     PPH_STRING UserName;
     PPH_STRING Password;
@@ -229,8 +229,8 @@ NTSTATUS PhSvcCaptureSid(
 
     if (sid)
     {
-        if (String->Length < UFIELD_OFFSET(struct _SID, IdentifierAuthority) ||
-            String->Length < PhLengthRequiredSid(((struct _SID *)sid)->SubAuthorityCount) ||
+        if (String->Length < UFIELD_OFFSET(SID, IdentifierAuthority) ||
+            String->Length < PhLengthRequiredSid(((SID *)sid)->SubAuthorityCount) ||
             !PhValidSid(sid))
         {
             PhFree(sid);

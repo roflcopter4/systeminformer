@@ -21,7 +21,7 @@
 #include <svcsup.h>
 #include <workqueue.h>
 
-typedef struct _PH_NETWORK_CONNECTION
+typedef struct PH_NETWORK_CONNECTION
 {
     ULONG ProtocolType;
     PH_IP_ENDPOINT LocalEndpoint;
@@ -34,7 +34,7 @@ typedef struct _PH_NETWORK_CONNECTION
     ULONG RemoteScopeId; // Ipv6
 } PH_NETWORK_CONNECTION, *PPH_NETWORK_CONNECTION;
 
-typedef struct _PH_NETWORK_ITEM_QUERY_DATA
+typedef struct PH_NETWORK_ITEM_QUERY_DATA
 {
     SLIST_ENTRY ListEntry;
     PPH_NETWORK_ITEM NetworkItem;
@@ -44,7 +44,7 @@ typedef struct _PH_NETWORK_ITEM_QUERY_DATA
     PPH_STRING HostString;
 } PH_NETWORK_ITEM_QUERY_DATA, *PPH_NETWORK_ITEM_QUERY_DATA;
 
-typedef struct _PHP_RESOLVE_CACHE_ITEM
+typedef struct PHP_RESOLVE_CACHE_ITEM
 {
     PH_IP_ADDRESS Address;
     PPH_STRING HostString;

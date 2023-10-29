@@ -16,7 +16,7 @@
 static PH_STRINGREF EmptyExportsText = PH_STRINGREF_INIT(L"There are no exports to display.");
 static PH_STRINGREF LoadingExportsText = PH_STRINGREF_INIT(L"Loading exports from image...");
 
-typedef enum _PV_EXPORT_TREE_COLUMN_ITEM
+typedef enum PV_EXPORT_TREE_COLUMN_ITEM
 {
     PV_EXPORT_TREE_COLUMN_ITEM_INDEX,
     PV_EXPORT_TREE_COLUMN_ITEM_RVA,
@@ -29,7 +29,7 @@ typedef enum _PV_EXPORT_TREE_COLUMN_ITEM
     PV_EXPORT_TREE_COLUMN_ITEM_MAXIMUM
 } PV_EXPORT_TREE_COLUMN_ITEM;
 
-typedef struct _PV_EXPORT_NODE
+typedef struct PV_EXPORT_NODE
 {
     PH_TREENEW_NODE Node;
 
@@ -50,7 +50,7 @@ typedef struct _PV_EXPORT_NODE
     PH_STRINGREF TextCache[PV_EXPORT_TREE_COLUMN_ITEM_MAXIMUM];
 } PV_EXPORT_NODE, *PPV_EXPORT_NODE;
 
-typedef struct _PV_EXPORT_CONTEXT
+typedef struct PV_EXPORT_CONTEXT
 {
     HWND WindowHandle;
     HWND SearchHandle;
@@ -609,7 +609,7 @@ VOID PvDeleteExportTree(
     PhDereferenceObject(Context->NodeList);
 }
 
-struct _PH_TN_FILTER_SUPPORT* GetExportListFilterSupport(
+struct PH_TN_FILTER_SUPPORT* GetExportListFilterSupport(
     _In_ PPV_EXPORT_CONTEXT Context
     )
 {

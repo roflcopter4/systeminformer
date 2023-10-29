@@ -19,10 +19,10 @@ extern BOOLEAN PhEnableServiceNonPollNotify;
 extern ULONG PhServiceNonPollFlushInterval;
 
 // begin_phapppub
-typedef enum _VERIFY_RESULT VERIFY_RESULT;
-typedef struct _PH_IMAGELIST_ITEM* PPH_IMAGELIST_ITEM;
+typedef enum VERIFY_RESULT VERIFY_RESULT;
+typedef struct PH_IMAGELIST_ITEM* PPH_IMAGELIST_ITEM;
 
-typedef struct _PH_SERVICE_ITEM
+typedef struct PH_SERVICE_ITEM
 {
     PH_STRINGREF Key; // points to Name
     PPH_STRING Name;
@@ -80,13 +80,13 @@ typedef struct _PH_SERVICE_ITEM
 // end_phapppub
 
 // begin_phapppub
-typedef struct _PH_SERVICE_MODIFIED_DATA
+typedef struct PH_SERVICE_MODIFIED_DATA
 {
     PPH_SERVICE_ITEM ServiceItem;
     PH_SERVICE_ITEM OldService;
 } PH_SERVICE_MODIFIED_DATA, *PPH_SERVICE_MODIFIED_DATA;
 
-typedef enum _PH_SERVICE_CHANGE
+typedef enum PH_SERVICE_CHANGE
 {
     ServiceNone,
     ServiceStarted,

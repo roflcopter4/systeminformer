@@ -32,7 +32,7 @@ typedef struct PRODITEM
 } PRODITEM, *PPRODITEM;
 
 // This enum was built from https://github.com/kirschju/richheader licensed under GPL3 (dmex)
-typedef enum _PRODID
+typedef enum PRODID
 {
     prodidUnknown = 0x0000,
     prodidImport0 = 0x0001, // Linker generated import object version 0

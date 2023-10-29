@@ -12,6 +12,7 @@
 
 #ifndef _PH_APIIMPORT_H
 #define _PH_APIIMPORT_H
+#include <windns.h>
 
 // ntdll
 
@@ -173,8 +174,6 @@ typedef LONG (WINAPI* _DnsQueryEx)(
 typedef LONG (WINAPI* _DnsCancelQuery)(
     _In_ PVOID pCancelHandle
     );
-
-typedef struct _DNS_MESSAGE_BUFFER* PDNS_MESSAGE_BUFFER;
 
 typedef LONG (WINAPI* _DnsExtractRecordsFromMessage_W)(
     _In_ PDNS_MESSAGE_BUFFER DnsBuffer,

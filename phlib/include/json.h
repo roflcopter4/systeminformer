@@ -14,7 +14,7 @@
 
 EXTERN_C_START
 
-typedef struct _JSON_ARRAY_LIST_OBJECT
+typedef struct JSON_ARRAY_LIST_OBJECT
 {
     PSTR Key;
     PVOID Entry;
@@ -105,7 +105,7 @@ PhGetJsonObject(
     _In_ PSTR Key
     );
 
-typedef enum _PH_JSON_OBJECT_TYPE
+typedef enum PH_JSON_OBJECT_TYPE
 {
     PH_JSON_OBJECT_TYPE_NULL,
     PH_JSON_OBJECT_TYPE_BOOLEAN,
@@ -483,7 +483,7 @@ typedef INT (NTAPI* PH_XML_GET_XML_NODE_ATTRIBUTE_COUNT)(
     _In_ PVOID XmlNodeObject
     );
 
-typedef struct _PH_XML_INTERFACE
+typedef struct PH_XML_INTERFACE
 {
     ULONG Version;
     PH_XML_LOAD_OBJECT_FROM_STRING LoadXmlObjectFromString;

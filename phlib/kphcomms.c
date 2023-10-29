@@ -17,14 +17,14 @@
 
 #include <fltuser.h>
 
-typedef struct _KPH_UMESSAGE
+typedef struct KPH_UMESSAGE
 {
     FILTER_MESSAGE_HEADER MessageHeader;
     KPH_MESSAGE Message;
     OVERLAPPED Overlapped;
 } KPH_UMESSAGE, *PKPH_UMESSAGE;
 
-typedef struct _KPH_UREPLY
+typedef struct KPH_UREPLY
 {
     FILTER_REPLY_HEADER ReplyHeader;
     KPH_MESSAGE Message;
@@ -47,7 +47,7 @@ PH_FREE_LIST KphpCommsReplyFreeList;
 #define KPH_COMMS_MAX_MESSAGES  1024
 
 // rev
-typedef struct _FILTER_PORT_EA
+typedef struct FILTER_PORT_EA
 {
     PUNICODE_STRING PortName;
     PUNICODE_STRING64 PortName64;
@@ -59,7 +59,7 @@ typedef struct _FILTER_PORT_EA
 #define FLT_PORT_CONTEXT_MAX 0xFFE8
 
 // FILE_FULL_EA_INFORMATION (symbols)
-typedef struct _FILTER_PORT_FULL_EA
+typedef struct FILTER_PORT_FULL_EA
 {
     ULONG NextEntryOffset; // 0
     UCHAR Flags;           // 0
@@ -96,7 +96,7 @@ C_ASSERT(FIELD_OFFSET(FILTER_PORT_FULL_EA, EaValue.SizeOfContext) == 24); // 0x1
 C_ASSERT(FIELD_OFFSET(FILTER_PORT_FULL_EA, EaValue.ConnectionContext) == 32); // 0x20
 #endif
 
-typedef struct _FILTER_LOADUNLOAD
+typedef struct FILTER_LOADUNLOAD
 {
     USHORT Length;
     WCHAR Name[ANYSIZE_ARRAY];

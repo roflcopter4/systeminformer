@@ -133,7 +133,7 @@ VOID PhMipOnUserMessage(
 
 // Framework
 
-typedef enum _PH_MIP_ADJUST_PIN_RESULT
+typedef enum PH_MIP_ADJUST_PIN_RESULT
 {
     NoAdjustPinResult,
     ShowAdjustPinResult,
@@ -191,7 +191,7 @@ VOID PhMipChangeSection(
     );
 
 VOID PhMipSetSectionText(
-    _In_ struct _PH_MINIINFO_SECTION *Section,
+    _In_ struct PH_MINIINFO_SECTION *Section,
     _In_opt_ PPH_STRING Text
     );
 
@@ -247,7 +247,7 @@ LRESULT CALLBACK PhMipSectionControlHookWndProc(
 #define MIP_ICON_PADDING 3
 #define MIP_INNER_PADDING 3
 
-typedef struct _PH_MIP_GROUP_NODE
+typedef struct PH_MIP_GROUP_NODE
 {
     union
     {
@@ -345,7 +345,7 @@ VOID PhMipHandleListSectionCommand(
 // CPU section
 
 BOOLEAN PhMipCpuListSectionCallback(
-    _In_ struct _PH_MINIINFO_LIST_SECTION *ListSection,
+    _In_ struct PH_MINIINFO_LIST_SECTION *ListSection,
     _In_ PH_MINIINFO_LIST_SECTION_MESSAGE Message,
     _In_opt_ PVOID Parameter1,
     _In_opt_ PVOID Parameter2
@@ -364,7 +364,7 @@ int __cdecl PhMipCpuListSectionNodeCompareFunction(
 // Commit charge section
 
 BOOLEAN PhMipCommitListSectionCallback(
-    _In_ struct _PH_MINIINFO_LIST_SECTION *ListSection,
+    _In_ struct PH_MINIINFO_LIST_SECTION *ListSection,
     _In_ PH_MINIINFO_LIST_SECTION_MESSAGE Message,
     _In_opt_ PVOID Parameter1,
     _In_opt_ PVOID Parameter2
@@ -383,7 +383,7 @@ int __cdecl PhMipCommitListSectionNodeCompareFunction(
 // Physical memory section
 
 BOOLEAN PhMipPhysicalListSectionCallback(
-    _In_ struct _PH_MINIINFO_LIST_SECTION *ListSection,
+    _In_ struct PH_MINIINFO_LIST_SECTION *ListSection,
     _In_ PH_MINIINFO_LIST_SECTION_MESSAGE Message,
     _In_opt_ PVOID Parameter1,
     _In_opt_ PVOID Parameter2
@@ -402,7 +402,7 @@ int __cdecl PhMipPhysicalListSectionNodeCompareFunction(
 // I/O section
 
 BOOLEAN PhMipIoListSectionCallback(
-    _In_ struct _PH_MINIINFO_LIST_SECTION *ListSection,
+    _In_ struct PH_MINIINFO_LIST_SECTION *ListSection,
     _In_ PH_MINIINFO_LIST_SECTION_MESSAGE Message,
     _In_opt_ PVOID Parameter1,
     _In_opt_ PVOID Parameter2

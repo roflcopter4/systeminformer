@@ -113,11 +113,11 @@ VOID PvCopyListView(
     );
 
 BOOLEAN PvHandleCopyListViewEMenuItem(
-    _In_ struct _PH_EMENU_ITEM* SelectedItem
+    _In_ struct PH_EMENU_ITEM* SelectedItem
     );
 
 BOOLEAN PvInsertCopyListViewEMenuItem(
-    _In_ struct _PH_EMENU_ITEM* Menu,
+    _In_ struct PH_EMENU_ITEM* Menu,
     _In_ ULONG InsertAfterId,
     _In_ HWND ListViewHandle
     );
@@ -194,7 +194,7 @@ VOID PvCreateSearchControl(
     _In_opt_ PWSTR BannerText
     );
 
-typedef enum _PV_SYMBOL_COLUMN_ITEM_NAME
+typedef enum PV_SYMBOL_COLUMN_ITEM_NAME
 {
     TREE_COLUMN_ITEM_INDEX,
     TREE_COLUMN_ITEM_TYPE,
@@ -206,7 +206,7 @@ typedef enum _PV_SYMBOL_COLUMN_ITEM_NAME
     TREE_COLUMN_ITEM_MAXIMUM
 } PV_SYMBOL_COLUMN_ITEM_NAME;
 
-typedef enum _PV_SYMBOL_TYPE
+typedef enum PV_SYMBOL_TYPE
 {
     PV_SYMBOL_TYPE_UNKNOWN,
     PV_SYMBOL_TYPE_FUNCTION,
@@ -224,7 +224,7 @@ typedef enum _PV_SYMBOL_TYPE
     PV_SYMBOL_TYPE_CLASS,
 } PV_SYMBOL_TYPE;
 
-typedef struct _PV_SYMBOL_NODE
+typedef struct PV_SYMBOL_NODE
 {
     PH_TREENEW_NODE Node;
 
@@ -246,15 +246,15 @@ typedef struct _PV_SYMBOL_NODE
     PH_STRINGREF TextCache[TREE_COLUMN_ITEM_MAXIMUM];
 } PV_SYMBOL_NODE, *PPV_SYMBOL_NODE;
 
-typedef struct _PH_TN_COLUMN_MENU_DATA
+typedef struct PH_TN_COLUMN_MENU_DATA
 {
     HWND TreeNewHandle;
     PPH_TREENEW_HEADER_MOUSE_EVENT MouseEvent;
     ULONG DefaultSortColumn;
     PH_SORT_ORDER DefaultSortOrder;
 
-    struct _PH_EMENU_ITEM *Menu;
-    struct _PH_EMENU_ITEM *Selection;
+    struct PH_EMENU_ITEM *Menu;
+    struct PH_EMENU_ITEM *Selection;
     ULONG ProcessedId;
 } PH_TN_COLUMN_MENU_DATA, *PPH_TN_COLUMN_MENU_DATA;
 
@@ -297,7 +297,7 @@ VOID PhDeleteTreeNewColumnMenu(
     _In_ PPH_TN_COLUMN_MENU_DATA Data
     );
 
-typedef struct _PH_TN_FILTER_SUPPORT
+typedef struct PH_TN_FILTER_SUPPORT
 {
     PPH_LIST FilterList;
     HWND TreeNewHandle;
@@ -309,7 +309,7 @@ typedef BOOLEAN (NTAPI *PPH_TN_FILTER_FUNCTION)(
     _In_opt_ PVOID Context
     );
 
-typedef struct _PH_TN_FILTER_ENTRY
+typedef struct PH_TN_FILTER_ENTRY
 {
     PPH_TN_FILTER_FUNCTION Filter;
     PVOID Context;
@@ -346,14 +346,14 @@ VOID PhApplyTreeNewFilters(
     );
 
 BOOLEAN PhInsertCopyCellEMenuItem(
-    _In_ struct _PH_EMENU_ITEM* Menu,
+    _In_ struct PH_EMENU_ITEM* Menu,
     _In_ ULONG InsertAfterId,
     _In_ HWND TreeNewHandle,
     _In_ PPH_TREENEW_COLUMN Column
     );
 
 BOOLEAN PhHandleCopyCellEMenuItem(
-    _In_ struct _PH_EMENU_ITEM* SelectedItem
+    _In_ struct PH_EMENU_ITEM* SelectedItem
     );
 
 // chcol.c
@@ -368,7 +368,7 @@ VOID PvShowChooseColumnsDialog(
 
 // pdbprp.c
 
-typedef struct _PDB_SYMBOL_CONTEXT
+typedef struct PDB_SYMBOL_CONTEXT
 {
     HWND WindowHandle;
     HWND SearchHandle;
@@ -469,7 +469,7 @@ INT_PTR CALLBACK PvPeImportsDlgProc(
     _In_ LPARAM lParam
     );
 
-typedef struct _PV_EXPORTS_PAGECONTEXT
+typedef struct PV_EXPORTS_PAGECONTEXT
 {
     BOOLEAN FreePropPageContext;
     PVOID Context;
@@ -747,14 +747,14 @@ INT_PTR CALLBACK PvpExlfDynamicDlgProc(
 
 // clrtableimport.cpp
 
-typedef struct _PV_CLR_IMAGE_IMPORT_FUNCTION
+typedef struct PV_CLR_IMAGE_IMPORT_FUNCTION
 {
     ULONG Flags;
     PPH_STRING FunctionName;
     PVOID Offset;
 } PV_CLR_IMAGE_IMPORT_FUNCTION, *PPV_CLR_IMAGE_IMPORT_FUNCTION;
 
-typedef struct _PV_CLR_IMAGE_IMPORT_DLL
+typedef struct PV_CLR_IMAGE_IMPORT_DLL
 {
     ULONG ImportToken;
     PPH_STRING ImportName;

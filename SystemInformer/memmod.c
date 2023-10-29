@@ -16,7 +16,7 @@
 #include <symprv.h>
 #include <workqueue.h>
 
-typedef struct _PH_IMAGE_MODIFIED_DIALOG_CONTEXT
+typedef struct PH_IMAGE_MODIFIED_DIALOG_CONTEXT
 {
     LONG RefCount;
 
@@ -39,14 +39,14 @@ typedef struct _PH_IMAGE_MODIFIED_DIALOG_CONTEXT
     PH_QUEUED_LOCK ResultListLock;
 } PH_IMAGE_MODIFIED_DIALOG_CONTEXT, *PPH_IMAGE_MODIFIED_DIALOG_CONTEXT;
 
-typedef struct _PH_IMAGE_MAPPED_BASE_ENTRY
+typedef struct PH_IMAGE_MAPPED_BASE_ENTRY
 {
     PVOID ImageBase;
     SIZE_T SizeOfImage;
     PPH_STRING FileName;
 } PH_IMAGE_MAPPED_BASE_ENTRY, *PPH_IMAGE_MAPPED_BASE_ENTRY;
 
-typedef struct _PH_IMAGE_MAPPED_FAILURE_ENTRY
+typedef struct PH_IMAGE_MAPPED_FAILURE_ENTRY
 {
     PVOID BaseAddress;
     SIZE_T SizeOfImage;
@@ -157,7 +157,7 @@ NTSTATUS NTAPI PhpEnumVirtualMemoryAttributesCallback(
     return STATUS_SUCCESS;
 }
 
-typedef struct _SYMBOL_LOOKUP_RESULT
+typedef struct SYMBOL_LOOKUP_RESULT
 {
     SINGLE_LIST_ENTRY ListEntry;
     PPH_IMAGE_MODIFIED_DIALOG_CONTEXT Context;

@@ -16,7 +16,7 @@
 
 #include <commdlg.h>
 
-typedef struct _PHP_COLORBOX_CONTEXT
+typedef struct PHP_COLORBOX_CONTEXT
 {
     COLORREF SelectedColor;
     union

@@ -13,7 +13,7 @@
 #ifndef _PH_VERIFYP_H
 #define _PH_VERIFYP_H
 
-typedef struct _PH_VERIFY_CACHE_ENTRY
+typedef struct PH_VERIFY_CACHE_ENTRY
 {
     PPH_STRING FileName;
     ULONGLONG SequenceNumber;
@@ -30,7 +30,7 @@ ULONG PhpVerifyCacheHashtableHashFunction(
     _In_ PVOID Entry
     );
 
-typedef struct _CATALOG_INFO
+typedef struct CATALOG_INFO
 {
     ULONG cbStruct;
     _Field_z_ WCHAR wszCatalogFile[MAX_PATH];
@@ -182,7 +182,7 @@ typedef BOOL (WINAPI *_CryptUIDlgViewSignerInfo)(
 // C689AAB8-8E78-11D0-8C47-00C04FC295EE
 DEFINE_GUID(WINTRUST_KNOWN_SUBJECT_PE_IMAGE, 0xC689AAB8, 0x8E78, 0x11D0, 0x8C, 0x47, 0x0, 0xC0, 0x4F, 0xC2, 0x95, 0xEE);
 
-typedef enum _SIGNATURE_STATE
+typedef enum SIGNATURE_STATE
 {
     SIGNATURE_STATE_UNSIGNED_MISSING,
     SIGNATURE_STATE_UNSIGNED_UNSUPPORTED,
@@ -194,14 +194,14 @@ typedef enum _SIGNATURE_STATE
     SIGNATURE_STATE_UNTRUSTED
 } SIGNATURE_STATE;
 
-typedef enum _SIGNATURE_INFO_TYPE
+typedef enum SIGNATURE_INFO_TYPE
 {
     SIT_UNKNOWN,
     SIT_AUTHENTICODE,
     SIT_CATALOG
 } SIGNATURE_INFO_TYPE;
 
-typedef enum _SIGNATURE_INFO_FLAGS
+typedef enum SIGNATURE_INFO_FLAGS
 {
     SIF_NONE = 0,
     SIF_AUTHENTICODE_SIGNED = 1,
@@ -213,7 +213,7 @@ typedef enum _SIGNATURE_INFO_FLAGS
     SIF_MOTW = 0x4000
 } SIGNATURE_INFO_FLAGS;
 
-typedef struct _SIGNATURE_INFO
+typedef struct SIGNATURE_INFO
 {
     ULONG cbSize;
     SIGNATURE_STATE nSignatureState;

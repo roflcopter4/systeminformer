@@ -12,7 +12,7 @@
 
 #include <peview.h>
 
-typedef struct _PV_PE_LOADCONFIG_CONTEXT
+typedef struct PV_PE_LOADCONFIG_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;

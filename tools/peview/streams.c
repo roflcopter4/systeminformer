@@ -11,7 +11,7 @@
 
 #include <peview.h>
 
-typedef struct _PVP_PE_STREAMS_CONTEXT
+typedef struct PVP_PE_STREAMS_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;

@@ -20,7 +20,7 @@
 #include <srvprv.h>
 #include <mainwnd.h>
 
-typedef struct _PH_SERVICES_CONTEXT
+typedef struct PH_SERVICES_CONTEXT
 {
     PPH_SERVICE_ITEM *Services;
     ULONG NumberOfServices;

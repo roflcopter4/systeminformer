@@ -29,7 +29,7 @@ extern BOOLEAN PhMainWndExiting;
 #define WM_PH_LAST (WM_APP + 145)
 
 // begin_phapppub
-typedef enum _PH_MAINWINDOW_CALLBACK_TYPE
+typedef enum PH_MAINWINDOW_CALLBACK_TYPE
 {
     PH_MAINWINDOW_CALLBACK_TYPE_DESTROY,
     PH_MAINWINDOW_CALLBACK_TYPE_SHOW_PROPERTIES,
@@ -138,7 +138,7 @@ PhPluginCreateTabPage(
     );
 // end_phapppub
 
-typedef struct _PH_SHOW_MEMORY_EDITOR
+typedef struct PH_SHOW_MEMORY_EDITOR
 {
     HWND OwnerWindow;
     HANDLE ProcessId;
@@ -150,21 +150,21 @@ typedef struct _PH_SHOW_MEMORY_EDITOR
     ULONG Flags;
 } PH_SHOW_MEMORY_EDITOR, *PPH_SHOW_MEMORY_EDITOR;
 
-typedef struct _PH_SHOW_MEMORY_RESULTS
+typedef struct PH_SHOW_MEMORY_RESULTS
 {
     HANDLE ProcessId;
     PPH_LIST Results;
 } PH_SHOW_MEMORY_RESULTS, *PPH_SHOW_MEMORY_RESULTS;
 
 // begin_phapppub
-typedef struct _PH_LAYOUT_PADDING_DATA
+typedef struct PH_LAYOUT_PADDING_DATA
 {
     RECT Padding;
 } PH_LAYOUT_PADDING_DATA, *PPH_LAYOUT_PADDING_DATA;
 // end_phapppub
 
 // begin_phapppub
-typedef enum _PH_MAIN_TAB_PAGE_MESSAGE
+typedef enum PH_MAIN_TAB_PAGE_MESSAGE
 {
     MainTabPageCreate,
     MainTabPageDestroy,
@@ -182,7 +182,7 @@ typedef enum _PH_MAIN_TAB_PAGE_MESSAGE
     MaxMainTabPageMessage
 } PH_MAIN_TAB_PAGE_MESSAGE;
 
-typedef struct _PH_MAIN_TAB_PAGE *PPH_MAIN_TAB_PAGE;
+typedef struct PH_MAIN_TAB_PAGE *PPH_MAIN_TAB_PAGE;
 
 typedef BOOLEAN (NTAPI *PPH_MAIN_TAB_PAGE_CALLBACK)(
     _In_ PPH_MAIN_TAB_PAGE Page,
@@ -191,19 +191,19 @@ typedef BOOLEAN (NTAPI *PPH_MAIN_TAB_PAGE_CALLBACK)(
     _In_opt_ PVOID Parameter2
     );
 
-typedef struct _PH_MAIN_TAB_PAGE_EXPORT_CONTENT
+typedef struct PH_MAIN_TAB_PAGE_EXPORT_CONTENT
 {
     PPH_FILE_STREAM FileStream;
     ULONG Mode;
 } PH_MAIN_TAB_PAGE_EXPORT_CONTENT, *PPH_MAIN_TAB_PAGE_EXPORT_CONTENT;
 
-typedef struct _PH_MAIN_TAB_PAGE_MENU_INFORMATION
+typedef struct PH_MAIN_TAB_PAGE_MENU_INFORMATION
 {
     PPH_EMENU_ITEM Menu;
     ULONG StartIndex;
 } PH_MAIN_TAB_PAGE_MENU_INFORMATION, *PPH_MAIN_TAB_PAGE_MENU_INFORMATION;
 
-typedef struct _PH_MAIN_TAB_PAGE
+typedef struct PH_MAIN_TAB_PAGE
 {
     // Public
 

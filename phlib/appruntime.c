@@ -364,7 +364,7 @@ PPH_STRING PhSystemIdentificationToString(
     return identifier;
 }
 
-typedef struct _PH_APPHWID_QUERY_CONTEXT
+typedef struct PH_APPHWID_QUERY_CONTEXT
 {
     HANDLE ProcessId;
     HANDLE ThreadId;
@@ -961,7 +961,7 @@ CleanupExit:
     return success;
 }
 
-typedef enum _PH_QUERY_PACKAGE_INFO_TYPE
+typedef enum PH_QUERY_PACKAGE_INFO_TYPE
 {
     PH_QUERY_PACKAGE_INFO_NAME = 1,
     PH_QUERY_PACKAGE_INFO_FULLNAME = 2,

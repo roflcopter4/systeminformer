@@ -65,7 +65,7 @@
 #include <svcsup.h>
 #include <mainwnd.h>
 
-typedef struct _RUNAS_DIALOG_CONTEXT
+typedef struct RUNAS_DIALOG_CONTEXT
 {
     HWND ProgramComboBoxWindowHandle;
     HWND UserComboBoxWindowHandle;
@@ -77,13 +77,13 @@ typedef struct _RUNAS_DIALOG_CONTEXT
     PPH_STRING CurrentWinStaName;
 } RUNAS_DIALOG_CONTEXT, *PRUNAS_DIALOG_CONTEXT;
 
-typedef struct _PH_RUNAS_SESSION_ITEM
+typedef struct PH_RUNAS_SESSION_ITEM
 {
     ULONG SessionId;
     PPH_STRING SessionName;
 } PH_RUNAS_SESSION_ITEM, *PPH_RUNAS_SESSION_ITEM;
 
-typedef struct _PH_RUNAS_DESKTOP_ITEM
+typedef struct PH_RUNAS_DESKTOP_ITEM
 {
     PPH_STRING DesktopName;
 } PH_RUNAS_DESKTOP_ITEM, *PPH_RUNAS_DESKTOP_ITEM;
@@ -545,7 +545,7 @@ static VOID PhpAddSessionsToComboBox(
     }
 }
 
-typedef struct _RUNAS_DIALOG_DESKTOP_CALLBACK
+typedef struct RUNAS_DIALOG_DESKTOP_CALLBACK
 {
     PPH_LIST DesktopList;
     PPH_STRING WinStaName;
@@ -1841,7 +1841,7 @@ NTSTATUS PhInvokeRunAsService(
     return status;
 }
 
-typedef struct _PHP_RUNFILEDLG
+typedef struct PHP_RUNFILEDLG
 {
     HWND WindowHandle;
     HWND ComboBoxHandle;
@@ -2567,7 +2567,7 @@ INT_PTR CALLBACK PhpRunFileWndProc(
     return FALSE;
 }
 
-typedef struct _PH_RUNAS_PACKAGE_CONTEXT
+typedef struct PH_RUNAS_PACKAGE_CONTEXT
 {
     HWND WindowHandle;
     HWND ParentWindowHandle;
@@ -2591,14 +2591,14 @@ typedef struct _PH_RUNAS_PACKAGE_CONTEXT
 
 } PH_RUNAS_PACKAGE_CONTEXT, *PPH_RUNAS_PACKAGE_CONTEXT;
 
-typedef enum _PH_RUNASPACKAGE_TREE_COLUMN_ITEM
+typedef enum PH_RUNASPACKAGE_TREE_COLUMN_ITEM
 {
     PH_RUNASPACKAGE_TREE_COLUMN_ITEM_NAME,
     PH_RUNASPACKAGE_TREE_COLUMN_ITEM_APPID,
     PH_RUNASPACKAGE_TREE_COLUMN_ITEM_MAXIMUM
 } PH_RUNASPACKAGE_TREE_COLUMN_ITEM;
 
-typedef struct _PH_RUNASPACKAGE_TREE_ROOT_NODE
+typedef struct PH_RUNASPACKAGE_TREE_ROOT_NODE
 {
     PH_TREENEW_NODE Node;
 

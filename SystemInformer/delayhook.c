@@ -260,7 +260,7 @@ LRESULT CALLBACK PhStaticWindowHookProcedure(
     return CallWindowProc(PhDefaultStaticWindowProcedure, WindowHandle, WindowMessage, wParam, lParam);
 }
 
-typedef struct _PHP_THEME_WINDOW_STATUSBAR_CONTEXT
+typedef struct PHP_THEME_WINDOW_STATUSBAR_CONTEXT
 {
     struct
     {
@@ -667,7 +667,7 @@ LRESULT CALLBACK PhEditWindowHookProcedure(
     return CallWindowProc(PhDefaultEditWindowProcedure, WindowHandle, WindowMessage, wParam, lParam);
 }
 
-typedef struct _PHP_THEME_WINDOW_HEADER_CONTEXT
+typedef struct PHP_THEME_WINDOW_HEADER_CONTEXT
 {
     HTHEME ThemeHandle;
     BOOLEAN MouseActive;

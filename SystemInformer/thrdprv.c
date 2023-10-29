@@ -28,7 +28,7 @@
 #include <extmgri.h>
 #include <procprv.h>
 
-typedef struct _PH_THREAD_QUERY_DATA
+typedef struct PH_THREAD_QUERY_DATA
 {
     SLIST_ENTRY ListEntry;
     PPH_THREAD_PROVIDER ThreadProvider;
@@ -42,7 +42,7 @@ typedef struct _PH_THREAD_QUERY_DATA
     PPH_STRING ServiceName;
 } PH_THREAD_QUERY_DATA, *PPH_THREAD_QUERY_DATA;
 
-typedef struct _PH_THREAD_SYMBOL_LOAD_CONTEXT
+typedef struct PH_THREAD_SYMBOL_LOAD_CONTEXT
 {
     HANDLE ProcessId;
     PPH_THREAD_PROVIDER ThreadProvider;

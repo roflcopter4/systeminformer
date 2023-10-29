@@ -49,7 +49,7 @@ typedef NTSTATUS (NTAPI *PPH_SET_OBJECT_SECURITY)(
     _In_opt_ PVOID Context
     );
 
-typedef struct _PH_TOKEN_ATTRIBUTES
+typedef struct PH_TOKEN_ATTRIBUTES
 {
     HANDLE TokenHandle;
     struct
@@ -62,7 +62,7 @@ typedef struct _PH_TOKEN_ATTRIBUTES
     PSID TokenSid;
 } PH_TOKEN_ATTRIBUTES, *PPH_TOKEN_ATTRIBUTES;
 
-typedef enum _MANDATORY_LEVEL_RID {
+typedef enum MANDATORY_LEVEL_RID {
     MandatoryUntrustedRID = SECURITY_MANDATORY_UNTRUSTED_RID,
     MandatoryLowRID = SECURITY_MANDATORY_LOW_RID,
     MandatoryMediumRID = SECURITY_MANDATORY_MEDIUM_RID,
@@ -236,7 +236,7 @@ PhGetProcessDeviceMap(
     );
 
 /** Specifies a PEB string. */
-typedef enum _PH_PEB_OFFSET
+typedef enum PH_PEB_OFFSET
 {
     PhpoCurrentDirectory,
     PhpoDllPath,
@@ -325,7 +325,7 @@ PhGetProcessEnvironment(
     _Out_ PULONG EnvironmentLength
     );
 
-typedef struct _PH_ENVIRONMENT_VARIABLE
+typedef struct PH_ENVIRONMENT_VARIABLE
 {
     PH_STRINGREF Name;
     PH_STRINGREF Value;
@@ -441,7 +441,7 @@ PhGetProcessWorkingSetInformation(
     _Out_ PMEMORY_WORKING_SET_INFORMATION *WorkingSetInformation
     );
 
-typedef struct _PH_PROCESS_WS_COUNTERS
+typedef struct PH_PROCESS_WS_COUNTERS
 {
     SIZE_T NumberOfPages;
     SIZE_T NumberOfPrivatePages;
@@ -564,7 +564,7 @@ PhQueryTokenVariableSize(
     );
 
 // rev from SE_TOKEN_USER (dmex)
-typedef struct _PH_TOKEN_USER
+typedef struct PH_TOKEN_USER
 {
     union
     {
@@ -588,7 +588,7 @@ PhGetTokenUser(
     _Out_ PPH_TOKEN_USER User
     );
 
-typedef struct _PH_TOKEN_OWNER
+typedef struct PH_TOKEN_OWNER
 {
     union
     {
@@ -660,7 +660,7 @@ PhGetTokenTrustLevel(
     _Out_ PTOKEN_PROCESS_TRUST_LEVEL *TrustLevel
     );
 
-typedef struct _PH_TOKEN_APPCONTAINER
+typedef struct PH_TOKEN_APPCONTAINER
 {
     union
     {
@@ -1394,7 +1394,7 @@ typedef BOOLEAN (NTAPI *PPH_ENUM_PROCESS_MODULES_CALLBACK)(
 #define PH_ENUM_PROCESS_MODULES_DONT_RESOLVE_WOW64_FS 0x1
 #define PH_ENUM_PROCESS_MODULES_TRY_MAPPED_FILE_NAME 0x2
 
-typedef struct _PH_ENUM_PROCESS_MODULES_PARAMETERS
+typedef struct PH_ENUM_PROCESS_MODULES_PARAMETERS
 {
     PPH_ENUM_PROCESS_MODULES_CALLBACK Callback;
     PVOID Context;
@@ -2070,7 +2070,7 @@ PhGetExistingPathPrefixWin32(
 #define PH_MODULE_TYPE_ELF_MAPPED_IMAGE 6
 #define PH_MODULE_TYPE_ENCLAVE_MODULE 7
 
-typedef struct _PH_MODULE_INFO
+typedef struct PH_MODULE_INFO
 {
     ULONG Type;
     PVOID BaseAddress;
@@ -2385,7 +2385,7 @@ PhOpenFile(
     _Out_opt_ PULONG OpenStatus
     );
 
-typedef struct _PH_FILE_ID_DESCRIPTOR
+typedef struct PH_FILE_ID_DESCRIPTOR
 {
     FILE_ID_TYPE Type;
     union
@@ -2798,7 +2798,7 @@ PhRevertImpersonationToken(
     _In_ HANDLE ThreadHandle
     );
 
-typedef struct _PH_PROCESS_DEBUG_HEAP_ENTRY
+typedef struct PH_PROCESS_DEBUG_HEAP_ENTRY
 {
     ULONG Flags;
     ULONG Signature;
@@ -2809,7 +2809,7 @@ typedef struct _PH_PROCESS_DEBUG_HEAP_ENTRY
     SIZE_T BytesCommitted;
 } PH_PROCESS_DEBUG_HEAP_ENTRY, *PPH_PROCESS_DEBUG_HEAP_ENTRY;
 
-typedef struct _PH_PROCESS_DEBUG_HEAP_ENTRY32
+typedef struct PH_PROCESS_DEBUG_HEAP_ENTRY32
 {
     ULONG Flags;
     ULONG Signature;
@@ -2820,21 +2820,21 @@ typedef struct _PH_PROCESS_DEBUG_HEAP_ENTRY32
     ULONG BytesCommitted;
 } PH_PROCESS_DEBUG_HEAP_ENTRY32, *PPH_PROCESS_DEBUG_HEAP_ENTRY32;
 
-typedef struct _PH_PROCESS_DEBUG_HEAP_INFORMATION
+typedef struct PH_PROCESS_DEBUG_HEAP_INFORMATION
 {
     ULONG NumberOfHeaps;
     PVOID DefaultHeap;
     PH_PROCESS_DEBUG_HEAP_ENTRY Heaps[1];
 } PH_PROCESS_DEBUG_HEAP_INFORMATION, *PPH_PROCESS_DEBUG_HEAP_INFORMATION;
 
-typedef struct _PH_PROCESS_DEBUG_HEAP_INFORMATION32
+typedef struct PH_PROCESS_DEBUG_HEAP_INFORMATION32
 {
     ULONG NumberOfHeaps;
     ULONG DefaultHeap;
     PH_PROCESS_DEBUG_HEAP_ENTRY32 Heaps[1];
 } PH_PROCESS_DEBUG_HEAP_INFORMATION32, *PPH_PROCESS_DEBUG_HEAP_INFORMATION32;
 
-typedef struct _PH_IMAGE_RUNTIME_FUNCTION_ENTRY_AMD64
+typedef struct PH_IMAGE_RUNTIME_FUNCTION_ENTRY_AMD64
 {
     ULONG BeginAddress;
     ULONG EndAddress;
@@ -2845,7 +2845,7 @@ typedef struct _PH_IMAGE_RUNTIME_FUNCTION_ENTRY_AMD64
     } DUMMYUNIONNAME;
 } PH_IMAGE_RUNTIME_FUNCTION_ENTRY_AMD64, *PPH_IMAGE_RUNTIME_FUNCTION_ENTRY_AMD64;
 
-typedef struct _PH_IMAGE_RUNTIME_FUNCTION_ENTRY_ARM64
+typedef struct PH_IMAGE_RUNTIME_FUNCTION_ENTRY_ARM64
 {
     ULONG BeginAddress;
     union
@@ -3016,7 +3016,7 @@ PhGetThreadApartmentState(
     _Out_ POLETLSFLAGS ApartmentState
     );
 
-typedef struct _PH_COM_CALLSTATE
+typedef struct PH_COM_CALLSTATE
 {
     ULONG ClientPID;
     ULONG ServerPID;
@@ -3042,7 +3042,7 @@ PhGetThreadCriticalSectionOwnerThread(
     _Out_ PULONG ThreadId
     );
 
-typedef enum _PH_THREAD_SOCKET_STATE
+typedef enum PH_THREAD_SOCKET_STATE
 {
     PH_THREAD_SOCKET_STATE_NONE,
     PH_THREAD_SOCKET_STATE_SHARED,
@@ -3192,7 +3192,7 @@ PhGetSystemLogicalProcessorInformation(
     _Out_ PULONG BufferLength
     );
 
-typedef struct _PH_LOGICAL_PROCESSOR_INFORMATION
+typedef struct PH_LOGICAL_PROCESSOR_INFORMATION
 {
     ULONG ProcessorCoreCount;
     ULONG ProcessorNumaCount;
@@ -3228,7 +3228,7 @@ PhGetActiveProcessorCount(
     _In_ USHORT ProcessorGroup
     );
 
-typedef struct _PH_PROCESSOR_NUMBER
+typedef struct PH_PROCESSOR_NUMBER
 {
     USHORT Group;
     USHORT Number;
@@ -3289,7 +3289,7 @@ PhGuardGrantSuppressedCallAccess(
     _In_ PVOID VirtualAddress
     );
 
-typedef struct _PH_SYSTEM_STORE_COMPRESSION_INFORMATION
+typedef struct PH_SYSTEM_STORE_COMPRESSION_INFORMATION
 {
     ULONG CompressionPid;
     ULONG WorkingSetSize;

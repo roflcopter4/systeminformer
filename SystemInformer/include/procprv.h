@@ -25,7 +25,7 @@ extern BOOLEAN PhEnableCycleCpuUsage;
 extern BOOLEAN PhEnableInterruptCpuUsage;
 extern BOOLEAN PhEnablePackageIconSupport;
 
-typedef enum _PH_PROCESS_PROVIDER_FLAG
+typedef enum PH_PROCESS_PROVIDER_FLAG
 {
     PH_PROCESS_PROVIDER_FLAG_WSCOUNTERS = 0x1,
     PH_PROCESS_PROVIDER_FLAG_GDIUSERHANDLES = 0x2,
@@ -125,17 +125,17 @@ extern PH_CIRCULAR_BUFFER_ULONG64 PhMaxIoWriteHistory;
 // end_phapppub
 
 // begin_phapppub
-typedef enum _VERIFY_RESULT VERIFY_RESULT;
-typedef struct _PH_PROCESS_RECORD *PPH_PROCESS_RECORD;
+typedef enum VERIFY_RESULT VERIFY_RESULT;
+typedef struct PH_PROCESS_RECORD *PPH_PROCESS_RECORD;
 
-typedef struct _PH_IMAGELIST_ITEM
+typedef struct PH_IMAGELIST_ITEM
 {
     PPH_STRING FileName;
     ULONG LargeIconIndex;
     ULONG SmallIconIndex;
 } PH_IMAGELIST_ITEM, *PPH_IMAGELIST_ITEM;
 
-typedef struct _PH_PROCESS_ITEM
+typedef struct PH_PROCESS_ITEM
 {
     PH_HASH_ENTRY HashEntry;
     ULONG State;
@@ -302,7 +302,7 @@ typedef struct _PH_PROCESS_ITEM
 // An extra reference has been added to the process record for the statistics system.
 #define PH_PROCESS_RECORD_STAT_REF 0x2
 
-typedef struct _PH_PROCESS_RECORD
+typedef struct PH_PROCESS_RECORD
 {
     LIST_ENTRY ListEntry;
     LONG RefCount;
@@ -364,7 +364,7 @@ PhEnumProcessItems(
     );
 // end_phapppub
 
-typedef struct _PH_VERIFY_FILE_INFO *PPH_VERIFY_FILE_INFO;
+typedef struct PH_VERIFY_FILE_INFO *PPH_VERIFY_FILE_INFO;
 
 VERIFY_RESULT PhVerifyFileWithAdditionalCatalog(
     _In_ PPH_VERIFY_FILE_INFO Information,

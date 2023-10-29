@@ -140,7 +140,7 @@
 
 // Sorting
 
-typedef enum _PH_SORT_ORDER
+typedef enum PH_SORT_ORDER
 {
     NoSortOrder = 0,
     AscendingSortOrder,

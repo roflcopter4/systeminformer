@@ -44,7 +44,7 @@ extern "C" {
 /** The block is the beginning of a large allocation (one that spans several segments). */
 #define PH_FP_BLOCK_LARGE_ALLOCATION 0x1
 
-typedef struct _PH_FP_BLOCK_HEADER
+typedef struct PH_FP_BLOCK_HEADER
 {
     ULONG Flags; // PH_FP_BLOCK_*
     /** The number of blocks in the entire logical block, or the number
@@ -53,7 +53,7 @@ typedef struct _PH_FP_BLOCK_HEADER
     ULONGLONG Body;
 } PH_FP_BLOCK_HEADER, *PPH_FP_BLOCK_HEADER;
 
-typedef struct _PH_FP_SEGMENT_HEADER
+typedef struct PH_FP_SEGMENT_HEADER
 {
     ULONG Bitmap[PH_FP_BITMAP_SIZE];
     ULONG FreeBlocks;
@@ -64,7 +64,7 @@ typedef struct _PH_FP_SEGMENT_HEADER
 
 #define PH_FP_MAGIC ('loPF')
 
-typedef struct _PH_FP_FILE_HEADER
+typedef struct PH_FP_FILE_HEADER
 {
     ULONG Magic;
     ULONG SegmentShift;
@@ -75,7 +75,7 @@ typedef struct _PH_FP_FILE_HEADER
 
 // Runtime
 
-typedef struct _PH_FILE_POOL_PARAMETERS
+typedef struct PH_FILE_POOL_PARAMETERS
 {
     // File options
 
@@ -91,7 +91,7 @@ typedef struct _PH_FILE_POOL_PARAMETERS
     ULONG MaximumInactiveViews;
 } PH_FILE_POOL_PARAMETERS, *PPH_FILE_POOL_PARAMETERS;
 
-typedef struct _PH_FILE_POOL
+typedef struct PH_FILE_POOL
 {
     HANDLE FileHandle;
     HANDLE SectionHandle;

@@ -22,7 +22,7 @@
 
 #define MSG_UPDATE (WM_APP + 1)
 
-typedef struct _JOB_PAGE_CONTEXT
+typedef struct JOB_PAGE_CONTEXT
 {
     PPH_OPEN_OBJECT OpenObject;
     PVOID Context;

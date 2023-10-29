@@ -3,14 +3,14 @@
 
 #include <extmgr.h>
 
-typedef struct _PH_EM_OBJECT_TYPE_STATE
+typedef struct PH_EM_OBJECT_TYPE_STATE
 {
     SIZE_T InitialSize;
     SIZE_T ExtensionOffset;
     LIST_ENTRY ExtensionListHead;
 } PH_EM_OBJECT_TYPE_STATE, *PPH_EM_OBJECT_TYPE_STATE;
 
-typedef struct _PH_EM_OBJECT_EXTENSION
+typedef struct PH_EM_OBJECT_EXTENSION
 {
     LIST_ENTRY ListEntry;
     SIZE_T ExtensionSize;

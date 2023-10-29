@@ -40,7 +40,7 @@ static const ULONG NativeFrame = PH_THREAD_STACK_FRAME_I386;
 #define PH_SYMBOL_MODULE_FLAG_CHPE    0x00000001ul
 #define PH_SYMBOL_MODULE_FLAG_ARM64EC 0x00000002ul
 
-typedef struct _PH_SYMBOL_MODULE
+typedef struct PH_SYMBOL_MODULE
 {
     LIST_ENTRY ListEntry;
     PH_AVL_LINKS Links;
@@ -1211,7 +1211,7 @@ BOOLEAN PhLoadFileNameSymbolProvider(
         return FALSE;
 }
 
-typedef struct _PH_LOAD_SYMBOLS_CONTEXT
+typedef struct PH_LOAD_SYMBOLS_CONTEXT
 {
     PPH_SYMBOL_PROVIDER SymbolProvider;
 } PH_LOAD_SYMBOLS_CONTEXT, *PPH_LOAD_SYMBOLS_CONTEXT;
@@ -2478,7 +2478,7 @@ PPH_STRING PhUndecorateSymbolName(
     return undecoratedSymbolName;
 }
 
-typedef struct _PH_ENUMERATE_SYMBOLS_CONTEXT
+typedef struct PH_ENUMERATE_SYMBOLS_CONTEXT
 {
     PVOID UserContext;
     PPH_ENUMERATE_SYMBOLS_CALLBACK UserCallback;

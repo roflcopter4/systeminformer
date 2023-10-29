@@ -14,13 +14,13 @@
 #include <hndlinfo.h>
 #include <settings.h>
 
-typedef struct _HANDLE_STATISTICS_ENTRY
+typedef struct HANDLE_STATISTICS_ENTRY
 {
     PPH_STRING Name;
     ULONG Count;
 } HANDLE_STATISTICS_ENTRY, *PHANDLE_STATISTICS_ENTRY;
 
-typedef struct _HANDLE_STATISTICS_CONTEXT
+typedef struct HANDLE_STATISTICS_CONTEXT
 {
     HANDLE ProcessId;
     HANDLE ProcessHandle;

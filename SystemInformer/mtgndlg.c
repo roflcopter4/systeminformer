@@ -14,14 +14,14 @@
 #include <phsettings.h>
 #include <procmtgn.h>
 
-typedef struct _MITIGATION_POLICY_ENTRY
+typedef struct MITIGATION_POLICY_ENTRY
 {
     BOOLEAN NonStandard;
     PPH_STRING ShortDescription;
     PPH_STRING LongDescription;
 } MITIGATION_POLICY_ENTRY, *PMITIGATION_POLICY_ENTRY;
 
-typedef struct _MITIGATION_POLICY_CONTEXT
+typedef struct MITIGATION_POLICY_CONTEXT
 {
     HWND ListViewHandle;
     PPS_SYSTEM_DLL_INIT_BLOCK SystemDllInitBlock;

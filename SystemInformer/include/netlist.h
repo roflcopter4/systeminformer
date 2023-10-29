@@ -33,7 +33,7 @@
 #define PHNETLC_MAXIMUM 13
 
 // begin_phapppub
-typedef struct _PH_NETWORK_NODE
+typedef struct PH_NETWORK_NODE
 {
     PH_TREENEW_NODE Node;
 

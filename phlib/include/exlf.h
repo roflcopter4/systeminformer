@@ -248,7 +248,7 @@
 #define IMAGE_ELF_SIGNATURE 0x457f // "\x7fELF"
 #define ELFMAG ((BYTE[4]){ELFMAG0,ELFMAG1,ELFMAG2,ELFMAG3})
 
-typedef struct _ELF_IMAGE_HEADER
+typedef struct ELF_IMAGE_HEADER
 {
     union
     {
@@ -273,7 +273,7 @@ typedef struct _ELF_IMAGE_HEADER
     //};
 } ELF_IMAGE_HEADER, *PELF_IMAGE_HEADER;
 
-typedef struct _ELF_IMAGE_HEADER32
+typedef struct ELF_IMAGE_HEADER32
 {
     // ELF_IMAGE_HEADER Header;
     unsigned int e_entry; // Entry point virtual address.
@@ -288,7 +288,7 @@ typedef struct _ELF_IMAGE_HEADER32
     unsigned short e_shstrndx; // Section header string table index.
 } ELF_IMAGE_HEADER32, *PELF_IMAGE_HEADER32;
 
-typedef struct _ELF_IMAGE_HEADER64
+typedef struct ELF_IMAGE_HEADER64
 {
     // ELF_IMAGE_HEADER Header;
     unsigned long long e_entry; // Entry point virtual address.
@@ -303,7 +303,7 @@ typedef struct _ELF_IMAGE_HEADER64
     unsigned short e_shstrndx; // Section header string table index.
 } ELF_IMAGE_HEADER64, *PELF_IMAGE_HEADER64;
 
-typedef struct _ELF32_IMAGE_SEGMENT_HEADER
+typedef struct ELF32_IMAGE_SEGMENT_HEADER
 {
     unsigned int p_type; // Segment type.
     unsigned int p_offset; // Segment file offset.
@@ -315,7 +315,7 @@ typedef struct _ELF32_IMAGE_SEGMENT_HEADER
     unsigned int p_align; // Segment alignment.
 } ELF32_IMAGE_SEGMENT_HEADER;
 
-typedef struct _ELF64_IMAGE_SEGMENT_HEADER
+typedef struct ELF64_IMAGE_SEGMENT_HEADER
 {
     unsigned int p_type; // Segment type.
     unsigned int p_flags; // Segment flags.
@@ -334,7 +334,7 @@ typedef struct _ELF64_IMAGE_SEGMENT_HEADER
     ((PELF64_IMAGE_SEGMENT_HEADER)PTR_ADD_OFFSET(SegmentHeader, sizeof(ELF64_IMAGE_SEGMENT_HEADER) * Index))
     //((PELF64_IMAGE_SEGMENT_HEADER)&SegmentHeaderTable[Index])
 
-typedef struct _ELF32_IMAGE_SECTION_HEADER
+typedef struct ELF32_IMAGE_SECTION_HEADER
 {
     unsigned int sh_name;
     unsigned int sh_type;
@@ -348,7 +348,7 @@ typedef struct _ELF32_IMAGE_SECTION_HEADER
     unsigned int sh_entsize;
 } ELF32_IMAGE_SECTION_HEADER;
 
-typedef struct _ELF64_IMAGE_SECTION_HEADER
+typedef struct ELF64_IMAGE_SECTION_HEADER
 {
     unsigned int sh_name;            /* Section name, index in string tbl */
     unsigned int sh_type;            /* Type of section */
@@ -371,13 +371,13 @@ typedef struct _ELF64_IMAGE_SECTION_HEADER
 
 // ELF dynamic entries
 
-typedef struct _ELF32_IMAGE_DYNAMIC_ENTRY // Elf32_Dyn
+typedef struct ELF32_IMAGE_DYNAMIC_ENTRY // Elf32_Dyn
 {
     int d_tag;
     unsigned int d_val;
 } ELF32_IMAGE_DYNAMIC_ENTRY, *PELF32_IMAGE_DYNAMIC_ENTRY;
 
-typedef struct _ELF64_IMAGE_DYNAMIC_ENTRY // Elf64_Dyn
+typedef struct ELF64_IMAGE_DYNAMIC_ENTRY // Elf64_Dyn
 {
     long long d_tag;
     unsigned long long d_val;
@@ -385,7 +385,7 @@ typedef struct _ELF64_IMAGE_DYNAMIC_ENTRY // Elf64_Dyn
 
 // ELF symbol entries
 
-typedef struct _ELF_IMAGE_SYMBOL_ENTRY // Elf_Sym
+typedef struct ELF_IMAGE_SYMBOL_ENTRY // Elf_Sym
 {
     unsigned int st_name;
     unsigned char st_info;
@@ -397,7 +397,7 @@ typedef struct _ELF_IMAGE_SYMBOL_ENTRY // Elf_Sym
 
 // ELF version entires
 
-typedef struct _ELF_VERSION_TABLE // Elf_Versym
+typedef struct ELF_VERSION_TABLE // Elf_Versym
 {
     unsigned short vs_vers;
 } ELF_VERSION_TABLE, *PELF_VERSION_TABLE;
@@ -424,7 +424,7 @@ typedef struct
 #define VER_NEED_CURRENT 1 /* Current version */
 #define VER_NEED_NUM     2 /* Given version number */
 
-typedef struct _ELF_VERSION_NEED // Elf_Verneed
+typedef struct ELF_VERSION_NEED // Elf_Verneed
 {
     unsigned short vn_version;
     unsigned short vn_cnt;
@@ -433,7 +433,7 @@ typedef struct _ELF_VERSION_NEED // Elf_Verneed
     unsigned int vn_next;
 } ELF_VERSION_NEED, *PELF_VERSION_NEED;
 
-typedef struct _ELF_VERSION_AUX // Elf_Vernaux
+typedef struct ELF_VERSION_AUX // Elf_Vernaux
 {
     unsigned int vna_hash; // dependency name hash.
     unsigned short vna_flags; // flags (VER_FLG_*).

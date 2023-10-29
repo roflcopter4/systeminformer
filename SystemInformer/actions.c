@@ -1136,7 +1136,7 @@ VOID PhUiHandleComputerFirmwareApplicationMenu(
     }
 }
 
-typedef struct _PHP_USERSMENU_ENTRY
+typedef struct PHP_USERSMENU_ENTRY
 {
     ULONG SessionId;
     PPH_STRING UserName;

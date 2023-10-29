@@ -63,7 +63,7 @@
 
 #define PH_NATIVE_STRING_CONVERSION 1
 
-typedef struct _PHP_BASE_THREAD_CONTEXT
+typedef struct PHP_BASE_THREAD_CONTEXT
 {
     PUSER_THREAD_START_ROUTINE StartAddress;
     PVOID Parameter;

@@ -18,7 +18,7 @@
 static PH_STRINGREF EmptySectionsText = PH_STRINGREF_INIT(L"There are no sections to display.");
 static PH_STRINGREF LoadingSectionsText = PH_STRINGREF_INIT(L"Loading sections from image...");
 
-typedef enum _PV_SECTION_TREE_COLUMN_ITEM
+typedef enum PV_SECTION_TREE_COLUMN_ITEM
 {
     PV_SECTION_TREE_COLUMN_ITEM_INDEX,
     PV_SECTION_TREE_COLUMN_ITEM_NAME,
@@ -36,7 +36,7 @@ typedef enum _PV_SECTION_TREE_COLUMN_ITEM
     PV_SECTION_TREE_COLUMN_ITEM_MAXIMUM
 } PV_SECTION_TREE_COLUMN_ITEM;
 
-typedef struct _PV_SECTION_NODE
+typedef struct PV_SECTION_NODE
 {
     PH_TREENEW_NODE Node;
 
@@ -69,7 +69,7 @@ typedef struct _PV_SECTION_NODE
     PH_STRINGREF TextCache[PV_SECTION_TREE_COLUMN_ITEM_MAXIMUM];
 } PV_SECTION_NODE, *PPV_SECTION_NODE;
 
-typedef struct _PV_SECTION_CONTEXT
+typedef struct PV_SECTION_CONTEXT
 {
     HWND DialogHandle;
     HWND SearchHandle;
@@ -112,7 +112,7 @@ typedef struct _PV_SECTION_CONTEXT
     PPH_LIST NodeList;
 } PV_SECTION_CONTEXT, *PPV_SECTION_CONTEXT;
 
-typedef enum _SECTION_TREE_MENU_ITEM
+typedef enum SECTION_TREE_MENU_ITEM
 {
     SECTION_TREE_MENU_ITEM_HIDE_WRITE = 1,
     SECTION_TREE_MENU_ITEM_HIDE_EXECUTE,
@@ -724,7 +724,7 @@ VOID PvDeleteSectionTree(
     PhDereferenceObject(Context->NodeList);
 }
 
-struct _PH_TN_FILTER_SUPPORT* GetSectionListFilterSupport(
+struct PH_TN_FILTER_SUPPORT* GetSectionListFilterSupport(
     _In_ PPV_SECTION_CONTEXT Context
     )
 {

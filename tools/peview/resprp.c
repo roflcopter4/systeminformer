@@ -15,7 +15,7 @@
 static PH_STRINGREF EmptyResourcesText = PH_STRINGREF_INIT(L"There are no resources to display.");
 static PH_STRINGREF LoadingResourcesText = PH_STRINGREF_INIT(L"Loading resources from image...");
 
-typedef enum _PV_RESOURCES_TREE_COLUMN_ITEM
+typedef enum PV_RESOURCES_TREE_COLUMN_ITEM
 {
     PV_RESOURCES_TREE_COLUMN_ITEM_INDEX,
     PV_RESOURCES_TREE_COLUMN_ITEM_TYPE,
@@ -29,18 +29,18 @@ typedef enum _PV_RESOURCES_TREE_COLUMN_ITEM
     PV_RESOURCES_TREE_COLUMN_ITEM_MAXIMUM
 } PV_RESOURCES_TREE_COLUMN_ITEM;
 
-typedef enum _PV_RESOURCES_TREE_NODE_TYPE
+typedef enum PV_RESOURCES_TREE_NODE_TYPE
 {
     PV_RESOURCES_TREE_NODE_TYPE_IMAGE,
     PV_RESOURCES_TREE_NODE_TYPE_MUI,
     PV_RESOURCES_TREE_NODE_TYPE_MAXIMUM
 } PV_RESOURCES_TREE_NODE_TYPE;
 
-typedef struct _PV_RESOURCE_NODE
+typedef struct PV_RESOURCE_NODE
 {
     PH_TREENEW_NODE Node;
 
-    struct _PV_RESOURCE_NODE* Parent;
+    struct PV_RESOURCE_NODE* Parent;
     PPH_LIST Children;
     BOOLEAN HasChildren;
 
@@ -64,7 +64,7 @@ typedef struct _PV_RESOURCE_NODE
     PH_STRINGREF TextCache[PV_RESOURCES_TREE_COLUMN_ITEM_MAXIMUM];
 } PV_RESOURCE_NODE, *PPV_RESOURCE_NODE;
 
-typedef struct _PV_RESOURCES_CONTEXT
+typedef struct PV_RESOURCES_CONTEXT
 {
     HWND DialogHandle;
     HWND SearchHandle;
@@ -202,9 +202,9 @@ PPH_STRING PvpGetResourceTypeString(
         return PhCreateString(L"RT_ANICURSOR");
     case RT_MANIFEST:
         return PhCreateString(L"RT_MANIFEST");
+    default:
+        return PhFormatUInt64(Type, FALSE);
     }
-
-    return PhFormatUInt64((ULONG)Type, FALSE);
 }
 
 PPH_STRING PvpPeResourceDumpFileName(
@@ -616,7 +616,7 @@ INT_PTR CALLBACK PvPeResourcesDlgProc(
             switch (header->code)
             {
             case PSN_QUERYINITIALFOCUS:
-                SetWindowLongPtr(hwndDlg, DWLP_MSGRESULT, (LONG_PTR)context->TreeNewHandle);
+                SetWindowLongPtrW(hwndDlg, DWLP_MSGRESULT, (LONG_PTR)context->TreeNewHandle);
                 return TRUE;
             }
         }
@@ -722,6 +722,7 @@ INT_PTR CALLBACK PvPeResourcesDlgProc(
             return (INT_PTR)GetStockBrush(DC_BRUSH);
         }
         break;
+    default:;
     }
 
     return FALSE;
@@ -774,7 +775,7 @@ VOID PvDeleteResourcesTree(
     PhDereferenceObject(Context->NodeList);
 }
 
-struct _PH_TN_FILTER_SUPPORT* GetResourcesListFilterSupport(
+PH_TN_FILTER_SUPPORT* GetResourcesListFilterSupport(
     _In_ PPV_RESOURCES_CONTEXT Context
     )
 {

@@ -37,7 +37,7 @@ static HANDLE PhFindObjectsThreadHandle = NULL;
 static HWND PhFindObjectsWindowHandle = NULL;
 static PH_EVENT PhFindObjectsInitializedEvent = PH_EVENT_INIT;
 
-typedef struct _PH_HANDLE_SEARCH_CONTEXT
+typedef struct PH_HANDLE_SEARCH_CONTEXT
 {
     PH_LAYOUT_MANAGER LayoutManager;
     RECT MinimumSize;
@@ -68,14 +68,14 @@ typedef struct _PH_HANDLE_SEARCH_CONTEXT
     BOOLEAN UseSearchPointer;
 } PH_HANDLE_SEARCH_CONTEXT, *PPH_HANDLE_SEARCH_CONTEXT;
 
-typedef enum _PHP_OBJECT_RESULT_TYPE
+typedef enum PHP_OBJECT_RESULT_TYPE
 {
     HandleSearchResult,
     ModuleSearchResult,
     MappedFileSearchResult
 } PHP_OBJECT_RESULT_TYPE;
 
-typedef struct _PHP_OBJECT_SEARCH_RESULT
+typedef struct PHP_OBJECT_SEARCH_RESULT
 {
     HANDLE ProcessId;
     PHP_OBJECT_RESULT_TYPE ResultType;
@@ -89,7 +89,7 @@ typedef struct _PHP_OBJECT_SEARCH_RESULT
     SYSTEM_HANDLE_TABLE_ENTRY_INFO_EX Info;
 } PHP_OBJECT_SEARCH_RESULT, *PPHP_OBJECT_SEARCH_RESULT;
 
-typedef enum _PH_HANDLE_OBJECT_TREE_COLUMN_ITEM_NAME
+typedef enum PH_HANDLE_OBJECT_TREE_COLUMN_ITEM_NAME
 {
     PH_OBJECT_SEARCH_TREE_COLUMN_PROCESS,
     PH_OBJECT_SEARCH_TREE_COLUMN_TYPE,
@@ -101,7 +101,7 @@ typedef enum _PH_HANDLE_OBJECT_TREE_COLUMN_ITEM_NAME
     PH_OBJECT_SEARCH_TREE_COLUMN_MAXIMUM
 } PH_HANDLE_OBJECT_TREE_COLUMN_ITEM_NAME;
 
-typedef struct _PH_HANDLE_OBJECT_TREE_ROOT_NODE
+typedef struct PH_HANDLE_OBJECT_TREE_ROOT_NODE
 {
     PH_TREENEW_NODE Node;
     ULONG64 UniqueId; // used to stabilize sorting
@@ -835,7 +835,7 @@ static BOOLEAN MatchTypeString(
     return PhEqualStringRef(Input, &Context->SearchTypeString->sr, TRUE);
 }
 
-typedef struct _SEARCH_HANDLE_CONTEXT
+typedef struct SEARCH_HANDLE_CONTEXT
 {
     PPH_HANDLE_SEARCH_CONTEXT WindowContext;
     BOOLEAN NeedToFree;
@@ -908,7 +908,7 @@ static NTSTATUS NTAPI SearchHandleFunction(
     return STATUS_SUCCESS;
 }
 
-typedef struct _SEARCH_MODULE_CONTEXT
+typedef struct SEARCH_MODULE_CONTEXT
 {
     PPH_HANDLE_SEARCH_CONTEXT WindowContext;
     HANDLE ProcessId;

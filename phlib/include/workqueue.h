@@ -21,7 +21,7 @@ extern PPH_LIST PhDbgWorkQueueList;
 extern PH_QUEUED_LOCK PhDbgWorkQueueListLock;
 #endif
 
-typedef struct _PH_WORK_QUEUE
+typedef struct PH_WORK_QUEUE
 {
     PH_RUNDOWN_PROTECT RundownProtect;
     BOOLEAN Terminating;
@@ -45,7 +45,7 @@ typedef VOID (NTAPI *PPH_WORK_QUEUE_ITEM_DELETE_FUNCTION)(
     _In_ PVOID Context
     );
 
-typedef struct _PH_WORK_QUEUE_ENVIRONMENT
+typedef struct PH_WORK_QUEUE_ENVIRONMENT
 {
     LONG BasePriority : 6; // Base priority increment
     ULONG IoPriority : 3; // I/O priority hint

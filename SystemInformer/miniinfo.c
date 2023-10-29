@@ -926,7 +926,7 @@ VOID PhMipChangeSection(
 }
 
 VOID PhMipSetSectionText(
-    _In_ struct _PH_MINIINFO_SECTION *Section,
+    _In_ struct PH_MINIINFO_SECTION *Section,
     _In_opt_ PPH_STRING Text
     )
 {
@@ -1961,7 +1961,7 @@ VOID PhMipHandleListSectionCommand(
 }
 
 BOOLEAN PhMipCpuListSectionCallback(
-    _In_ struct _PH_MINIINFO_LIST_SECTION *ListSection,
+    _In_ struct PH_MINIINFO_LIST_SECTION *ListSection,
     _In_ PH_MINIINFO_LIST_SECTION_MESSAGE Message,
     _In_opt_ PVOID Parameter1,
     _In_opt_ PVOID Parameter2
@@ -2088,7 +2088,7 @@ int __cdecl PhMipCpuListSectionNodeCompareFunction(
 }
 
 BOOLEAN PhMipCommitListSectionCallback(
-    _In_ struct _PH_MINIINFO_LIST_SECTION *ListSection,
+    _In_ struct PH_MINIINFO_LIST_SECTION *ListSection,
     _In_ PH_MINIINFO_LIST_SECTION_MESSAGE Message,
     _In_opt_ PVOID Parameter1,
     _In_opt_ PVOID Parameter2
@@ -2197,7 +2197,7 @@ int __cdecl PhMipCommitListSectionNodeCompareFunction(
 }
 
 BOOLEAN PhMipPhysicalListSectionCallback(
-    _In_ struct _PH_MINIINFO_LIST_SECTION *ListSection,
+    _In_ struct PH_MINIINFO_LIST_SECTION *ListSection,
     _In_ PH_MINIINFO_LIST_SECTION_MESSAGE Message,
     _In_opt_ PVOID Parameter1,
     _In_opt_ PVOID Parameter2
@@ -2308,7 +2308,7 @@ int __cdecl PhMipPhysicalListSectionNodeCompareFunction(
 }
 
 BOOLEAN PhMipIoListSectionCallback(
-    _In_ struct _PH_MINIINFO_LIST_SECTION *ListSection,
+    _In_ struct PH_MINIINFO_LIST_SECTION *ListSection,
     _In_ PH_MINIINFO_LIST_SECTION_MESSAGE Message,
     _In_opt_ PVOID Parameter1,
     _In_opt_ PVOID Parameter2

@@ -20,7 +20,7 @@
 
 #define WM_PV_HASH_FINISHED (WM_APP + 701)
 
-typedef struct _PV_PE_HASHWND_CONTEXT
+typedef struct PV_PE_HASHWND_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;
@@ -28,7 +28,7 @@ typedef struct _PV_PE_HASHWND_CONTEXT
     PPV_PROPPAGECONTEXT PropSheetContext;
 } PV_PE_HASHWND_CONTEXT, *PPV_PE_HASHWND_CONTEXT;
 
-typedef struct _PV_HASH_CONTEXT
+typedef struct PV_HASH_CONTEXT
 {
     BCRYPT_ALG_HANDLE HashAlgHandle;
     BCRYPT_KEY_HANDLE KeyHandle;
@@ -39,7 +39,7 @@ typedef struct _PV_HASH_CONTEXT
     PVOID Hash;
 } PV_HASH_CONTEXT, *PPV_HASH_CONTEXT;
 
-typedef struct _PV_PE_HASH_RESULTS
+typedef struct PV_PE_HASH_RESULTS
 {
     BOOLEAN ImageHasImports;
 
@@ -63,20 +63,20 @@ typedef struct _PV_PE_HASH_RESULTS
 } PV_PE_HASH_RESULTS, *PPV_PE_HASH_RESULTS;
 
 #include <pshpack1.h>
-typedef struct _SPC_PE_IMAGE_PAGE_HASHES_V1
+typedef struct SPC_PE_IMAGE_PAGE_HASHES_V1
 {
     ULONG PageOffset;
     BYTE PageHash[20]; // SHA-1
 } SPC_PE_IMAGE_PAGE_HASHES_V1, *PSPC_PE_IMAGE_PAGE_HASHES_V1;
 
-typedef struct _SPC_PE_IMAGE_PAGE_HASHES_V2
+typedef struct SPC_PE_IMAGE_PAGE_HASHES_V2
 {
     ULONG PageOffset;
     BYTE PageHash[32]; // SHA-256
 } SPC_PE_IMAGE_PAGE_HASHES_V2, *PSPC_PE_IMAGE_PAGE_HASHES_V2;
 #include <poppack.h>
 
-typedef enum _PV_HASHLIST_CATEGORY
+typedef enum PV_HASHLIST_CATEGORY
 {
     PV_HASHLIST_CATEGORY_FILEHASH,
     PV_HASHLIST_CATEGORY_IMPORTHASH,
@@ -87,7 +87,7 @@ typedef enum _PV_HASHLIST_CATEGORY
     PV_HASHLIST_CATEGORY_MAXIMUM
 } PV_HASHLIST_CATEGORY;
 
-typedef enum _PV_HASHLIST_INDEX
+typedef enum PV_HASHLIST_INDEX
 {
     PV_HASHLIST_INDEX_CRC32,
     PV_HASHLIST_INDEX_MD5,
@@ -844,7 +844,7 @@ PvGenerateOrdinalHashtable(
     return PvGenerateOrdinalHashtableStringRef(&fileName);
 }
 
-typedef struct _PV_IMPHASH_ORDINAL_CACHE
+typedef struct PV_IMPHASH_ORDINAL_CACHE
 {
     PPH_HASHTABLE Oleaut32Hashtable;
     PPH_HASHTABLE Ws232Hashtable;

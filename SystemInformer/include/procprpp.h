@@ -22,7 +22,7 @@
 #include <memlist.h>
 #include <memprv.h>
 
-typedef struct _PH_PROCESS_PROPSHEETCONTEXT
+typedef struct PH_PROCESS_PROPSHEETCONTEXT
 {
     WNDPROC PropSheetWindowHookProc;
     PH_LAYOUT_MANAGER LayoutManager;
@@ -196,7 +196,7 @@ extern PH_STRINGREF PhProcessPropPageLoadingText;
 #define WM_PH_THREAD_SELECTION_CHANGED (WM_APP + 201)
 
 // begin_phapppub
-typedef struct _PH_THREADS_CONTEXT
+typedef struct PH_THREADS_CONTEXT
 {
     PPH_THREAD_PROVIDER Provider;
     PH_CALLBACK_REGISTRATION ProviderRegistration;
@@ -232,7 +232,7 @@ typedef struct _PH_THREADS_CONTEXT
 #define WM_PH_MODULES_UPDATED (WM_APP + 210)
 
 // begin_phapppub
-typedef struct _PH_MODULES_CONTEXT
+typedef struct PH_MODULES_CONTEXT
 {
     PPH_MODULE_PROVIDER Provider;
     PH_PROVIDER_REGISTRATION ProviderRegistration;
@@ -266,7 +266,7 @@ typedef struct _PH_MODULES_CONTEXT
 #define WM_PH_HANDLES_UPDATED (WM_APP + 220)
 
 // begin_phapppub
-typedef struct _PH_HANDLES_CONTEXT
+typedef struct PH_HANDLES_CONTEXT
 {
     PPH_HANDLE_PROVIDER Provider;
     PH_PROVIDER_REGISTRATION ProviderRegistration;
@@ -304,7 +304,7 @@ typedef struct _PH_HANDLES_CONTEXT
 // end_phapppub
 
 // begin_phapppub
-typedef struct _PH_MEMORY_CONTEXT
+typedef struct PH_MEMORY_CONTEXT
 {
     HANDLE ProcessId;
     HWND WindowHandle;
@@ -337,7 +337,7 @@ typedef struct _PH_MEMORY_CONTEXT
 
 #define WM_PH_STATISTICS_UPDATE (WM_APP + 231)
 
-typedef struct _PH_STATISTICS_CONTEXT
+typedef struct PH_STATISTICS_CONTEXT
 {
     PH_CALLBACK_REGISTRATION ProcessesUpdatedRegistration;
     HWND WindowHandle;
@@ -376,7 +376,7 @@ typedef struct _PH_STATISTICS_CONTEXT
 
 #define WM_PH_PERFORMANCE_UPDATE (WM_APP + 241)
 
-typedef struct _PH_PERFORMANCE_CONTEXT
+typedef struct PH_PERFORMANCE_CONTEXT
 {
     PH_CALLBACK_REGISTRATION ProcessesUpdatedRegistration;
 
@@ -397,13 +397,13 @@ typedef struct _PH_PERFORMANCE_CONTEXT
     HWND IoGroupBox;
 } PH_PERFORMANCE_CONTEXT, *PPH_PERFORMANCE_CONTEXT;
 
-typedef struct _PH_ENVIRONMENT_ITEM
+typedef struct PH_ENVIRONMENT_ITEM
 {
     PPH_STRING Name;
     PPH_STRING Value;
 } PH_ENVIRONMENT_ITEM, *PPH_ENVIRONMENT_ITEM;
 
-typedef struct _PH_ENVIRONMENT_CONTEXT
+typedef struct PH_ENVIRONMENT_CONTEXT
 {
     HWND WindowHandle;
     HWND TreeNewHandle;

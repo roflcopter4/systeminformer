@@ -20,7 +20,7 @@
 
 #include <extmgri.h>
 
-typedef struct _PHP_CREATE_HANDLE_ITEM_CONTEXT
+typedef struct PHP_CREATE_HANDLE_ITEM_CONTEXT
 {
     PPH_HANDLE_PROVIDER Provider;
     PSYSTEM_HANDLE_TABLE_ENTRY_INFO_EX Handle;

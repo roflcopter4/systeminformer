@@ -1,7 +1,7 @@
 #ifndef PH_MEMSRCH_H
 #define PH_MEMSRCH_H
 
-typedef struct _PH_MEMORY_RESULT
+typedef struct PH_MEMORY_RESULT
 {
     LONG RefCount;
     PVOID Address;
@@ -17,14 +17,14 @@ typedef VOID (NTAPI *PPH_MEMORY_RESULT_CALLBACK)(
 
 #define PH_DISPLAY_BUFFER_COUNT (PAGE_SIZE * 2 - 1)
 
-typedef struct _PH_MEMORY_SEARCH_OPTIONS
+typedef struct PH_MEMORY_SEARCH_OPTIONS
 {
     BOOLEAN Cancel;
     PPH_MEMORY_RESULT_CALLBACK Callback;
     PVOID Context;
 } PH_MEMORY_SEARCH_OPTIONS, *PPH_MEMORY_SEARCH_OPTIONS;
 
-typedef struct _PH_MEMORY_STRING_OPTIONS
+typedef struct PH_MEMORY_STRING_OPTIONS
 {
     PH_MEMORY_SEARCH_OPTIONS Header;
 

@@ -17,7 +17,7 @@
 extern "C" {
 #endif
 
-typedef struct T___(_PH_CIRCULAR_BUFFER, T)
+typedef struct T___(PH_CIRCULAR_BUFFER, T)
 {
     ULONG Size;
 #ifdef PH_CIRCULAR_BUFFER_POWER_OF_TWO_SIZE

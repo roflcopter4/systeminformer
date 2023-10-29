@@ -10,7 +10,7 @@ extern "C" {
 #define PH_TREENEW_SEARCH_TIMEOUT 1000
 #define PH_TREENEW_SEARCH_MAXIMUM_LENGTH 1023
 
-typedef struct _PH_TREENEW_CREATEPARAMS
+typedef struct PH_TREENEW_CREATEPARAMS
 {
     ULONG Size;
     COLORREF TextColor;
@@ -20,7 +20,7 @@ typedef struct _PH_TREENEW_CREATEPARAMS
     // Add new fields here.
 } PH_TREENEW_CREATEPARAMS, *PPH_TREENEW_CREATEPARAMS;
 
-typedef struct _PH_TREENEW_COLUMN
+typedef struct PH_TREENEW_COLUMN
 {
     union
     {
@@ -51,7 +51,7 @@ typedef struct _PH_TREENEW_COLUMN
     } s;
 } PH_TREENEW_COLUMN, *PPH_TREENEW_COLUMN;
 
-typedef struct _PH_TREENEW_NODE
+typedef struct PH_TREENEW_NODE
 {
     union
     {
@@ -175,7 +175,7 @@ typedef struct _PH_TREENEW_NODE
 // Auto-size flags
 #define TN_AUTOSIZE_REMAINING_SPACE 0x1
 
-typedef struct _PH_TREENEW_CELL_PARTS
+typedef struct PH_TREENEW_CELL_PARTS
 {
     ULONG Flags;
     RECT RowRect;
@@ -188,7 +188,7 @@ typedef struct _PH_TREENEW_CELL_PARTS
     HFONT Font; // TN_PART_TEXT
 } PH_TREENEW_CELL_PARTS, *PPH_TREENEW_CELL_PARTS;
 
-typedef struct _PH_TREENEW_HIT_TEST
+typedef struct PH_TREENEW_HIT_TEST
 {
     POINT Point;
     ULONG InFlags;
@@ -198,7 +198,7 @@ typedef struct _PH_TREENEW_HIT_TEST
     PPH_TREENEW_COLUMN Column; // requires TN_TEST_COLUMN
 } PH_TREENEW_HIT_TEST, *PPH_TREENEW_HIT_TEST;
 
-typedef enum _PH_TREENEW_MESSAGE
+typedef enum PH_TREENEW_MESSAGE
 {
     TreeNewGetChildren, // PPH_TREENEW_GET_CHILDREN Parameter1
     TreeNewIsLeaf, // PPH_TREENEW_IS_LEAF Parameter1
@@ -246,7 +246,7 @@ typedef BOOLEAN (NTAPI *PPH_TREENEW_CALLBACK)(
     _In_opt_ PVOID Context
     );
 
-typedef struct _PH_TREENEW_GET_CHILDREN
+typedef struct PH_TREENEW_GET_CHILDREN
 {
     ULONG Flags;
     PPH_TREENEW_NODE Node;
@@ -255,7 +255,7 @@ typedef struct _PH_TREENEW_GET_CHILDREN
     PPH_TREENEW_NODE *Children; // can be NULL if no children
 } PH_TREENEW_GET_CHILDREN, *PPH_TREENEW_GET_CHILDREN;
 
-typedef struct _PH_TREENEW_IS_LEAF
+typedef struct PH_TREENEW_IS_LEAF
 {
     ULONG Flags;
     PPH_TREENEW_NODE Node;
@@ -263,7 +263,7 @@ typedef struct _PH_TREENEW_IS_LEAF
     BOOLEAN IsLeaf;
 } PH_TREENEW_IS_LEAF, *PPH_TREENEW_IS_LEAF;
 
-typedef struct _PH_TREENEW_GET_CELL_TEXT
+typedef struct PH_TREENEW_GET_CELL_TEXT
 {
     ULONG Flags;
     PPH_TREENEW_NODE Node;
@@ -272,7 +272,7 @@ typedef struct _PH_TREENEW_GET_CELL_TEXT
     PH_STRINGREF Text;
 } PH_TREENEW_GET_CELL_TEXT, *PPH_TREENEW_GET_CELL_TEXT;
 
-typedef struct _PH_TREENEW_GET_NODE_COLOR
+typedef struct PH_TREENEW_GET_NODE_COLOR
 {
     ULONG Flags;
     PPH_TREENEW_NODE Node;
@@ -281,7 +281,7 @@ typedef struct _PH_TREENEW_GET_NODE_COLOR
     COLORREF ForeColor;
 } PH_TREENEW_GET_NODE_COLOR, *PPH_TREENEW_GET_NODE_COLOR;
 
-typedef struct _PH_TREENEW_GET_NODE_FONT
+typedef struct PH_TREENEW_GET_NODE_FONT
 {
     ULONG Flags;
     PPH_TREENEW_NODE Node;
@@ -289,7 +289,7 @@ typedef struct _PH_TREENEW_GET_NODE_FONT
     HFONT Font;
 } PH_TREENEW_GET_NODE_FONT, *PPH_TREENEW_GET_NODE_FONT;
 
-typedef struct _PH_TREENEW_GET_NODE_ICON
+typedef struct PH_TREENEW_GET_NODE_ICON
 {
     ULONG Flags;
     PPH_TREENEW_NODE Node;
@@ -297,7 +297,7 @@ typedef struct _PH_TREENEW_GET_NODE_ICON
     HICON Icon;
 } PH_TREENEW_GET_NODE_ICON, *PPH_TREENEW_GET_NODE_ICON;
 
-typedef struct _PH_TREENEW_GET_CELL_TOOLTIP
+typedef struct PH_TREENEW_GET_CELL_TOOLTIP
 {
     ULONG Flags;
     PPH_TREENEW_NODE Node;
@@ -309,7 +309,7 @@ typedef struct _PH_TREENEW_GET_CELL_TOOLTIP
     ULONG MaximumWidth;
 } PH_TREENEW_GET_CELL_TOOLTIP, *PPH_TREENEW_GET_CELL_TOOLTIP;
 
-typedef struct _PH_TREENEW_CUSTOM_DRAW
+typedef struct PH_TREENEW_CUSTOM_DRAW
 {
     PPH_TREENEW_NODE Node;
     PPH_TREENEW_COLUMN Column;
@@ -319,7 +319,7 @@ typedef struct _PH_TREENEW_CUSTOM_DRAW
     RECT TextRect;
 } PH_TREENEW_CUSTOM_DRAW, *PPH_TREENEW_CUSTOM_DRAW;
 
-typedef struct _PH_TREENEW_MOUSE_EVENT
+typedef struct PH_TREENEW_MOUSE_EVENT
 {
     POINT Location;
     PPH_TREENEW_NODE Node;
@@ -327,14 +327,14 @@ typedef struct _PH_TREENEW_MOUSE_EVENT
     ULONG KeyFlags;
 } PH_TREENEW_MOUSE_EVENT, *PPH_TREENEW_MOUSE_EVENT;
 
-typedef struct _PH_TREENEW_KEY_EVENT
+typedef struct PH_TREENEW_KEY_EVENT
 {
     BOOLEAN Handled;
     ULONG VirtualKey;
     ULONG Data;
 } PH_TREENEW_KEY_EVENT, *PPH_TREENEW_KEY_EVENT;
 
-typedef struct _PH_TREENEW_NODE_EVENT
+typedef struct PH_TREENEW_NODE_EVENT
 {
     BOOLEAN Handled;
     ULONG Flags;
@@ -342,7 +342,7 @@ typedef struct _PH_TREENEW_NODE_EVENT
     PVOID Reserved2;
 } PH_TREENEW_NODE_EVENT, *PPH_TREENEW_NODE_EVENT;
 
-typedef struct _PH_TREENEW_CONTEXT_MENU
+typedef struct PH_TREENEW_CONTEXT_MENU
 {
     POINT Location;
     POINT ClientLocation;
@@ -351,7 +351,7 @@ typedef struct _PH_TREENEW_CONTEXT_MENU
     BOOLEAN KeyboardInvoked;
 } PH_TREENEW_CONTEXT_MENU, *PPH_TREENEW_CONTEXT_MENU;
 
-typedef struct _PH_TREENEW_HEADER_MOUSE_EVENT
+typedef struct PH_TREENEW_HEADER_MOUSE_EVENT
 {
     POINT ScreenLocation;
     POINT Location;
@@ -359,7 +359,7 @@ typedef struct _PH_TREENEW_HEADER_MOUSE_EVENT
     PPH_TREENEW_COLUMN Column;
 } PH_TREENEW_HEADER_MOUSE_EVENT, *PPH_TREENEW_HEADER_MOUSE_EVENT;
 
-typedef struct _PH_TREENEW_SEARCH_EVENT
+typedef struct PH_TREENEW_SEARCH_EVENT
 {
     LONG FoundIndex;
     LONG StartIndex;
@@ -368,7 +368,7 @@ typedef struct _PH_TREENEW_SEARCH_EVENT
 
 #define PH_TREENEW_HEADER_TEXT_SIZE_MAX 0x40
 
-typedef struct _PH_TREENEW_GET_HEADER_TEXT
+typedef struct PH_TREENEW_GET_HEADER_TEXT
 {
     PPH_TREENEW_COLUMN Column;
     PH_STRINGREF Text;
@@ -376,7 +376,7 @@ typedef struct _PH_TREENEW_GET_HEADER_TEXT
     ULONG TextCacheSize;
 } PH_TREENEW_GET_HEADER_TEXT, *PPH_TREENEW_GET_HEADER_TEXT;
 
-typedef struct _PH_TREENEW_SET_HEADER_CACHE
+typedef struct PH_TREENEW_SET_HEADER_CACHE
 {
     ULONG HeaderTreeColumnMax;
     PVOID HeaderTreeColumnStringCache;
@@ -580,7 +580,7 @@ typedef struct _PH_TREENEW_SET_HEADER_CACHE
 #define TreeNew_GetVisibleColumn(hWnd, Index, Column) \
     SendMessage((hWnd), TNM_GETVISIBLECOLUMN, (WPARAM)(Index), (LPARAM)(Column))
 
-typedef struct _PH_TREENEW_VIEW_PARTS
+typedef struct PH_TREENEW_VIEW_PARTS
 {
     RECT ClientRect;
     LONG HeaderHeight;

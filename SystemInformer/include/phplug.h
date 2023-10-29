@@ -20,7 +20,7 @@
 // begin_phapppub
 // Callbacks
 
-typedef enum _PH_GENERAL_CALLBACK
+typedef enum PH_GENERAL_CALLBACK
 {
     GeneralCallbackMainWindowShowing = 0, // INT ShowCommand [main thread]
     GeneralCallbackProcessesUpdated = 1, // [main thread]
@@ -82,7 +82,7 @@ typedef enum _PH_GENERAL_CALLBACK
     GeneralCallbackMaximum
 } PH_GENERAL_CALLBACK, *PPH_GENERAL_CALLBACK;
 
-typedef enum _PH_PLUGIN_CALLBACK
+typedef enum PH_PLUGIN_CALLBACK
 {
     PluginCallbackLoad = 0, // PPH_LIST Parameters [main thread] // list of strings, might be NULL
     PluginCallbackUnload = 1, // BOOLEAN SessionEnding [main thread]
@@ -94,7 +94,7 @@ typedef enum _PH_PLUGIN_CALLBACK
     PluginCallbackMaximum
 } PH_PLUGIN_CALLBACK, *PPH_PLUGIN_CALLBACK;
 
-typedef struct _PH_PLUGIN_GET_HIGHLIGHTING_COLOR
+typedef struct PH_PLUGIN_GET_HIGHLIGHTING_COLOR
 {
     // Parameter is:
     // PPH_PROCESS_ITEM for GeneralCallbackGetProcessHighlightingColor
@@ -106,7 +106,7 @@ typedef struct _PH_PLUGIN_GET_HIGHLIGHTING_COLOR
     BOOLEAN Cache;
 } PH_PLUGIN_GET_HIGHLIGHTING_COLOR, *PPH_PLUGIN_GET_HIGHLIGHTING_COLOR;
 
-typedef struct _PH_PLUGIN_GET_TOOLTIP_TEXT
+typedef struct PH_PLUGIN_GET_TOOLTIP_TEXT
 {
     // Parameter is:
     // PPH_PROCESS_ITEM for GeneralCallbackGetProcessTooltipText
@@ -116,13 +116,13 @@ typedef struct _PH_PLUGIN_GET_TOOLTIP_TEXT
     ULONG ValidForMs;
 } PH_PLUGIN_GET_TOOLTIP_TEXT, *PPH_PLUGIN_GET_TOOLTIP_TEXT;
 
-typedef struct _PH_PLUGIN_PROCESS_PROPCONTEXT
+typedef struct PH_PLUGIN_PROCESS_PROPCONTEXT
 {
     PPH_PROCESS_PROPCONTEXT PropContext;
     PPH_PROCESS_ITEM ProcessItem;
 } PH_PLUGIN_PROCESS_PROPCONTEXT, *PPH_PLUGIN_PROCESS_PROPCONTEXT;
 
-typedef struct _PH_PLUGIN_NOTIFY_EVENT
+typedef struct PH_PLUGIN_NOTIFY_EVENT
 {
     // Parameter is:
     // PPH_PROCESS_ITEM for Type = PH_NOTIFY_PROCESS_*
@@ -134,7 +134,7 @@ typedef struct _PH_PLUGIN_NOTIFY_EVENT
     PVOID Parameter;
 } PH_PLUGIN_NOTIFY_EVENT, *PPH_PLUGIN_NOTIFY_EVENT;
 
-typedef struct _PH_PLUGIN_OBJECT_PROPERTIES
+typedef struct PH_PLUGIN_OBJECT_PROPERTIES
 {
     // Parameter is:
     // PPH_SERVICE_ITEM for GeneralCallbackServicePropertiesInitializing
@@ -146,7 +146,7 @@ typedef struct _PH_PLUGIN_OBJECT_PROPERTIES
     HPROPSHEETPAGE *Pages;
 } PH_PLUGIN_OBJECT_PROPERTIES, *PPH_PLUGIN_OBJECT_PROPERTIES;
 
-typedef struct _PH_PLUGIN_PROCESS_STATS_EVENT
+typedef struct PH_PLUGIN_PROCESS_STATS_EVENT
 {
     ULONG Version;
     ULONG Type;
@@ -154,17 +154,17 @@ typedef struct _PH_PLUGIN_PROCESS_STATS_EVENT
     PVOID Parameter;
 } PH_PLUGIN_PROCESS_STATS_EVENT, *PPH_PLUGIN_PROCESS_STATS_EVENT;
 
-typedef struct _PH_PLUGIN_HANDLE_PROPERTIES_CONTEXT
+typedef struct PH_PLUGIN_HANDLE_PROPERTIES_CONTEXT
 {
     HANDLE ProcessId;
     PPH_HANDLE_ITEM HandleItem;
 } PH_PLUGIN_HANDLE_PROPERTIES_CONTEXT, *PPH_PLUGIN_HANDLE_PROPERTIES_CONTEXT;
 
-typedef struct _PH_EMENU_ITEM *PPH_EMENU_ITEM, *PPH_EMENU;
+typedef struct PH_EMENU_ITEM *PPH_EMENU_ITEM, *PPH_EMENU;
 
 #define PH_PLUGIN_MENU_DISALLOW_HOOKS 0x1
 
-typedef struct _PH_PLUGIN_MENU_INFORMATION
+typedef struct PH_PLUGIN_MENU_INFORMATION
 {
     PPH_EMENU Menu;
     HWND OwnerWindow;
@@ -231,7 +231,7 @@ typedef struct _PH_PLUGIN_MENU_INFORMATION
 
 C_ASSERT(RTL_FIELD_SIZE(PH_PLUGIN_MENU_INFORMATION, u) == RTL_FIELD_SIZE(PH_PLUGIN_MENU_INFORMATION, u.DoNotUse));
 
-typedef struct _PH_PLUGIN_MENU_HOOK_INFORMATION
+typedef struct PH_PLUGIN_MENU_HOOK_INFORMATION
 {
     PPH_PLUGIN_MENU_INFORMATION MenuInfo;
     PPH_EMENU SelectedItem;
@@ -239,14 +239,14 @@ typedef struct _PH_PLUGIN_MENU_HOOK_INFORMATION
     BOOLEAN Handled;
 } PH_PLUGIN_MENU_HOOK_INFORMATION, *PPH_PLUGIN_MENU_HOOK_INFORMATION;
 
-typedef struct _PH_PLUGIN_TREENEW_INFORMATION
+typedef struct PH_PLUGIN_TREENEW_INFORMATION
 {
     HWND TreeNewHandle;
     PVOID CmData;
     PVOID SystemContext; // e.g. PPH_THREADS_CONTEXT
 } PH_PLUGIN_TREENEW_INFORMATION, *PPH_PLUGIN_TREENEW_INFORMATION;
 
-typedef enum _PH_PLUGIN_THREAD_STACK_CONTROL_TYPE
+typedef enum PH_PLUGIN_THREAD_STACK_CONTROL_TYPE
 {
     PluginThreadStackInitializing,
     PluginThreadStackUninitializing,
@@ -258,15 +258,15 @@ typedef enum _PH_PLUGIN_THREAD_STACK_CONTROL_TYPE
     PluginThreadStackMaximum
 } PH_PLUGIN_THREAD_STACK_CONTROL_TYPE;
 
-typedef struct _PH_SYMBOL_PROVIDER *PPH_SYMBOL_PROVIDER;
-typedef struct _PH_THREAD_STACK_FRAME *PPH_THREAD_STACK_FRAME;
+typedef struct PH_SYMBOL_PROVIDER *PPH_SYMBOL_PROVIDER;
+typedef struct PH_THREAD_STACK_FRAME *PPH_THREAD_STACK_FRAME;
 
 typedef BOOLEAN (NTAPI *PPH_PLUGIN_WALK_THREAD_STACK_CALLBACK)(
     _In_ PPH_THREAD_STACK_FRAME StackFrame,
     _In_opt_ PVOID Context
     );
 
-typedef struct _PH_PLUGIN_THREAD_STACK_CONTROL
+typedef struct PH_PLUGIN_THREAD_STACK_CONTROL
 {
     PH_PLUGIN_THREAD_STACK_CONTROL_TYPE Type;
     PVOID UniqueKey;
@@ -306,13 +306,13 @@ typedef struct _PH_PLUGIN_THREAD_STACK_CONTROL
     } u;
 } PH_PLUGIN_THREAD_STACK_CONTROL, *PPH_PLUGIN_THREAD_STACK_CONTROL;
 
-typedef enum _PH_PLUGIN_MEMORY_ITEM_LIST_CONTROL_TYPE
+typedef enum PH_PLUGIN_MEMORY_ITEM_LIST_CONTROL_TYPE
 {
     PluginMemoryItemListInitialized,
     PluginMemoryItemListMaximum
 } PH_PLUGIN_MEMORY_ITEM_LIST_CONTROL_TYPE;
 
-typedef struct _PH_PLUGIN_MEMORY_ITEM_LIST_CONTROL
+typedef struct PH_PLUGIN_MEMORY_ITEM_LIST_CONTROL
 {
     PH_PLUGIN_MEMORY_ITEM_LIST_CONTROL_TYPE Type;
 
@@ -341,7 +341,7 @@ typedef VOID (NTAPI *PPH_SYSINFO_RESTORE_SUMMARY_VIEW)(
     VOID
     );
 
-typedef struct _PH_PLUGIN_SYSINFO_POINTERS
+typedef struct PH_PLUGIN_SYSINFO_POINTERS
 {
     HWND WindowHandle;
     PPH_SYSINFO_CREATE_SECTION CreateSection;
@@ -364,7 +364,7 @@ typedef PPH_MINIINFO_LIST_SECTION (NTAPI *PPH_MINIINFO_CREATE_LIST_SECTION)(
     _In_ PPH_MINIINFO_LIST_SECTION Template
     );
 
-typedef struct _PH_PLUGIN_MINIINFO_POINTERS
+typedef struct PH_PLUGIN_MINIINFO_POINTERS
 {
     HWND WindowHandle;
     PPH_MINIINFO_CREATE_SECTION CreateSection;
@@ -374,8 +374,8 @@ typedef struct _PH_PLUGIN_MINIINFO_POINTERS
 // end_phapppub
 
 // begin_phapppub
-typedef struct _PH_NF_ICON_REGISTRATION_DATA *PPH_NF_ICON_REGISTRATION_DATA;
-typedef struct _PH_PLUGIN *PPH_PLUGIN;
+typedef struct PH_NF_ICON_REGISTRATION_DATA *PPH_NF_ICON_REGISTRATION_DATA;
+typedef struct PH_PLUGIN *PPH_PLUGIN;
 
 /**
  * Creates a notification icon.
@@ -401,14 +401,14 @@ typedef PPH_PLUGIN (NTAPI *PPH_REGISTER_TRAY_ICON)(
     _In_ PPH_NF_ICON_REGISTRATION_DATA RegistrationData
     );
 
-typedef struct _PH_TRAY_ICON_POINTERS
+typedef struct PH_TRAY_ICON_POINTERS
 {
     PPH_REGISTER_TRAY_ICON RegisterTrayIcon;
 } PH_TRAY_ICON_POINTERS, *PPH_TRAY_ICON_POINTERS;
 // end_phapppub
 
 // begin_phapppub
-typedef struct _PH_OPTIONS_SECTION
+typedef struct PH_OPTIONS_SECTION
 {
     PH_STRINGREF Name;
     // end_phapppub
@@ -441,7 +441,7 @@ typedef VOID (NTAPI *PPH_OPTIONS_ENTER_SECTION_VIEW)(
     _In_ PPH_OPTIONS_SECTION NewSection
     );
 
-typedef struct _PH_PLUGIN_OPTIONS_POINTERS
+typedef struct PH_PLUGIN_OPTIONS_POINTERS
 {
     HWND WindowHandle;
     PPH_OPTIONS_CREATE_SECTION CreateSection;
@@ -451,7 +451,7 @@ typedef struct _PH_PLUGIN_OPTIONS_POINTERS
 // end_phapppub
 
 // begin_phapppub
-typedef struct _PH_PLUGIN_TREENEW_MESSAGE
+typedef struct PH_PLUGIN_TREENEW_MESSAGE
 {
     HWND TreeNewHandle;
     PH_TREENEW_MESSAGE Message;
@@ -495,7 +495,7 @@ typedef PHSVC_SERVER_PROBE_BUFFER *PPHSVC_SERVER_PROBE_BUFFER;
 typedef PHSVC_SERVER_CAPTURE_BUFFER *PPHSVC_SERVER_CAPTURE_BUFFER;
 typedef PHSVC_SERVER_CAPTURE_STRING *PPHSVC_SERVER_CAPTURE_STRING;
 
-typedef struct _PH_PLUGIN_PHSVC_REQUEST
+typedef struct PH_PLUGIN_PHSVC_REQUEST
 {
     ULONG SubId;
     NTSTATUS ReturnStatus;
@@ -519,7 +519,7 @@ typedef PVOID (NTAPI *PPHSVC_CLIENT_CREATE_STRING)(
     _Out_ PPH_RELATIVE_STRINGREF StringRef
     );
 
-typedef struct _PH_PLUGIN_PHSVC_CLIENT
+typedef struct PH_PLUGIN_PHSVC_CLIENT
 {
     HANDLE ServerProcessId;
     PPHSVC_CLIENT_FREE_HEAP FreeHeap;
@@ -528,7 +528,7 @@ typedef struct _PH_PLUGIN_PHSVC_CLIENT
 
 // Plugin structures
 
-typedef struct _PH_PLUGIN_INFORMATION
+typedef struct PH_PLUGIN_INFORMATION
 {
     PWSTR DisplayName;
     PWSTR Author;
@@ -543,7 +543,7 @@ typedef struct _PH_PLUGIN_INFORMATION
 // end_phapppub
 
 // begin_phapppub
-typedef struct _PH_PLUGIN
+typedef struct PH_PLUGIN
 {
     // Public
 
@@ -612,7 +612,7 @@ PhPluginReserveIds(
     _In_ ULONG Count
     );
 
-typedef struct _PH_PLUGIN_MENU_ITEM *PPH_PLUGIN_MENU_ITEM;
+typedef struct PH_PLUGIN_MENU_ITEM *PPH_PLUGIN_MENU_ITEM;
 
 _Function_class_(PH_PLUGIN_MENU_ITEM_DELETE_FUNCTION)
 typedef VOID (NTAPI PH_PLUGIN_MENU_ITEM_DELETE_FUNCTION)(
@@ -620,7 +620,7 @@ typedef VOID (NTAPI PH_PLUGIN_MENU_ITEM_DELETE_FUNCTION)(
     );
 typedef PH_PLUGIN_MENU_ITEM_DELETE_FUNCTION *PPH_PLUGIN_MENU_ITEM_DELETE_FUNCTION;
 
-typedef struct _PH_PLUGIN_MENU_ITEM
+typedef struct PH_PLUGIN_MENU_ITEM
 {
     PPH_PLUGIN Plugin;
     ULONG Id;
@@ -640,7 +640,7 @@ typedef struct _PH_PLUGIN_MENU_ITEM
 #define PH_MENU_ITEM_LOCATION_USERS 3
 #define PH_MENU_ITEM_LOCATION_HELP 4
 
-typedef struct _PH_PLUGIN_SYSTEM_STATISTICS
+typedef struct PH_PLUGIN_SYSTEM_STATISTICS
 {
     PSYSTEM_PERFORMANCE_INFORMATION Performance;
 

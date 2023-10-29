@@ -240,7 +240,7 @@ VOID PhSaveSettingsColumnSet(
 
 // Column Set Editor Dialog
 
-typedef struct _PH_COLUMNSET_DIALOG_CONTEXT
+typedef struct PH_COLUMNSET_DIALOG_CONTEXT
 {
     HWND DialogHandle;
     HWND ListViewHandle;

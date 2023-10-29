@@ -1,7 +1,7 @@
 #ifndef _PH_PHINTRNL_H
 #define _PH_PHINTRNL_H
 
-typedef struct _PHLIB_STATISTICS_BLOCK
+typedef struct PHLIB_STATISTICS_BLOCK
 {
     // basesup
     ULONG BaseThreadsCreated;

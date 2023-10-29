@@ -25,7 +25,7 @@
 #define FILTER_REGEX 3
 #define FILTER_REGEX_IGNORECASE 4
 
-typedef struct _MEMORY_RESULTS_CONTEXT
+typedef struct MEMORY_RESULTS_CONTEXT
 {
     HANDLE ProcessId;
     PPH_LIST Results;

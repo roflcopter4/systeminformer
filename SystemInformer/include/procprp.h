@@ -1,7 +1,7 @@
 #ifndef PH_PROCPRP_H
 #define PH_PROCPRP_H
 
-typedef struct _PH_PROCESS_WAITPROPCONTEXT
+typedef struct PH_PROCESS_WAITPROPCONTEXT
 {
     SLIST_ENTRY ListEntry;
     HWND PropSheetWindowHandle;
@@ -12,7 +12,7 @@ typedef struct _PH_PROCESS_WAITPROPCONTEXT
 
 #define PH_PROCESS_PROPCONTEXT_MAXPAGES 20
 
-typedef struct _PH_PROCESS_PROPCONTEXT
+typedef struct PH_PROCESS_PROPCONTEXT
 {
     PPH_PROCESS_ITEM ProcessItem;
     PPH_STRING Title;
@@ -26,7 +26,7 @@ typedef struct _PH_PROCESS_PROPCONTEXT
 } PH_PROCESS_PROPCONTEXT, *PPH_PROCESS_PROPCONTEXT;
 
 // begin_phapppub
-typedef struct _PH_PROCESS_PROPPAGECONTEXT
+typedef struct PH_PROCESS_PROPPAGECONTEXT
 {
     PPH_PROCESS_PROPCONTEXT PropContext;
     PVOID Context;

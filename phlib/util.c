@@ -2634,7 +2634,7 @@ PPH_STRING PhFormatImageVersionInfo(
     return PhFinalStringBuilderString(&stringBuilder);
 }
 
-typedef struct _PH_FILE_VERSIONINFO_CACHE_ENTRY
+typedef struct PH_FILE_VERSIONINFO_CACHE_ENTRY
 {
     PPH_STRING FileName;
     PPH_STRING CompanyName;
@@ -5541,7 +5541,7 @@ VOID PhpFreeOpenFileName(
     PhFree(OpenFileName);
 }
 
-typedef struct _PHP_FILE_DIALOG
+typedef struct PHP_FILE_DIALOG
 {
     BOOLEAN UseIFileDialog;
     BOOLEAN Save;

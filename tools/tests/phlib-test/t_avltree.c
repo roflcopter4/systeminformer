@@ -1,6 +1,6 @@
 #include "tests.h"
 
-typedef struct _NODE
+typedef struct NODE
 {
     PH_AVL_LINKS Links;
     ULONG Value;

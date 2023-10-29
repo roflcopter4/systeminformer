@@ -25,7 +25,7 @@
 #include <appsup.h>
 #include <mapldr.h>
 
-typedef struct _PH_MODULE_QUERY_DATA
+typedef struct PH_MODULE_QUERY_DATA
 {
     SLIST_ENTRY ListEntry;
     PPH_MODULE_PROVIDER ModuleProvider;
@@ -1101,7 +1101,7 @@ static VOID PhModuleAddEnclaveModule(
     PhAddItemList(Modules, info);
 }
 
-typedef struct _PHP_ENUM_ENCLAVE_MODULES_CONTEXT
+typedef struct PHP_ENUM_ENCLAVE_MODULES_CONTEXT
 {
     PPH_LIST Modules;
     USHORT LoadOrderIndex;

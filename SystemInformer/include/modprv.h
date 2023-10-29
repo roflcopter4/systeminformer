@@ -17,7 +17,7 @@ extern PPH_OBJECT_TYPE PhModuleProviderType;
 extern PPH_OBJECT_TYPE PhModuleItemType;
 
 // begin_phapppub
-typedef struct _PH_MODULE_ITEM
+typedef struct PH_MODULE_ITEM
 {
     PVOID BaseAddress;
     PVOID ParentBaseAddress;
@@ -47,7 +47,7 @@ typedef struct _PH_MODULE_ITEM
         };
     };
 
-    enum _VERIFY_RESULT VerifyResult;
+    enum VERIFY_RESULT VerifyResult;
     PPH_STRING VerifySignerName;
 
     ULONG ImageTimeDateStamp;
@@ -69,7 +69,7 @@ typedef struct _PH_MODULE_ITEM
     WCHAR EnclaveBaseAddressString[PH_PTR_STR_LEN_1];
 } PH_MODULE_ITEM, *PPH_MODULE_ITEM;
 
-typedef struct _PH_MODULE_PROVIDER
+typedef struct PH_MODULE_PROVIDER
 {
     PPH_HASHTABLE ModuleHashtable;
     PH_FAST_LOCK ModuleHashtableLock;

@@ -145,7 +145,7 @@ PhEnumeratePrivileges(
     _In_opt_ PVOID Context
     );
 
-typedef enum _LSA_USER_ACCOUNT_TYPE
+typedef enum LSA_USER_ACCOUNT_TYPE
 {
     UnknownUserAccountType,
     LocalUserAccountType,

@@ -11,7 +11,7 @@
 
 #include <peview.h>
 
-typedef struct _PV_PE_ATTRIBUTES_CONTEXT
+typedef struct PV_PE_ATTRIBUTES_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;
@@ -19,7 +19,7 @@ typedef struct _PV_PE_ATTRIBUTES_CONTEXT
     PPV_PROPPAGECONTEXT PropSheetContext;
 } PVP_PE_ATTRIBUTES_CONTEXT, *PPVP_PE_ATTRIBUTES_CONTEXT;
 
-typedef struct _PV_EA_CALLBACK
+typedef struct PV_EA_CALLBACK
 {
     HWND ListViewHandle;
     ULONG Count;

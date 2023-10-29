@@ -38,7 +38,7 @@
 #define PHMMTLC_MAXIMUM 17
 
 // begin_phapppub
-typedef struct _PH_MEMORY_NODE
+typedef struct PH_MEMORY_NODE
 {
     PH_TREENEW_NODE Node;
 
@@ -47,7 +47,7 @@ typedef struct _PH_MEMORY_NODE
     USHORT Reserved2;
     PPH_MEMORY_ITEM MemoryItem;
 
-    struct _PH_MEMORY_NODE *Parent;
+    struct PH_MEMORY_NODE *Parent;
     PPH_LIST Children;
 // end_phapppub
 
@@ -81,7 +81,7 @@ typedef struct _PH_MEMORY_NODE
 #define PH_MEMORY_FLAGS_GUARD_OPTION 7
 #define PH_MEMORY_FLAGS_ZERO_PAD_ADDRESSES 8
 
-typedef struct _PH_MEMORY_LIST_CONTEXT
+typedef struct PH_MEMORY_LIST_CONTEXT
 {
     HWND ParentWindowHandle;
     HWND TreeNewHandle;

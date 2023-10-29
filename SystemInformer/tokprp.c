@@ -24,7 +24,7 @@
 #include <workqueue.h>
 #include <phsettings.h>
 
-typedef enum _PH_PROCESS_TOKEN_CATEGORY
+typedef enum PH_PROCESS_TOKEN_CATEGORY
 {
     PH_PROCESS_TOKEN_CATEGORY_DANGEROUS_FLAGS,
     PH_PROCESS_TOKEN_CATEGORY_PRIVILEGES,
@@ -32,14 +32,14 @@ typedef enum _PH_PROCESS_TOKEN_CATEGORY
     PH_PROCESS_TOKEN_CATEGORY_RESTRICTED
 } PH_PROCESS_TOKEN_CATEGORY;
 
-typedef enum _PH_PROCESS_TOKEN_FLAG
+typedef enum PH_PROCESS_TOKEN_FLAG
 {
     PH_PROCESS_TOKEN_FLAG_NO_WRITE_UP,
     PH_PROCESS_TOKEN_FLAG_SANDBOX_INERT,
     PH_PROCESS_TOKEN_FLAG_UIACCESS
 } PH_PROCESS_TOKEN_FLAG;
 
-typedef enum _PH_PROCESS_TOKEN_INDEX
+typedef enum PH_PROCESS_TOKEN_INDEX
 {
     PH_PROCESS_TOKEN_INDEX_NAME,
     PH_PROCESS_TOKEN_INDEX_STATUS,
@@ -48,7 +48,7 @@ typedef enum _PH_PROCESS_TOKEN_INDEX
     PH_PROCESS_TOKEN_INDEX_TYPE
 } PH_PROCESS_TOKEN_INDEX;
 
-typedef struct _PHP_TOKEN_PAGE_LISTVIEW_ITEM
+typedef struct PHP_TOKEN_PAGE_LISTVIEW_ITEM
 {
     PH_PROCESS_TOKEN_CATEGORY ItemCategory;
     PSID_AND_ATTRIBUTES TokenGroup;
@@ -57,20 +57,20 @@ typedef struct _PHP_TOKEN_PAGE_LISTVIEW_ITEM
     BOOLEAN ItemFlagState;
 } PHP_TOKEN_PAGE_LISTVIEW_ITEM, *PPHP_TOKEN_PAGE_LISTVIEW_ITEM;
 
-typedef struct _PHP_TOKEN_USER_RESOLVE_CONTEXT
+typedef struct PHP_TOKEN_USER_RESOLVE_CONTEXT
 {
     HWND WindowHandle;
     PSID TokenUserSid;
 } PHP_TOKEN_USER_RESOLVE_CONTEXT, *PPHP_TOKEN_USER_RESOLVE_CONTEXT;
 
-typedef struct _PHP_TOKEN_GROUP_RESOLVE_CONTEXT
+typedef struct PHP_TOKEN_GROUP_RESOLVE_CONTEXT
 {
     HWND ListViewHandle;
     PPHP_TOKEN_PAGE_LISTVIEW_ITEM LvItem;
     PSID TokenGroupSid;
 } PHP_TOKEN_GROUP_RESOLVE_CONTEXT, *PPHP_TOKEN_GROUP_RESOLVE_CONTEXT;
 
-typedef struct _PH_TOKEN_ATTRIBUTE_NODE
+typedef struct PH_TOKEN_ATTRIBUTE_NODE
 {
     PH_TREENEW_NODE Node;
     PPH_LIST Children;
@@ -78,7 +78,7 @@ typedef struct _PH_TOKEN_ATTRIBUTE_NODE
     PPH_STRING Value;
 } PH_TOKEN_ATTRIBUTE_NODE, *PPH_TOKEN_ATTRIBUTE_NODE;
 
-typedef struct _PH_TOKEN_ATTRIBUTE_TREE_CONTEXT
+typedef struct PH_TOKEN_ATTRIBUTE_TREE_CONTEXT
 {
     HWND WindowHandle;
     PPH_LIST RootList;
@@ -87,7 +87,7 @@ typedef struct _PH_TOKEN_ATTRIBUTE_TREE_CONTEXT
     PH_SORT_ORDER TreeNewSortOrder;
 } PH_TOKEN_ATTRIBUTE_TREE_CONTEXT, *PPH_TOKEN_ATTRIBUTE_TREE_CONTEXT;
 
-typedef struct _TOKEN_PAGE_CONTEXT
+typedef struct TOKEN_PAGE_CONTEXT
 {
     PPH_OPEN_OBJECT OpenObject;
     PVOID Context;
@@ -2554,7 +2554,7 @@ INT_PTR CALLBACK PhpTokenGeneralPageProc(
     return FALSE;
 }
 
-typedef struct _PHP_TOKEN_ADVANCED_CONTEXT
+typedef struct PHP_TOKEN_ADVANCED_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;
@@ -4343,7 +4343,7 @@ INT_PTR CALLBACK PhpTokenContainerPageProc(
     return FALSE;
 }
 
-typedef enum _AppModelPolicy_Type
+typedef enum AppModelPolicy_Type
 {
     AppModelPolicy_Type_LifecycleManager = 1,
     AppModelPolicy_Type_AppDataAccess = 2,
@@ -4406,7 +4406,7 @@ typedef enum _AppModelPolicy_Type
     AppModelPolicy_Type_Count = 58,
 } AppModelPolicy_Type;
 
-typedef enum _AppModelPolicy_PolicyValue
+typedef enum AppModelPolicy_PolicyValue
 {
     AppModelPolicy_LifecycleManager_Unmanaged = 0x10000,
     AppModelPolicy_LifecycleManager_ManagedByPLM = 0x10001,

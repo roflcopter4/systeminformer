@@ -47,7 +47,7 @@ NTSTATUS PhBcdSetFirmwareBootApplicationOneTime(
     _In_ GUID Identifier
     );
 
-typedef struct _PH_BCD_OBJECT_LIST
+typedef struct PH_BCD_OBJECT_LIST
 {
     GUID ObjectGuid;
     PPH_STRING ObjectName;

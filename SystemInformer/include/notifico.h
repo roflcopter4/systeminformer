@@ -15,7 +15,7 @@
 
 extern PPH_LIST PhTrayIconItemList;
 
-typedef enum _PH_TRAY_ICON_ID
+typedef enum PH_TRAY_ICON_ID
 {
     PH_TRAY_ICON_ID_NONE,
     PH_TRAY_ICON_ID_CPU_USAGE,
@@ -31,7 +31,7 @@ typedef enum _PH_TRAY_ICON_ID
     PH_TRAY_ICON_ID_MAXIMUM
 } PH_TRAY_ICON_ID;
 
-typedef enum _PH_TRAY_ICON_GUID
+typedef enum PH_TRAY_ICON_GUID
 {
     PH_TRAY_ICON_GUID_CPU_USAGE,
     PH_TRAY_ICON_GUID_CPU_HISTORY,
@@ -52,7 +52,7 @@ typedef enum _PH_TRAY_ICON_GUID
 #define PH_ICON_ALL 0xffffffff
 
 // begin_phapppub
-typedef struct _PH_NF_ICON PH_NF_ICON, *PPH_NF_ICON;
+typedef struct PH_NF_ICON PH_NF_ICON, *PPH_NF_ICON;
 
 typedef VOID (NTAPI *PPH_NF_UPDATE_REGISTERED_ICON)(
     _In_ PPH_NF_ICON Icon
@@ -67,7 +67,7 @@ typedef VOID (NTAPI *PPH_NF_BEGIN_BITMAP)(
     _Out_ HBITMAP *OldBitmap
     );
 
-typedef struct _PH_NF_POINTERS
+typedef struct PH_NF_POINTERS
 {
     PPH_NF_BEGIN_BITMAP BeginBitmap;
 } PH_NF_POINTERS, *PPH_NF_POINTERS;
@@ -95,7 +95,7 @@ typedef BOOLEAN (NTAPI *PPH_NF_ICON_MESSAGE_CALLBACK)(
 
 #define PH_NF_MSG_SHOWMINIINFOSECTION (WM_APP + 1)
 
-typedef struct _PH_NF_MSG_SHOWMINIINFOSECTION_DATA
+typedef struct PH_NF_MSG_SHOWMINIINFOSECTION_DATA
 {
     PWSTR SectionName; // NULL to leave unchanged
 } PH_NF_MSG_SHOWMINIINFOSECTION_DATA, *PPH_NF_MSG_SHOWMINIINFOSECTION_DATA;
@@ -108,9 +108,9 @@ typedef struct _PH_NF_MSG_SHOWMINIINFOSECTION_DATA
 // end_phapppub
 
 // begin_phapppub
-typedef struct _PH_PLUGIN PH_PLUGIN, *PPH_PLUGIN;
+typedef struct PH_PLUGIN PH_PLUGIN, *PPH_PLUGIN;
 
-typedef struct _PH_NF_ICON
+typedef struct PH_NF_ICON
 {
     // Public
 
@@ -202,7 +202,7 @@ VOID PhNfNotifyMiniInfoPinned(
 // begin_phapppub
 // Public registration data
 
-typedef struct _PH_NF_ICON_REGISTRATION_DATA
+typedef struct PH_NF_ICON_REGISTRATION_DATA
 {
     PPH_NF_ICON_UPDATE_CALLBACK UpdateCallback;
     PPH_NF_ICON_MESSAGE_CALLBACK MessageCallback;

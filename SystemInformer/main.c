@@ -10,23 +10,23 @@
  *
  */
 
-#include <phapp.h>
+#include "phapp.h"
+#include "devprv.h"
+#include "extmgri.h"
+#include "ksisup.h"
+#include "mainwnd.h"
+#include "netprv.h"
+#include "phsettings.h"
+#include "phsvc.h"
+#include "procprv.h"
+#include "srvprv.h"
+
 #include <colorbox.h>
 #include <hexedit.h>
 #include <hndlinfo.h>
-#include <objbase.h>
-
-#include <extmgri.h>
-#include <mainwnd.h>
-#include <netprv.h>
-#include <phsettings.h>
-#include <phsvc.h>
-#include <procprv.h>
-#include <devprv.h>
-
-#include <ksisup.h>
 #include <settings.h>
-#include <srvprv.h>
+
+#include <objbase.h>
 
 LONG PhMainMessageLoop(
     VOID
@@ -409,7 +409,7 @@ VOID PhUnregisterMessageLoopFilter(
     PhFree(FilterEntry);
 }
 
-typedef struct _PHP_PREVIOUS_MAIN_WINDOW_CONTEXT
+typedef struct PHP_PREVIOUS_MAIN_WINDOW_CONTEXT
 {
     HANDLE ProcessId;
     PPH_STRING WindowName;
@@ -605,7 +605,7 @@ BOOLEAN PhInitializeDirectoryPolicy(
 #include <minidumpapiset.h>
 #include <winsta.h>
 
-typedef enum _PH_DUMP_TYPE
+typedef enum PH_DUMP_TYPE
 {
     PhDumpTypeMinidump,
     PhDumpTypeNormaldump,
@@ -1201,7 +1201,7 @@ VOID PhpInitializeSettings(
     }
 }
 
-typedef enum _PH_COMMAND_ARG
+typedef enum PH_COMMAND_ARG
 {
     PH_ARG_NONE,
     PH_ARG_NOSETTINGS,

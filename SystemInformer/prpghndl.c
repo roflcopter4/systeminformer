@@ -302,7 +302,7 @@ BOOLEAN PhpHandleTreeFilterCallback(
     return FALSE;
 }
 
-typedef struct _HANDLE_OPEN_CONTEXT
+typedef struct HANDLE_OPEN_CONTEXT
 {
     HANDLE ProcessId;
     PPH_HANDLE_ITEM HandleItem;

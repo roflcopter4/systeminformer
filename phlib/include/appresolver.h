@@ -34,7 +34,7 @@ HRESULT PhAppResolverPackageTerminateProcess(
     _In_ PPH_STRING PackageFullName
     );
 
-typedef struct _PH_PACKAGE_TASK_ENTRY
+typedef struct PH_PACKAGE_TASK_ENTRY
 {
     PPH_STRING TaskName;
     GUID TaskGuid;
@@ -73,7 +73,7 @@ PPH_LIST PhGetPackageAssetsFromResourceFile(
     _In_ PWSTR FilePath
     );
 
-typedef struct _PH_APPUSERMODELID_ENUM_ENTRY
+typedef struct PH_APPUSERMODELID_ENUM_ENTRY
 {
     PPH_STRING AppUserModelId;
     PPH_STRING PackageName;
@@ -142,7 +142,7 @@ typedef struct HSTRING__* HSTRING;
 // Note: The HSTRING structures can be found in the Windows SDK
 // \cppwinrt\winrt\base.h under MIT License. (dmex)
 
-typedef struct _WSTRING_HEADER // HSTRING_HEADER (WinSDK)
+typedef struct WSTRING_HEADER // HSTRING_HEADER (WinSDK)
 {
     union
     {
@@ -157,7 +157,7 @@ typedef struct _WSTRING_HEADER // HSTRING_HEADER (WinSDK)
 
 #define HSTRING_REFERENCE_FLAG 0x1 // hstring_reference_flag (WinSDK)
 
-typedef struct _HSTRING_REFERENCE // Stack
+typedef struct HSTRING_REFERENCE // Stack
 {
     union
     {
@@ -173,7 +173,7 @@ typedef struct _HSTRING_REFERENCE // Stack
     };
 } HSTRING_REFERENCE;
 
-typedef struct _HSTRING_INSTANCE // Heap
+typedef struct HSTRING_INSTANCE // Heap
 {
     // Header
     union

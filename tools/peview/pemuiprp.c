@@ -11,7 +11,7 @@
 
 #include <peview.h>
 
-typedef struct _PVP_PE_MUI_CONTEXT
+typedef struct PVP_PE_MUI_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;
@@ -29,7 +29,7 @@ typedef struct _PVP_PE_MUI_CONTEXT
 #define MUI_FILETYPE_MUI 16
 
 // rev from MUIRCT.EXE!DumpRCManifest (Windows SDK) (dmex)
-typedef struct _MUI_MANIFEST
+typedef struct MUI_MANIFEST
 {
     ULONG Signature;
     ULONG Length;

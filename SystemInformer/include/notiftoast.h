@@ -17,7 +17,7 @@ extern "C"
 {
 #endif
 
-typedef enum _PH_TOAST_REASON
+typedef enum PH_TOAST_REASON
 {
     PhToastReasonUserCanceled,
     PhToastReasonApplicationHidden,

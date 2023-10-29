@@ -13,7 +13,7 @@
 #include <phapp.h>
 #include <settings.h>
 
-typedef struct _COLUMNS_DIALOG_CONTEXT
+typedef struct COLUMNS_DIALOG_CONTEXT
 {
     HWND ControlHandle;
     HFONT ControlFont;

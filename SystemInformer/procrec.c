@@ -15,7 +15,7 @@
 #include <mainwnd.h>
 #include <procprv.h>
 
-typedef struct _PROCESS_RECORD_CONTEXT
+typedef struct PROCESS_RECORD_CONTEXT
 {
     PPH_PROCESS_RECORD Record;
     HICON FileIcon;

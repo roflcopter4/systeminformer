@@ -21,7 +21,7 @@
 
 #define PH_MAX_COMPARE_FUNCTIONS 16
 
-typedef struct _PH_EXTLV_CONTEXT
+typedef struct PH_EXTLV_CONTEXT
 {
     HWND Handle;
     WNDPROC OldWndProc;

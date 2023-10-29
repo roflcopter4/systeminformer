@@ -12,7 +12,7 @@
 #ifndef _PH_FILEPOOLP_H
 #define _PH_FILEPOOLP_H
 
-typedef struct _PH_FILE_POOL_VIEW
+typedef struct PH_FILE_POOL_VIEW
 {
     LIST_ENTRY ByIndexListEntry;
     PH_AVL_LINKS ByBaseLinks;

@@ -142,7 +142,7 @@ typedef INT32 (CALLBACK *MRUINARYCMPPROC)(PVOID String1, PVOID String2, ULONG Le
 #define MRU_BINARY 0x0001
 #define MRU_CACHEWRITE 0x0002
 
-typedef struct _MRUINFO
+typedef struct MRUINFO
 {
     ULONG cbSize;
     UINT uMaxItems;
@@ -171,7 +171,7 @@ typedef INT32 (WINAPI* _FreeMRUList)(
 
 // Icons
 
-typedef struct _PHP_ICON_ENTRY
+typedef struct PHP_ICON_ENTRY
 {
     PVOID InstanceHandle;
     PWSTR Name;

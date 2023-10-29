@@ -19,7 +19,7 @@ extern BOOLEAN PhEnableSecurityAdvancedDialog;
 
 // secedit
 
-typedef struct _PH_ACCESS_ENTRY
+typedef struct PH_ACCESS_ENTRY
 {
     PWSTR Name;
     ACCESS_MASK Access;
@@ -65,7 +65,7 @@ PhEditSecurityEx(
     _In_opt_ PVOID Context
     );
 
-typedef struct _PH_STD_OBJECT_SECURITY
+typedef struct PH_STD_OBJECT_SECURITY
 {
     PVOID ObjectContext;
     PVOID Context;

@@ -11,7 +11,7 @@
 
 #include <peview.h>
 
-typedef struct _PV_PE_VERSIONINFO_CONTEXT
+typedef struct PV_PE_VERSIONINFO_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;

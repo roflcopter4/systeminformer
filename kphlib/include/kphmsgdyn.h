@@ -15,7 +15,7 @@
 
 EXTERN_C_START
 
-typedef struct _KPH_STACK_TRACE
+typedef struct KPH_STACK_TRACE
 {
     PVOID* Frames;
     USHORT Count;

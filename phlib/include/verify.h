@@ -17,7 +17,7 @@ EXTERN_C_START
 
 #define PH_VERIFY_DEFAULT_SIZE_LIMIT (32 * 1024 * 1024)
 
-typedef enum _VERIFY_RESULT
+typedef enum VERIFY_RESULT
 {
     VrUnknown = 0,
     VrNoSignature,
@@ -41,7 +41,7 @@ PhVerifyResultToStringRef(
 #define PH_VERIFY_PREVENT_NETWORK_ACCESS 0x1
 #define PH_VERIFY_VIEW_PROPERTIES 0x2
 
-typedef struct _PH_VERIFY_FILE_INFO
+typedef struct PH_VERIFY_FILE_INFO
 {
     HANDLE FileHandle;
     ULONG Flags; // PH_VERIFY_*

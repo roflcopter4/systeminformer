@@ -17,7 +17,7 @@
 #endif
 
 #include <pshpack1.h>
-typedef struct _KPH_DYN_DATA_BUFFER
+typedef struct KPH_DYN_DATA_BUFFER
 {
     USHORT Size;
     CHAR Buffer[ANYSIZE_ARRAY];

@@ -11,7 +11,7 @@
 
 #include <phapp.h>
 
-typedef struct _LIVE_DUMP_CONFIG
+typedef struct LIVE_DUMP_CONFIG
 {
     HWND WindowHandle;
     PPH_STRING FileName;

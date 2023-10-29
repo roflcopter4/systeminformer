@@ -10,7 +10,7 @@ extern PPH_LIST PhDbgProviderList;
 extern PH_QUEUED_LOCK PhDbgProviderListLock;
 #endif
 
-typedef enum _PH_PROVIDER_THREAD_STATE
+typedef enum PH_PROVIDER_THREAD_STATE
 {
     ProviderThreadRunning,
     ProviderThreadStopped,
@@ -21,10 +21,10 @@ typedef VOID (NTAPI *PPH_PROVIDER_FUNCTION)(
     _In_ PVOID Object
     );
 
-struct _PH_PROVIDER_THREAD;
-typedef struct _PH_PROVIDER_THREAD *PPH_PROVIDER_THREAD;
+struct PH_PROVIDER_THREAD;
+typedef struct PH_PROVIDER_THREAD *PPH_PROVIDER_THREAD;
 
-typedef struct _PH_PROVIDER_REGISTRATION
+typedef struct PH_PROVIDER_REGISTRATION
 {
     LIST_ENTRY ListEntry;
     PPH_PROVIDER_THREAD ProviderThread;
@@ -36,7 +36,7 @@ typedef struct _PH_PROVIDER_REGISTRATION
     BOOLEAN Boosting;
 } PH_PROVIDER_REGISTRATION, *PPH_PROVIDER_REGISTRATION;
 
-typedef struct _PH_PROVIDER_THREAD
+typedef struct PH_PROVIDER_THREAD
 {
     HANDLE ThreadHandle;
     HANDLE TimerHandle;

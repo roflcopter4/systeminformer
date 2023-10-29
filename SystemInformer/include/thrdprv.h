@@ -17,7 +17,7 @@ extern PPH_OBJECT_TYPE PhThreadProviderType;
 extern PPH_OBJECT_TYPE PhThreadItemType;
 
 // begin_phapppub
-typedef struct _PH_THREAD_ITEM
+typedef struct PH_THREAD_ITEM
 {
     HANDLE ThreadId;
 
@@ -47,7 +47,7 @@ typedef struct _PH_THREAD_ITEM
     ULONG64 StartAddress;
     PPH_STRING StartAddressString;
     PPH_STRING StartAddressFileName;
-    enum _PH_SYMBOL_RESOLVE_LEVEL StartAddressResolveLevel;
+    enum PH_SYMBOL_RESOLVE_LEVEL StartAddressResolveLevel;
 
     BOOLEAN IsGuiThread;
     BOOLEAN JustResolved;
@@ -59,9 +59,9 @@ typedef struct _PH_THREAD_ITEM
     ULONG LxssThreadId;
 } PH_THREAD_ITEM, *PPH_THREAD_ITEM;
 
-typedef enum _PH_KNOWN_PROCESS_TYPE PH_KNOWN_PROCESS_TYPE;
+typedef enum PH_KNOWN_PROCESS_TYPE PH_KNOWN_PROCESS_TYPE;
 
-typedef struct _PH_THREAD_PROVIDER
+typedef struct PH_THREAD_PROVIDER
 {
     PPH_HASHTABLE ThreadHashtable;
     PH_FAST_LOCK ThreadHashtableLock;
@@ -86,7 +86,7 @@ typedef struct _PH_THREAD_PROVIDER
         };
     };
 
-    struct _PH_SYMBOL_PROVIDER *SymbolProvider;
+    struct PH_SYMBOL_PROVIDER *SymbolProvider;
 
     SLIST_HEADER QueryListHead;
     PH_QUEUED_LOCK LoadSymbolsLock;

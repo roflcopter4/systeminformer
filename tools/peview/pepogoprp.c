@@ -14,7 +14,7 @@
 #include "../thirdparty/ssdeep/fuzzy.h"
 #include "../thirdparty/tlsh/tlsh_wrapper.h"
 
-typedef struct _PVP_PE_POGO_CONTEXT
+typedef struct PVP_PE_POGO_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;
@@ -23,7 +23,7 @@ typedef struct _PVP_PE_POGO_CONTEXT
     PPV_PROPPAGECONTEXT PropSheetContext;
 } PVP_PE_POGO_CONTEXT, *PPVP_PE_POGO_CONTEXT;
 
-typedef struct _PVP_PE_CRT_CONTEXT
+typedef struct PVP_PE_CRT_CONTEXT
 {
     HWND WindowHandle;
     HWND ListViewHandle;

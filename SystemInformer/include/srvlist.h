@@ -41,7 +41,7 @@
 #define PHSN_KEY 0x4
 
 // begin_phapppub
-typedef struct _PH_SERVICE_NODE
+typedef struct PH_SERVICE_NODE
 {
     PH_TREENEW_NODE Node;
 
@@ -84,7 +84,7 @@ VOID PhSaveSettingsServiceTreeList(
 
 // begin_phapppub
 PHAPPAPI
-struct _PH_TN_FILTER_SUPPORT *
+struct PH_TN_FILTER_SUPPORT *
 NTAPI
 PhGetFilterSupportServiceTreeList(
     VOID

@@ -16,7 +16,7 @@
 extern PPH_OBJECT_TYPE PhMemoryItemType;
 
 // begin_phapppub
-typedef enum _PH_MEMORY_REGION_TYPE
+typedef enum PH_MEMORY_REGION_TYPE
 {
     UnknownRegion,
     CustomRegion,
@@ -45,7 +45,7 @@ typedef enum _PH_MEMORY_REGION_TYPE
     SystemDefaultActivationContextDataRegion
 } PH_MEMORY_REGION_TYPE;
 
-typedef struct _PH_MEMORY_ITEM
+typedef struct PH_MEMORY_ITEM
 {
     LIST_ENTRY ListEntry;
     PH_AVL_LINKS Links;
@@ -99,7 +99,7 @@ typedef struct _PH_MEMORY_ITEM
 
     WCHAR BaseAddressString[PH_PTR_STR_LEN_1];
 
-    struct _PH_MEMORY_ITEM *AllocationBaseItem;
+    struct PH_MEMORY_ITEM *AllocationBaseItem;
 
     SIZE_T CommittedSize;
     SIZE_T PrivateSize;
@@ -144,12 +144,12 @@ typedef struct _PH_MEMORY_ITEM
         } Heap;
         struct
         {
-            struct _PH_MEMORY_ITEM *HeapItem;
+            struct PH_MEMORY_ITEM *HeapItem;
         } HeapSegment;
     } u;
 } PH_MEMORY_ITEM, *PPH_MEMORY_ITEM;
 
-typedef struct _PH_MEMORY_ITEM_LIST
+typedef struct PH_MEMORY_ITEM_LIST
 {
     HANDLE ProcessId;
     PH_AVL_TREE Set;

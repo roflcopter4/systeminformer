@@ -7,7 +7,7 @@
 
 // svcmain
 
-typedef struct _PHSVC_STOP
+typedef struct PHSVC_STOP
 {
     BOOLEAN Stop;
     HANDLE Event1;
@@ -25,7 +25,7 @@ VOID PhSvcStop(
 
 // svcclient
 
-typedef struct _PHSVC_CLIENT
+typedef struct PHSVC_CLIENT
 {
     LIST_ENTRY ListEntry;
 
@@ -58,7 +58,7 @@ VOID PhSvcDetachClient(
 
 // svcapiport
 
-typedef struct _PHSVC_THREAD_CONTEXT
+typedef struct PHSVC_THREAD_CONTEXT
 {
     PPHSVC_CLIENT CurrentClient;
     PPHSVC_CLIENT OldClient;

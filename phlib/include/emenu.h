@@ -31,13 +31,13 @@ EXTERN_C_START
 #define PH_EMENU_TEXT_OWNED 0x80000000
 #define PH_EMENU_BITMAP_OWNED 0x40000000
 
-typedef struct _PH_EMENU_ITEM *PPH_EMENU_ITEM;
+typedef struct PH_EMENU_ITEM *PPH_EMENU_ITEM;
 
 typedef VOID (NTAPI *PPH_EMENU_ITEM_DELETE_FUNCTION)(
     _In_ PPH_EMENU_ITEM Item
     );
 
-typedef struct _PH_EMENU_ITEM
+typedef struct PH_EMENU_ITEM
 {
     ULONG Flags;
     ULONG Id;
@@ -53,7 +53,7 @@ typedef struct _PH_EMENU_ITEM
     PPH_LIST Items;
 } PH_EMENU_ITEM, *PPH_EMENU_ITEM;
 
-typedef struct _PH_EMENU_ITEM PH_EMENU, *PPH_EMENU;
+typedef struct PH_EMENU_ITEM PH_EMENU, *PPH_EMENU;
 
 PHLIBAPI
 PPH_EMENU_ITEM PhCreateEMenuItem(
@@ -131,7 +131,7 @@ VOID PhDestroyEMenu(
 
 #define PH_EMENU_CONVERT_ID 0x1
 
-typedef struct _PH_EMENU_DATA
+typedef struct PH_EMENU_DATA
 {
     PPH_LIST IdToItem;
 } PH_EMENU_DATA, *PPH_EMENU_DATA;

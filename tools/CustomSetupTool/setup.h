@@ -56,7 +56,7 @@
 DECLSPEC_SELECTANY GUID FOLDERID_ProgramData = { 0x62AB5D82, 0xFDC1, 0x4DC3, { 0xA9, 0xDD, 0x07, 0x0D, 0x1D, 0x49, 0x5D, 0x97 } };
 DECLSPEC_SELECTANY GUID FOLDERID_PublicDesktop = { 0xC4AA340D, 0xF20F, 0x4863, { 0xAF, 0xEF, 0xF8, 0x7E, 0xF2, 0xE6, 0xBA, 0x25 } };
 
-typedef enum _SETUP_COMMAND_TYPE
+typedef enum SETUP_COMMAND_TYPE
 {
     SETUP_COMMAND_INSTALL,
     SETUP_COMMAND_SILENTINSTALL,
@@ -64,7 +64,7 @@ typedef enum _SETUP_COMMAND_TYPE
     SETUP_COMMAND_UPDATE,
 } SETUP_COMMAND_TYPE;
 
-typedef struct _PH_SETUP_CONTEXT
+typedef struct PH_SETUP_CONTEXT
 {
     HWND DialogHandle;
     HICON IconSmallHandle;
@@ -229,13 +229,13 @@ VOID SetupUpgradeSettingsFile(
 
 extern PH_STRINGREF UninstallKeyName;
 
-typedef struct _SETUP_EXTRACT_FILE
+typedef struct SETUP_EXTRACT_FILE
 {
     PSTR FileName;
     PWSTR ExtractFileName;
 } SETUP_EXTRACT_FILE, *PSETUP_EXTRACT_FILE;
 
-typedef struct _SETUP_REMOVE_FILE
+typedef struct SETUP_REMOVE_FILE
 {
     PWSTR FileName;
 } SETUP_REMOVE_FILE, *PSETUP_REMOVE_FILE;

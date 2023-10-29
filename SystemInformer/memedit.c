@@ -17,7 +17,7 @@
 
 #define WM_PH_SELECT_OFFSET (WM_APP + 300)
 
-typedef struct _MEMORY_EDITOR_CONTEXT
+typedef struct MEMORY_EDITOR_CONTEXT
 {
     PH_AVL_LINKS Links;
     union

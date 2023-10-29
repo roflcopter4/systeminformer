@@ -179,7 +179,7 @@ VOID PhSaveSettingsServiceTreeList(
     PhDereferenceObject(sortSettings);
 }
 
-struct _PH_TN_FILTER_SUPPORT *PhGetFilterSupportServiceTreeList(
+struct PH_TN_FILTER_SUPPORT *PhGetFilterSupportServiceTreeList(
     VOID
     )
 {

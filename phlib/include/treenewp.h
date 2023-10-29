@@ -26,7 +26,7 @@
 //
 // Strings are valid only through the duration of message processing.
 
-typedef struct _PH_TREENEW_CONTEXT
+typedef struct PH_TREENEW_CONTEXT
 {
     HWND Handle;
     PVOID InstanceHandle;

@@ -503,7 +503,7 @@ NTSTATUS PhTerminateThread(
     return status;
 }
 
-typedef struct _PH_PROCESS_RUNTIME_LIBRARY
+typedef struct PH_PROCESS_RUNTIME_LIBRARY
 {
     PH_STRINGREF NtdllFileName;
     PH_STRINGREF Kernel32FileName;
@@ -5145,7 +5145,7 @@ NTSTATUS PhGetEnlistmentBasicInformation(
     }
 }
 
-typedef struct _OPEN_DRIVER_BY_BASE_ADDRESS_CONTEXT
+typedef struct OPEN_DRIVER_BY_BASE_ADDRESS_CONTEXT
 {
     NTSTATUS Status;
     PVOID BaseAddress;
@@ -5877,7 +5877,7 @@ NTSTATUS PhEnumProcessModulesEx(
         );
 }
 
-typedef struct _SET_PROCESS_MODULE_LOAD_COUNT_CONTEXT
+typedef struct SET_PROCESS_MODULE_LOAD_COUNT_CONTEXT
 {
     NTSTATUS Status;
     PVOID BaseAddress;
@@ -7713,7 +7713,7 @@ BOOLEAN NTAPI PhpIsDotNetEnumProcessModulesCallback(
     return TRUE;
 }
 
-typedef struct _PHP_PIPE_NAME_HASH
+typedef struct PHP_PIPE_NAME_HASH
 {
     ULONG Hash;
 } PHP_PIPE_NAME_HASH, *PPHP_PIPE_NAME_HASH;
@@ -9593,7 +9593,7 @@ CleanupExit:
     return longPathName;
 }
 
-typedef struct _ENUM_GENERIC_PROCESS_MODULES_CONTEXT
+typedef struct ENUM_GENERIC_PROCESS_MODULES_CONTEXT
 {
     PPH_ENUM_GENERIC_MODULES_CALLBACK Callback;
     PVOID Context;
@@ -15129,7 +15129,7 @@ NTSTATUS PhGetThreadApartmentCallState(
 
     if (NT_SUCCESS(status) && oletlsDataAddress)
     {
-        typedef enum _CALL_STATE_TYPE
+        typedef enum CALL_STATE_TYPE
         {
             CALL_STATE_TYPE_OUTGOING, // tagOutgoingCallData
             CALL_STATE_TYPE_INCOMING, // tagIncomingCallData
@@ -15388,14 +15388,14 @@ NTSTATUS PhGetThreadSocketState(
         #ifndef SO_BSP_STATE
         #define SO_BSP_STATE 0x1009
         #endif
-        typedef struct _SOCKET_ADDRESS
+        typedef struct SOCKET_ADDRESS
         {
             _Field_size_bytes_(iSockaddrLength) PVOID lpSockaddr;
             // _When_(lpSockaddr->sa_family == AF_INET, _Field_range_(>=, sizeof(SOCKADDR_IN)))
             // _When_(lpSockaddr->sa_family == AF_INET6, _Field_range_(>=, sizeof(SOCKADDR_IN6)))
             INT iSockaddrLength;
         } SOCKET_ADDRESS, *PSOCKET_ADDRESS, *LPSOCKET_ADDRESS;
-        typedef struct _CSADDR_INFO
+        typedef struct CSADDR_INFO
         {
             SOCKET_ADDRESS LocalAddr;
             SOCKET_ADDRESS RemoteAddr;
@@ -16034,7 +16034,7 @@ NTSTATUS PhDestroyExecutionRequiredRequest(
 static PH_INITONCE PhProcessStateInitOnce = PH_INITONCE_INIT;
 static PPH_HASHTABLE PhProcessStateHashtable = NULL;
 
-typedef struct _PH_STATEHANDLE_CACHE_ENTRY
+typedef struct PH_STATEHANDLE_CACHE_ENTRY
 {
     HANDLE ProcessId;
     HANDLE StateHandle;
@@ -16247,7 +16247,7 @@ NTSTATUS PhThawProcess(
 static PH_INITONCE PhKnownDllsInitOnce = PH_INITONCE_INIT;
 static PPH_HASHTABLE PhKnownDllsHashtable = NULL;
 
-typedef struct _PH_KNOWNDLL_CACHE_ENTRY
+typedef struct PH_KNOWNDLL_CACHE_ENTRY
 {
     PPH_STRING FileName;
 } PH_KNOWNDLL_CACHE_ENTRY, *PPH_KNOWNDLL_CACHE_ENTRY;
